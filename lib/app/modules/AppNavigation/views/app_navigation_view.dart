@@ -10,6 +10,7 @@ import 'package:stainless_v2/app/modules/store/views/store_view.dart';
 import 'package:stainless_v2/generated/l10n.dart';
 
 import '../controllers/app_navigation_controller.dart';
+import 'package:stainless_v2/utils/app_util.dart';
 
 class AppNavigationView extends GetView<AppNavigationController> {
   //final root = GlobalKey<ScaffoldState>();
@@ -17,39 +18,37 @@ class AppNavigationView extends GetView<AppNavigationController> {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
-        // key: root,
-        // body: Stack(children: [
-        //   Positioned.fill(
-        //     child: Navigator(onGenerateRoute: (settings) {
-        //       print("test");
-        //       print(AppPages
-        //           .navigationRoutes[controller.currentIndex.value].name);
-        //       return GetPageRoute(
-        //           page: AppPages
-        //               .navigationRoutes[controller.currentIndex.value].page,
-        //           settings: settings,
-        //           binding: AppPages
-        //               .navigationRoutes[controller.currentIndex.value].binding,
-        //           bindings: AppPages
-        //               .navigationRoutes[controller.currentIndex.value].bindings,
-        //           transition: Transition.fadeIn);
-        //     }),
-        //   ),
-        // ]),
-        body: PageView(
-          controller: controller.pageController,
-          onPageChanged: (i) => controller.currentIndex.value = i,
-          children: [
-            ProfileView(),
-            PaymentsView(),
-            HomeView(),
-            ClientsView(),
-            StoreView()
-          ],
-        ),
-        bottomNavigationBar: Directionality(
-          textDirection: TextDirection.ltr,
-          child: BottomNavigationBar(
+          // key: root,
+          // body: Stack(children: [
+          //   Positioned.fill(
+          //     child: Navigator(onGenerateRoute: (settings) {
+          //       print("test");
+          //       print(AppPages
+          //           .navigationRoutes[controller.currentIndex.value].name);
+          //       return GetPageRoute(
+          //           page: AppPages
+          //               .navigationRoutes[controller.currentIndex.value].page,
+          //           settings: settings,
+          //           binding: AppPages
+          //               .navigationRoutes[controller.currentIndex.value].binding,
+          //           bindings: AppPages
+          //               .navigationRoutes[controller.currentIndex.value].bindings,
+          //           transition: Transition.fadeIn);
+          //     }),
+          //   ),
+          // ]),
+          body: PageView(
+            controller: controller.pageController,
+            onPageChanged: (i) => controller.currentIndex.value = i,
+            children: [
+              ProfileView(),
+              PaymentsView(),
+              HomeView(),
+              ClientsView(),
+              StoreView()
+            ],
+          ),
+          bottomNavigationBar: BottomNavigationBar(
             currentIndex: controller.currentIndex.value,
             onTap: (i) => controller.pageController.jumpToPage(i),
             items: [
@@ -63,9 +62,7 @@ class AppNavigationView extends GetView<AppNavigationController> {
               StanilessNavigationItem(
                   label: S.current.store, icon: Icons.museum),
             ],
-          ),
-        ),
-      ),
+          ).alignToLeft()),
     );
   }
 }

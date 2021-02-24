@@ -23,6 +23,7 @@ class _AppColors {
   final Color blueAccent = Color(0xffBFDBF2);
   final Color clientBlue = Color(0xff0A9FDE);
   final Color clientPink = Color(0xffFD79A8);
+  final Color sliverColor = Color(0xff8886E7);
   final LinearGradient blueGradient = LinearGradient(colors: [
     Color(0xff449FE7),
     Color(0xff357CB4),
@@ -34,6 +35,14 @@ class _AppColors {
   final LinearGradient clientPinkGradient = LinearGradient(colors: [
     Color(0xffFD79A8),
     Color(0xffFAB1A0),
+  ], begin: Alignment.topLeft, end: Alignment.bottomRight);
+  final LinearGradient sliverGradient = LinearGradient(colors: [
+    Color(0xffEBEBF5),
+    Color(0xffB9B9E3),
+  ], begin: Alignment.topLeft, end: Alignment.bottomRight);
+  final LinearGradient goldGradient = LinearGradient(colors: [
+    Color(0xffFDCB6E),
+    Color(0xffEFDAB3),
   ], begin: Alignment.topLeft, end: Alignment.bottomRight);
 }
 
