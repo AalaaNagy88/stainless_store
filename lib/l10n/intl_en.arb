@@ -1,0 +1,16 @@
+
+{
+    "welcomeMessage":"Welcom to your stainless store",
+    "log_in":"Log in",
+    "phone_number":"Phone Number",
+    "continues":"Continue",
+    "profile":"Profile",
+    "payments":"Payments",
+    "home":"Home",
+    "clients":"Clients",
+    "store":"Store",
+    "search":"Search...",
+    "sheets":"Sheets",
+    "ouds":"Ouds",
+    "paymentHistory":"Paymnet History"
+}
