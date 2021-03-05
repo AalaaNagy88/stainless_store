@@ -1,9 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:stainless_v2/app/routes/app_pages.dart';
 
 class AppNavigationController extends GetxController {
-  final pageController = PageController(initialPage: 2);
   RxInt currentIndex = RxInt();
+  void changePage(int index) {
+    if (currentIndex.value != index) {
+      currentIndex.value = index;
+      Get.toNamed(AppPages.navigationRoutes[index].name, id: 1);
+    }
+  }
+
+  Route onGenerateRoute(settings) {
+    return GetPageRoute(
+        page: AppPages.navigationRoutes[currentIndex.value].page,
+        settings: settings,
+        binding: AppPages.navigationRoutes[currentIndex.value].binding,
+        bindings: AppPages.navigationRoutes[currentIndex.value].bindings,
+        transition: Transition.fadeIn);
+  }
 
   @override
   void onInit() {
@@ -17,13 +32,5 @@ class AppNavigationController extends GetxController {
   }
 
   @override
-  void onClose() {
-    pageController.dispose();
-  }
-
-  onPageChanged(i) {
-    currentIndex.value = i;
-    print(currentIndex.value);
-    update();
-  }
+  void onClose() {}
 }

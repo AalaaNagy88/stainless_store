@@ -21,18 +21,36 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "add" : MessageLookupByLibrary.simpleMessage("أضف"),
+    "addNewClient" : MessageLookupByLibrary.simpleMessage("أضف عميل جديد"),
+    "add_imports" : MessageLookupByLibrary.simpleMessage("أضف وارد"),
+    "cancel" : MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "change_language" : MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
+    "clientName" : MessageLookupByLibrary.simpleMessage("اسم العميل"),
     "clients" : MessageLookupByLibrary.simpleMessage("العملاء"),
     "continues" : MessageLookupByLibrary.simpleMessage("مواصلة"),
-    "home" : MessageLookupByLibrary.simpleMessage("الصفحة الريسية"),
+    "el" : MessageLookupByLibrary.simpleMessage("ج.م"),
+    "golden" : MessageLookupByLibrary.simpleMessage("الذهبى"),
+    "home" : MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
     "log_in" : MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "my_informations" : MessageLookupByLibrary.simpleMessage("معلوماتى الشخصيه"),
+    "name_ex" : MessageLookupByLibrary.simpleMessage("م: محمد"),
+    "number" : MessageLookupByLibrary.simpleMessage("العدد"),
     "ouds" : MessageLookupByLibrary.simpleMessage("أعواد"),
     "paymentHistory" : MessageLookupByLibrary.simpleMessage("سجل الدفع"),
     "payments" : MessageLookupByLibrary.simpleMessage("المدفوعات"),
     "phone_number" : MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "price" : MessageLookupByLibrary.simpleMessage("السعر"),
     "profile" : MessageLookupByLibrary.simpleMessage("الملف الشخصى"),
     "search" : MessageLookupByLibrary.simpleMessage("البحث..."),
     "sheets" : MessageLookupByLibrary.simpleMessage("ألواح"),
+    "show" : MessageLookupByLibrary.simpleMessage("أظهر"),
+    "size" : MessageLookupByLibrary.simpleMessage("المقاس"),
+    "sliver" : MessageLookupByLibrary.simpleMessage("الفضى"),
     "store" : MessageLookupByLibrary.simpleMessage("المخزن"),
+    "theme" : MessageLookupByLibrary.simpleMessage("سمات"),
+    "totalPrice" : MessageLookupByLibrary.simpleMessage("السعر الكلى"),
+    "total_balance" : MessageLookupByLibrary.simpleMessage("إجمالى الرصيد"),
     "welcomeMessage" : MessageLookupByLibrary.simpleMessage("مرحبا بك فى مخزن الاستانلس")
   };
 }

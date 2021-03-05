@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "142245158046",
+    "project_id": "stainlesv2",
+    "storage_bucket": "stainlesv2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142245158046:android:784dd21ebc00b71315af8f",
+        "android_client_info": {
+          "package_name": "com.example.stainless_v2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142245158046-acjm4m63trnrh2nl1rompjicagvrlbj4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.stainless_v2",
+            "certificate_hash": "21d5f8bb4b54ee84810083dad01022f8c0b0526e"
+          }
+        },
+        {
+          "client_id": "142245158046-3ojcuugh0r0eepgp3scbejkh1sh77hot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVK7pVAefqENJ48_vr-mwJ8lwVHm5i-yg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142245158046-3ojcuugh0r0eepgp3scbejkh1sh77hot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

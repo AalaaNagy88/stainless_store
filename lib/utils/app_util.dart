@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
+import 'package:stainless_v2/utils/app_ui.dart';
 
-extension FixedDirection on Widget {
+extension appShared on Widget {
   alignToLeft() {
     return Directionality(
       textDirection: TextDirection.ltr,
@@ -16,6 +17,34 @@ extension FixedDirection on Widget {
       },
       child: this,
     );
+  }
+
+  labeledField(context, String label) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
+            child: Text(
+              label,
+              style: Theme.of(context)
+                  .textTheme
+                  .subtitle2
+                  .copyWith(fontWeight: FontWeight.bold),
+            ),
+          ),
+          this
+        ],
+      ),
+    );
+  }
+}
+
+extension textToNumConversion on String {
+  double convertToDouble({double defautlValue = 1}) {
+    return double.tryParse(this) ?? defautlValue;
   }
 }
 

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="76928c83-521f-43f2-a921-ae0654f94802" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration_test/app_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/integration_test/app_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/AppNavigation/bindings/app_navigation_binding.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/AppNavigation/bindings/app_navigation_binding.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/AppNavigation/controllers/app_navigation_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/AppNavigation/controllers/app_navigation_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/AppNavigation/views/app_navigation_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/AppNavigation/views/app_navigation_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/ClientDetials/controllers/client_detials_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/ClientDetials/controllers/client_detials_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/ClientDetials/views/client_detials_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/ClientDetials/views/client_detials_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/_root/root.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/_root/root.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/_shared/app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/_shared/app_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/_shared/app_raised_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/_shared/app_raised_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/_shared/painted_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/_shared/painted_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/_shared/phone_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/_shared/phone_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/_shared/search_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/_shared/search_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/clients/controllers/clients_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/clients/controllers/clients_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/clients/views/clients_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/clients/views/clients_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/home_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/home_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/profile/controllers/profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/profile/controllers/profile_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/profile/views/profile_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/profile/views/profile_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/signUp/views/sign_up_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/signUp/views/sign_up_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/modules/store/views/store_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/store/views/store_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated/intl/messages_ar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/intl/messages_ar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated/intl/messages_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/intl/messages_en.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated/l10n.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/l10n.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/l10n/intl_ar.arb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/l10n/intl_ar.arb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/l10n/intl_en.arb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/l10n/intl_en.arb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/app_ui.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/app_ui.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/app_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/app_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1684264147">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.29" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="dart" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Dart" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/main.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="stainless_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stainless_v2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stainless_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stainless_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stainless_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stainless_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="generated" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76928c83-521f-43f2-a921-ae0654f94802" name="Default Changelist" comment="" />
+      <created>1614902007655</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614902007655</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.32980332" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Captures" order="0" weight="0.25" />
+      <window_info anchor="bottom" id="Dart Analysis" weight="0.3295082" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Run" sideWeight="0.49924356" weight="0.3295082" />
+      <window_info anchor="bottom" id="Debug" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50075644" side_tool="true" weight="0.3295082" />
+      <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.3295082" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Flutter Inspector" />
+      <window_info anchor="right" id="Flutter Outline" />
+      <window_info anchor="right" id="Palette&#9;" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

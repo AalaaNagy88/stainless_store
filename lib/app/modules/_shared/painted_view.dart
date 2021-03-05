@@ -12,18 +12,16 @@ class PaintedView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.white,
-        child: Stack(
-          children: [
-            CustomPaint(
-              painter: PagePainter(
-                  downPainting: downPainting, upPainting: upPainting),
-            ),
-            child
-          ],
-        ),
+    return Container(
+      color: Colors.white,
+      child: Stack(
+        children: [
+          CustomPaint(
+            painter:
+                PagePainter(downPainting: downPainting, upPainting: upPainting),
+          ),
+          child
+        ],
       ),
     );
   }

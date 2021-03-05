@@ -1,11 +1,10 @@
 import 'package:get/get.dart';
 
 class ProfileController extends GetxController {
-  //TODO: Implement ProfileController
-
-  final count = 0.obs;
+  RxBool currentIsEn = RxBool();
   @override
   void onInit() {
+    currentIsEn.value = Get.deviceLocale.languageCode == "en" ? true : false;
     super.onInit();
   }
 
@@ -16,5 +15,4 @@ class ProfileController extends GetxController {
 
   @override
   void onClose() {}
-  void increment() => count.value++;
 }

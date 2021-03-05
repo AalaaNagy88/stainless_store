@@ -164,6 +164,186 @@ class S {
       args: [],
     );
   }
+
+  /// `Number`
+  String get number {
+    return Intl.message(
+      'Number',
+      name: 'number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Size`
+  String get size {
+    return Intl.message(
+      'Size',
+      name: 'size',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price`
+  String get price {
+    return Intl.message(
+      'Price',
+      name: 'price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Price`
+  String get totalPrice {
+    return Intl.message(
+      'Total Price',
+      name: 'totalPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ex: Mohamed`
+  String get name_ex {
+    return Intl.message(
+      'Ex: Mohamed',
+      name: 'name_ex',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Client Name`
+  String get clientName {
+    return Intl.message(
+      'Client Name',
+      name: 'clientName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add New Client`
+  String get addNewClient {
+    return Intl.message(
+      'Add New Client',
+      name: 'addNewClient',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add`
+  String get add {
+    return Intl.message(
+      'Add',
+      name: 'add',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Balance`
+  String get total_balance {
+    return Intl.message(
+      'Total Balance',
+      name: 'total_balance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show`
+  String get show {
+    return Intl.message(
+      'Show',
+      name: 'show',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sliver`
+  String get sliver {
+    return Intl.message(
+      'Sliver',
+      name: 'sliver',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Golden`
+  String get golden {
+    return Intl.message(
+      'Golden',
+      name: 'golden',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `EL`
+  String get el {
+    return Intl.message(
+      'EL',
+      name: 'el',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Imports`
+  String get add_imports {
+    return Intl.message(
+      'Add Imports',
+      name: 'add_imports',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Language`
+  String get change_language {
+    return Intl.message(
+      'Change Language',
+      name: 'change_language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Theme`
+  String get theme {
+    return Intl.message(
+      'Theme',
+      name: 'theme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Informations`
+  String get my_informations {
+    return Intl.message(
+      'My Informations',
+      name: 'my_informations',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,9 +1,8 @@
 import 'package:get/get.dart';
+import 'package:stainless_v2/app/controllers_mixins/selectable_controller_mixin.dart';
 
-class ClientDetialsController extends GetxController {
-  //TODO: Implement ClientDetialsController
-
-  final count = 0.obs;
+class ClientDetialsController extends GetxController
+    with SelectableControllerMixin {
   @override
   void onInit() {
     super.onInit();
@@ -16,5 +15,4 @@ class ClientDetialsController extends GetxController {
 
   @override
   void onClose() {}
-  void increment() => count.value++;
 }

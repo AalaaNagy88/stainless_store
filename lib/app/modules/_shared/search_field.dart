@@ -1,32 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:stainless_v2/app/modules/_shared/app_field.dart';
 import 'package:stainless_v2/generated/l10n.dart';
 import 'package:stainless_v2/utils/app_ui.dart';
 
-class SearchField extends TextField {
+class SearchField extends AppField {
   SearchField(context)
       : super(
           readOnly: true,
           showCursor: false,
+          isSearch: true,
           onTap: () => showSearch(context: context, delegate: Search()),
-          decoration: InputDecoration(
-            hintText: S.current.search,
-            filled: true,
-            prefixIcon: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: Icon(
-                  Icons.search_rounded,
-                  color: AppUi.colors.blue,
-                )),
-            enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: AppUi.colors.blueBacground),
-              borderRadius: BorderRadius.circular(20.h),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: AppUi.colors.blueBacground),
-              borderRadius: BorderRadius.circular(20.h),
-            ),
-            fillColor: AppUi.colors.blueBacground,
-          ),
+          prefixIcon: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Icon(
+                Icons.search_rounded,
+                color: AppUi.colors.blue,
+              )),
+          hintText: S.current.search,
         );
 }
 

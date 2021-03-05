@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
@@ -15,6 +16,8 @@ class AppUi {
 
 class _AppAssets {
   final String moneyHero = "assets/flare/money_hero.json";
+  final String languageGrey = "assets/icons/language_grey.png";
+  final String languageBlue = "assets/icons/language_blue.png";
 }
 
 class _AppColors {
@@ -49,6 +52,9 @@ class _AppColors {
 class _AppTheme {
   final theme = ThemeData(
       fontFamily: "Inter",
+      iconTheme: IconThemeData(color: AppUi.colors.blue, size: 40.w),
+      appBarTheme: AppBarTheme(
+          iconTheme: IconThemeData(color: AppUi.colors.blue, size: 40.w)),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
           showUnselectedLabels: true,
           unselectedItemColor: AppUi.colors.blueAccent));

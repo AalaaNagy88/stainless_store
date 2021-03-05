@@ -21,18 +21,36 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "add" : MessageLookupByLibrary.simpleMessage("Add"),
+    "addNewClient" : MessageLookupByLibrary.simpleMessage("Add New Client"),
+    "add_imports" : MessageLookupByLibrary.simpleMessage("Add Imports"),
+    "cancel" : MessageLookupByLibrary.simpleMessage("Cancel"),
+    "change_language" : MessageLookupByLibrary.simpleMessage("Change Language"),
+    "clientName" : MessageLookupByLibrary.simpleMessage("Client Name"),
     "clients" : MessageLookupByLibrary.simpleMessage("Clients"),
     "continues" : MessageLookupByLibrary.simpleMessage("Continue"),
+    "el" : MessageLookupByLibrary.simpleMessage("EL"),
+    "golden" : MessageLookupByLibrary.simpleMessage("Golden"),
     "home" : MessageLookupByLibrary.simpleMessage("Home"),
     "log_in" : MessageLookupByLibrary.simpleMessage("Log in"),
+    "my_informations" : MessageLookupByLibrary.simpleMessage("My Informations"),
+    "name_ex" : MessageLookupByLibrary.simpleMessage("Ex: Mohamed"),
+    "number" : MessageLookupByLibrary.simpleMessage("Number"),
     "ouds" : MessageLookupByLibrary.simpleMessage("Ouds"),
     "paymentHistory" : MessageLookupByLibrary.simpleMessage("Paymnet History"),
     "payments" : MessageLookupByLibrary.simpleMessage("Payments"),
     "phone_number" : MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "price" : MessageLookupByLibrary.simpleMessage("Price"),
     "profile" : MessageLookupByLibrary.simpleMessage("Profile"),
     "search" : MessageLookupByLibrary.simpleMessage("Search..."),
     "sheets" : MessageLookupByLibrary.simpleMessage("Sheets"),
+    "show" : MessageLookupByLibrary.simpleMessage("Show"),
+    "size" : MessageLookupByLibrary.simpleMessage("Size"),
+    "sliver" : MessageLookupByLibrary.simpleMessage("Sliver"),
     "store" : MessageLookupByLibrary.simpleMessage("Store"),
+    "theme" : MessageLookupByLibrary.simpleMessage("Theme"),
+    "totalPrice" : MessageLookupByLibrary.simpleMessage("Total Price"),
+    "total_balance" : MessageLookupByLibrary.simpleMessage("Total Balance"),
     "welcomeMessage" : MessageLookupByLibrary.simpleMessage("Welcom to your stainless store")
   };
 }

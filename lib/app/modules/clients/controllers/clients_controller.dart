@@ -1,8 +1,8 @@
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class ClientsController extends GetxController {
-  //TODO: Implement ClientsController
-
+  final userName = TextEditingController();
   final count = 0.obs;
   @override
   void onInit() {

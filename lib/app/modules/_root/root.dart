@@ -26,6 +26,7 @@ class StainlessApp extends StatelessWidget {
           child: _,
         ),
         theme: AppUi.themes.theme,
+        debugShowCheckedModeBanner: false,
         supportedLocales: S.delegate.supportedLocales,
         initialRoute: AppPages.INITIAL,
         getPages: AppPages.routes,

@@ -7,17 +7,22 @@ class StainlessAppBar extends AppBar {
       {@required BuildContext context,
       String title,
       PreferredSizeWidget bottom,
-      bool showLeading = false})
+      List<Widget> actions,
+      bool showLeading = true})
       : super(
+            centerTitle: true,
             bottom: bottom,
             backgroundColor: Colors.transparent,
             elevation: 0,
-            leading: IconButton(
-                icon: Icon(Icons.arrow_back_ios_rounded,
-                    color: AppUi.colors.blue),
-                onPressed: () {
-                  Get.back();
-                }),
+            leading: showLeading
+                ? IconButton(
+                    icon: Icon(Icons.arrow_back_ios_rounded,
+                        color: AppUi.colors.blue),
+                    onPressed: () {
+                      Get.back();
+                    })
+                : Container(),
+            actions: actions,
             title: Text(
               title,
               style: Theme.of(context).textTheme.headline4.copyWith(
