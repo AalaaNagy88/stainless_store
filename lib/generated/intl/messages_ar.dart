@@ -24,10 +24,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "add" : MessageLookupByLibrary.simpleMessage("أضف"),
     "addNewClient" : MessageLookupByLibrary.simpleMessage("أضف عميل جديد"),
     "add_imports" : MessageLookupByLibrary.simpleMessage("أضف وارد"),
+    "add_order" : MessageLookupByLibrary.simpleMessage("أضف الطلب"),
     "cancel" : MessageLookupByLibrary.simpleMessage("إلغاء"),
     "change_language" : MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
     "clientName" : MessageLookupByLibrary.simpleMessage("اسم العميل"),
     "clients" : MessageLookupByLibrary.simpleMessage("العملاء"),
+    "color" : MessageLookupByLibrary.simpleMessage("اللون"),
     "continues" : MessageLookupByLibrary.simpleMessage("مواصلة"),
     "el" : MessageLookupByLibrary.simpleMessage("ج.م"),
     "golden" : MessageLookupByLibrary.simpleMessage("الذهبى"),
@@ -36,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "my_informations" : MessageLookupByLibrary.simpleMessage("معلوماتى الشخصيه"),
     "name_ex" : MessageLookupByLibrary.simpleMessage("م: محمد"),
     "number" : MessageLookupByLibrary.simpleMessage("العدد"),
+    "orders" : MessageLookupByLibrary.simpleMessage("الطلبات"),
     "ouds" : MessageLookupByLibrary.simpleMessage("أعواد"),
     "paymentHistory" : MessageLookupByLibrary.simpleMessage("سجل الدفع"),
     "payments" : MessageLookupByLibrary.simpleMessage("المدفوعات"),
@@ -51,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "theme" : MessageLookupByLibrary.simpleMessage("سمات"),
     "totalPrice" : MessageLookupByLibrary.simpleMessage("السعر الكلى"),
     "total_balance" : MessageLookupByLibrary.simpleMessage("إجمالى الرصيد"),
+    "type" : MessageLookupByLibrary.simpleMessage("النوع"),
     "welcomeMessage" : MessageLookupByLibrary.simpleMessage("مرحبا بك فى مخزن الاستانلس")
   };
 }

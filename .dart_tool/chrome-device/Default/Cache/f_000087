@@ -1,0 +1,1367 @@
+define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/rendering/paragraph.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/widgets/icon_data.dart', 'packages/country_code_picker/country_codes.dart', 'packages/country_code_picker/country_code.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/material/icons.dart', 'packages/modal_bottom_sheet/src/bottom_sheets/bar_bottom_sheet.dart', 'packages/flutter/src/material/colors.dart', 'packages/country_code_picker/selection_dialog.dart'], (function load__packages__country_code_picker__country_code_picker_dart(dart_sdk, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__rendering__paragraph$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__widgets__icon_data$46dart, packages__country_code_picker__country_codes$46dart, packages__country_code_picker__country_code$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__material__icons$46dart, packages__modal_bottom_sheet__src__bottom_sheets__bar_bottom_sheet$46dart, packages__flutter__src__material__colors$46dart, packages__country_code_picker__selection_dialog$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const input_decorator = packages__flutter__src__material__icon_button$46dart.src__material__input_decorator;
+  const ink_well = packages__flutter__src__material__icon_button$46dart.src__material__ink_well;
+  const flat_button = packages__flutter__src__material__icon_button$46dart.src__material__flat_button;
+  const theme = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const paragraph = packages__flutter__src__rendering__paragraph$46dart.src__rendering__paragraph;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const image = packages__flutter__src__widgets__widget_span$46dart.src__widgets__image;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const icon_data = packages__flutter__src__widgets__icon_data$46dart.src__widgets__icon_data;
+  const country_codes = packages__country_code_picker__country_codes$46dart.country_codes;
+  const country_code = packages__country_code_picker__country_code$46dart.country_code;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const material_bottom_sheet = packages__modal_bottom_sheet__src__bottom_sheets__bar_bottom_sheet$46dart.src__bottom_sheets__material_bottom_sheet;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const selection_dialog = packages__country_code_picker__selection_dialog$46dart.selection_dialog;
+  var country_code_picker = Object.create(dart.library);
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $sort = dartx.sort;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $toUpperCase = dartx.toUpperCase;
+  var $contains = dartx.contains;
+  var $where = dartx.where;
+  var $add = dartx.add;
+  var $_get = dartx._get;
+  var $firstWhere = dartx.firstWhere;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    CountryCodeL: () => (T.CountryCodeL = dart.constFn(dart.legacy(country_code.CountryCode)))(),
+    MapOfStringL$dynamic: () => (T.MapOfStringL$dynamic = dart.constFn(core.Map$(T.StringL(), dart.dynamic)))(),
+    MapLOfStringL$dynamic: () => (T.MapLOfStringL$dynamic = dart.constFn(dart.legacy(T.MapOfStringL$dynamic())))(),
+    MapL: () => (T.MapL = dart.constFn(dart.legacy(core.Map)))(),
+    MapLToCountryCodeL: () => (T.MapLToCountryCodeL = dart.constFn(dart.fnType(T.CountryCodeL(), [T.MapL()])))(),
+    StringLToStringL: () => (T.StringLToStringL = dart.constFn(dart.fnType(T.StringL(), [T.StringL()])))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    CountryCodeLToboolL: () => (T.CountryCodeLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.CountryCodeL()])))(),
+    JSArrayOfCountryCodeL: () => (T.JSArrayOfCountryCodeL = dart.constFn(_interceptors.JSArray$(T.CountryCodeL())))(),
+    WidgetN: () => (T.WidgetN = dart.constFn(dart.nullable(framework.Widget)))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))(),
+    CountryCodeLToCountryCodeL: () => (T.CountryCodeLToCountryCodeL = dart.constFn(dart.fnType(T.CountryCodeL(), [T.CountryCodeL()])))(),
+    CountryCodePickerL: () => (T.CountryCodePickerL = dart.constFn(dart.legacy(country_code_picker.CountryCodePicker)))(),
+    VoidToCountryCodeL: () => (T.VoidToCountryCodeL = dart.constFn(dart.fnType(T.CountryCodeL(), [])))(),
+    StringLToboolL: () => (T.StringLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.StringL()])))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    CenterL: () => (T.CenterL = dart.constFn(dart.legacy(basic.Center)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    BuildContextLToCenterL: () => (T.BuildContextLToCenterL = dart.constFn(dart.fnType(T.CenterL(), [T.BuildContextL()])))(),
+    dynamicToNull: () => (T.dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.constList([], T.StringL());
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: input_decorator.InputDecoration.prototype,
+        [InputDecoration_alignLabelWithHint]: null,
+        [InputDecoration_semanticCounterText]: null,
+        [InputDecoration_enabled]: true,
+        [InputDecoration_border]: null,
+        [InputDecoration_enabledBorder]: null,
+        [InputDecoration_disabledBorder]: null,
+        [InputDecoration_focusedErrorBorder]: null,
+        [InputDecoration_focusedBorder]: null,
+        [InputDecoration_errorBorder]: null,
+        [InputDecoration_hoverColor]: null,
+        [InputDecoration_focusColor]: null,
+        [InputDecoration_fillColor]: null,
+        [InputDecoration_filled]: null,
+        [InputDecoration_counterStyle]: null,
+        [InputDecoration_counter]: null,
+        [InputDecoration_counterText]: null,
+        [InputDecoration_suffixIconConstraints]: null,
+        [InputDecoration_suffixStyle]: null,
+        [InputDecoration_suffixText]: null,
+        [InputDecoration_suffix]: null,
+        [InputDecoration_suffixIcon]: null,
+        [InputDecoration_prefixStyle]: null,
+        [InputDecoration_prefixText]: null,
+        [InputDecoration_prefix]: null,
+        [InputDecoration_prefixIconConstraints]: null,
+        [InputDecoration_prefixIcon]: null,
+        [InputDecoration_isCollapsed]: false,
+        [InputDecoration_contentPadding]: null,
+        [InputDecoration_isDense]: null,
+        [InputDecoration_floatingLabelBehavior]: null,
+        [InputDecoration_hasFloatingPlaceholder]: true,
+        [InputDecoration_errorMaxLines]: null,
+        [InputDecoration_errorStyle]: null,
+        [InputDecoration_errorText]: null,
+        [InputDecoration_hintMaxLines]: null,
+        [InputDecoration_hintTextDirection]: null,
+        [InputDecoration_hintStyle]: null,
+        [InputDecoration_hintText]: null,
+        [InputDecoration_helperMaxLines]: null,
+        [InputDecoration_helperStyle]: null,
+        [InputDecoration_helperText]: null,
+        [InputDecoration_labelStyle]: null,
+        [InputDecoration_labelText]: null,
+        [InputDecoration_icon]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: paragraph.TextOverflow.prototype,
+        [_name]: "TextOverflow.ellipsis",
+        index: 2
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 39,
+        [_Location_line]: 108,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C[6] = dart.constList([C[7] || CT.C7], T._LocationL());
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[6] || CT.C6,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 108,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/country_code_picker-1.7.0/lib/country_code_picker.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 58974
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: icon.Icon.prototype,
+        [Widget__location]: C[5] || CT.C5,
+        [Widget_key]: null,
+        [Icon_textDirection]: null,
+        [Icon_semanticLabel]: null,
+        [Icon_color]: null,
+        [Icon_size]: null,
+        [Icon_icon]: C[8] || CT.C8
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 9,
+        [_Location_line]: 150,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 151,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11, C[12] || CT.C12], T._LocationL());
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 149,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/country_code_picker-1.7.0/lib/country_code_picker.dart"
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 16,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 8
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 16,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "name",
+        [_Location_column]: 34,
+        [_Location_line]: 172,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "package",
+        [_Location_column]: 21,
+        [_Location_line]: 173,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 21,
+        [_Location_line]: 174,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.constList([C[17] || CT.C17, C[18] || CT.C18, C[19] || CT.C19], T._LocationL());
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[16] || CT.C16,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 171,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/country_code_picker-1.7.0/lib/country_code_picker.dart"
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 19,
+        [_Location_line]: 168,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 171,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.constList([C[22] || CT.C22, C[23] || CT.C23], T._LocationL());
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[21] || CT.C21,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 167,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/country_code_picker-1.7.0/lib/country_code_picker.dart"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "flex",
+        [_Location_column]: 17,
+        [_Location_line]: 165,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "fit",
+        [_Location_column]: 17,
+        [_Location_line]: 166,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 167,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([C[26] || CT.C26, C[27] || CT.C27, C[28] || CT.C28], T._LocationL());
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 164,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/country_code_picker-1.7.0/lib/country_code_picker.dart"
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 23,
+        [_Location_line]: 183,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 19,
+        [_Location_line]: 185,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overflow",
+        [_Location_column]: 19,
+        [_Location_line]: 186,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.constList([C[31] || CT.C31, C[32] || CT.C32, C[33] || CT.C33], T._LocationL());
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[30] || CT.C30,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 181,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/country_code_picker-1.7.0/lib/country_code_picker.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "fit",
+        [_Location_column]: 17,
+        [_Location_line]: 180,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 181,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36, C[37] || CT.C37], T._LocationL());
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 179,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/country_code_picker-1.7.0/lib/country_code_picker.dart"
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 29,
+        [_Location_line]: 198,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 23,
+        [_Location_line]: 199,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 23,
+        [_Location_line]: 200,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.constList([C[40] || CT.C40, C[41] || CT.C41, C[42] || CT.C42], T._LocationL());
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[39] || CT.C39,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 197,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/country_code_picker-1.7.0/lib/country_code_picker.dart"
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 21,
+        [_Location_line]: 194,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 197,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.constList([C[45] || CT.C45, C[46] || CT.C46], T._LocationL());
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[44] || CT.C44,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 193,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/country_code_picker-1.7.0/lib/country_code_picker.dart"
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "flex",
+        [_Location_column]: 17,
+        [_Location_line]: 191,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "fit",
+        [_Location_column]: 17,
+        [_Location_line]: 192,
+        [_Location_file]: null
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 193,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.constList([C[49] || CT.C49, C[50] || CT.C50, C[51] || CT.C51], T._LocationL());
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[48] || CT.C48,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 190,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/country_code_picker-1.7.0/lib/country_code_picker.dart"
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "direction",
+        [_Location_column]: 11,
+        [_Location_line]: 158,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisSize",
+        [_Location_column]: 11,
+        [_Location_line]: 159,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 11,
+        [_Location_line]: 160,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.constList([C[54] || CT.C54, C[55] || CT.C55, C[56] || CT.C56], T._LocationL());
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[53] || CT.C53,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 157,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/country_code_picker-1.7.0/lib/country_code_picker.dart"
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 9,
+        [_Location_line]: 155,
+        [_Location_file]: null
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 9,
+        [_Location_line]: 156,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 157,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.constList([C[59] || CT.C59, C[60] || CT.C60, C[61] || CT.C61], T._LocationL());
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[58] || CT.C58,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 154,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/country_code_picker-1.7.0/lib/country_code_picker.dart"
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "elements",
+        [_Location_column]: 11,
+        [_Location_line]: 272,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "favoriteElements",
+        [_Location_column]: 11,
+        [_Location_line]: 273,
+        [_Location_file]: null
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "showCountryOnly",
+        [_Location_column]: 11,
+        [_Location_line]: 274,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "emptySearchBuilder",
+        [_Location_column]: 11,
+        [_Location_line]: 275,
+        [_Location_file]: null
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "searchDecoration",
+        [_Location_column]: 11,
+        [_Location_line]: 276,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "searchStyle",
+        [_Location_column]: 11,
+        [_Location_line]: 277,
+        [_Location_file]: null
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textStyle",
+        [_Location_column]: 11,
+        [_Location_line]: 278,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "boxDecoration",
+        [_Location_column]: 11,
+        [_Location_line]: 279,
+        [_Location_file]: null
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "showFlag",
+        [_Location_column]: 11,
+        [_Location_line]: 280,
+        [_Location_file]: null
+      });
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "flagWidth",
+        [_Location_column]: 11,
+        [_Location_line]: 283,
+        [_Location_file]: null
+      });
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 11,
+        [_Location_line]: 284,
+        [_Location_file]: null
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 11,
+        [_Location_line]: 285,
+        [_Location_file]: null
+      });
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "barrierColor",
+        [_Location_column]: 11,
+        [_Location_line]: 286,
+        [_Location_file]: null
+      });
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "hideSearch",
+        [_Location_column]: 11,
+        [_Location_line]: 287,
+        [_Location_file]: null
+      });
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "closeIcon",
+        [_Location_column]: 11,
+        [_Location_line]: 288,
+        [_Location_file]: null
+      });
+    },
+    get C63() {
+      return C[63] = dart.constList([C[64] || CT.C64, C[65] || CT.C65, C[66] || CT.C66, C[67] || CT.C67, C[68] || CT.C68, C[69] || CT.C69, C[70] || CT.C70, C[71] || CT.C71, C[72] || CT.C72, C[73] || CT.C73, C[74] || CT.C74, C[75] || CT.C75, C[76] || CT.C76, C[77] || CT.C77, C[78] || CT.C78], T._LocationL());
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[63] || CT.C63,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 271,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/country_code_picker-1.7.0/lib/country_code_picker.dart"
+      });
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 271,
+        [_Location_file]: null
+      });
+    },
+    get C80() {
+      return C[80] = dart.constList([C[81] || CT.C81], T._LocationL());
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[80] || CT.C80,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 270,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/country_code_picker-1.7.0/lib/country_code_picker.dart"
+      });
+    }
+  }, false);
+  var C = Array(82).fill(void 0);
+  var I = ["package:country_code_picker/country_code_picker.dart"];
+  var onChanged$ = dart.privateName(country_code_picker, "CountryCodePicker.onChanged");
+  var onInit$ = dart.privateName(country_code_picker, "CountryCodePicker.onInit");
+  var initialSelection$ = dart.privateName(country_code_picker, "CountryCodePicker.initialSelection");
+  var favorite$ = dart.privateName(country_code_picker, "CountryCodePicker.favorite");
+  var textStyle$ = dart.privateName(country_code_picker, "CountryCodePicker.textStyle");
+  var padding$ = dart.privateName(country_code_picker, "CountryCodePicker.padding");
+  var showCountryOnly$ = dart.privateName(country_code_picker, "CountryCodePicker.showCountryOnly");
+  var searchDecoration$ = dart.privateName(country_code_picker, "CountryCodePicker.searchDecoration");
+  var searchStyle$ = dart.privateName(country_code_picker, "CountryCodePicker.searchStyle");
+  var dialogTextStyle$ = dart.privateName(country_code_picker, "CountryCodePicker.dialogTextStyle");
+  var emptySearchBuilder$ = dart.privateName(country_code_picker, "CountryCodePicker.emptySearchBuilder");
+  var builder$ = dart.privateName(country_code_picker, "CountryCodePicker.builder");
+  var enabled$ = dart.privateName(country_code_picker, "CountryCodePicker.enabled");
+  var textOverflow$ = dart.privateName(country_code_picker, "CountryCodePicker.textOverflow");
+  var closeIcon$ = dart.privateName(country_code_picker, "CountryCodePicker.closeIcon");
+  var barrierColor$ = dart.privateName(country_code_picker, "CountryCodePicker.barrierColor");
+  var backgroundColor$ = dart.privateName(country_code_picker, "CountryCodePicker.backgroundColor");
+  var boxDecoration$ = dart.privateName(country_code_picker, "CountryCodePicker.boxDecoration");
+  var dialogSize$ = dart.privateName(country_code_picker, "CountryCodePicker.dialogSize");
+  var dialogBackgroundColor$ = dart.privateName(country_code_picker, "CountryCodePicker.dialogBackgroundColor");
+  var countryFilter$ = dart.privateName(country_code_picker, "CountryCodePicker.countryFilter");
+  var showOnlyCountryWhenClosed$ = dart.privateName(country_code_picker, "CountryCodePicker.showOnlyCountryWhenClosed");
+  var alignLeft$ = dart.privateName(country_code_picker, "CountryCodePicker.alignLeft");
+  var showFlag$ = dart.privateName(country_code_picker, "CountryCodePicker.showFlag");
+  var hideMainText$ = dart.privateName(country_code_picker, "CountryCodePicker.hideMainText");
+  var showFlagMain$ = dart.privateName(country_code_picker, "CountryCodePicker.showFlagMain");
+  var showFlagDialog$ = dart.privateName(country_code_picker, "CountryCodePicker.showFlagDialog");
+  var flagWidth$ = dart.privateName(country_code_picker, "CountryCodePicker.flagWidth");
+  var comparator$ = dart.privateName(country_code_picker, "CountryCodePicker.comparator");
+  var hideSearch$ = dart.privateName(country_code_picker, "CountryCodePicker.hideSearch");
+  var showDropDownButton$ = dart.privateName(country_code_picker, "CountryCodePicker.showDropDownButton");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var InputDecoration_alignLabelWithHint = dart.privateName(input_decorator, "InputDecoration.alignLabelWithHint");
+  var InputDecoration_semanticCounterText = dart.privateName(input_decorator, "InputDecoration.semanticCounterText");
+  var InputDecoration_enabled = dart.privateName(input_decorator, "InputDecoration.enabled");
+  var InputDecoration_border = dart.privateName(input_decorator, "InputDecoration.border");
+  var InputDecoration_enabledBorder = dart.privateName(input_decorator, "InputDecoration.enabledBorder");
+  var InputDecoration_disabledBorder = dart.privateName(input_decorator, "InputDecoration.disabledBorder");
+  var InputDecoration_focusedErrorBorder = dart.privateName(input_decorator, "InputDecoration.focusedErrorBorder");
+  var InputDecoration_focusedBorder = dart.privateName(input_decorator, "InputDecoration.focusedBorder");
+  var InputDecoration_errorBorder = dart.privateName(input_decorator, "InputDecoration.errorBorder");
+  var InputDecoration_hoverColor = dart.privateName(input_decorator, "InputDecoration.hoverColor");
+  var InputDecoration_focusColor = dart.privateName(input_decorator, "InputDecoration.focusColor");
+  var InputDecoration_fillColor = dart.privateName(input_decorator, "InputDecoration.fillColor");
+  var InputDecoration_filled = dart.privateName(input_decorator, "InputDecoration.filled");
+  var InputDecoration_counterStyle = dart.privateName(input_decorator, "InputDecoration.counterStyle");
+  var InputDecoration_counter = dart.privateName(input_decorator, "InputDecoration.counter");
+  var InputDecoration_counterText = dart.privateName(input_decorator, "InputDecoration.counterText");
+  var InputDecoration_suffixIconConstraints = dart.privateName(input_decorator, "InputDecoration.suffixIconConstraints");
+  var InputDecoration_suffixStyle = dart.privateName(input_decorator, "InputDecoration.suffixStyle");
+  var InputDecoration_suffixText = dart.privateName(input_decorator, "InputDecoration.suffixText");
+  var InputDecoration_suffix = dart.privateName(input_decorator, "InputDecoration.suffix");
+  var InputDecoration_suffixIcon = dart.privateName(input_decorator, "InputDecoration.suffixIcon");
+  var InputDecoration_prefixStyle = dart.privateName(input_decorator, "InputDecoration.prefixStyle");
+  var InputDecoration_prefixText = dart.privateName(input_decorator, "InputDecoration.prefixText");
+  var InputDecoration_prefix = dart.privateName(input_decorator, "InputDecoration.prefix");
+  var InputDecoration_prefixIconConstraints = dart.privateName(input_decorator, "InputDecoration.prefixIconConstraints");
+  var InputDecoration_prefixIcon = dart.privateName(input_decorator, "InputDecoration.prefixIcon");
+  var InputDecoration_isCollapsed = dart.privateName(input_decorator, "InputDecoration.isCollapsed");
+  var InputDecoration_contentPadding = dart.privateName(input_decorator, "InputDecoration.contentPadding");
+  var InputDecoration_isDense = dart.privateName(input_decorator, "InputDecoration.isDense");
+  var InputDecoration_floatingLabelBehavior = dart.privateName(input_decorator, "InputDecoration.floatingLabelBehavior");
+  var InputDecoration_hasFloatingPlaceholder = dart.privateName(input_decorator, "InputDecoration.hasFloatingPlaceholder");
+  var InputDecoration_errorMaxLines = dart.privateName(input_decorator, "InputDecoration.errorMaxLines");
+  var InputDecoration_errorStyle = dart.privateName(input_decorator, "InputDecoration.errorStyle");
+  var InputDecoration_errorText = dart.privateName(input_decorator, "InputDecoration.errorText");
+  var InputDecoration_hintMaxLines = dart.privateName(input_decorator, "InputDecoration.hintMaxLines");
+  var InputDecoration_hintTextDirection = dart.privateName(input_decorator, "InputDecoration.hintTextDirection");
+  var InputDecoration_hintStyle = dart.privateName(input_decorator, "InputDecoration.hintStyle");
+  var InputDecoration_hintText = dart.privateName(input_decorator, "InputDecoration.hintText");
+  var InputDecoration_helperMaxLines = dart.privateName(input_decorator, "InputDecoration.helperMaxLines");
+  var InputDecoration_helperStyle = dart.privateName(input_decorator, "InputDecoration.helperStyle");
+  var InputDecoration_helperText = dart.privateName(input_decorator, "InputDecoration.helperText");
+  var InputDecoration_labelStyle = dart.privateName(input_decorator, "InputDecoration.labelStyle");
+  var InputDecoration_labelText = dart.privateName(input_decorator, "InputDecoration.labelText");
+  var InputDecoration_icon = dart.privateName(input_decorator, "InputDecoration.icon");
+  var _name = dart.privateName(paragraph, "_name");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var Widget__location = dart.privateName(framework, "Widget._location");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var Icon_textDirection = dart.privateName(icon, "Icon.textDirection");
+  var Icon_semanticLabel = dart.privateName(icon, "Icon.semanticLabel");
+  var Icon_color = dart.privateName(icon, "Icon.color");
+  var Icon_size = dart.privateName(icon, "Icon.size");
+  var IconData_matchTextDirection = dart.privateName(icon_data, "IconData.matchTextDirection");
+  var IconData_fontPackage = dart.privateName(icon_data, "IconData.fontPackage");
+  var IconData_fontFamily = dart.privateName(icon_data, "IconData.fontFamily");
+  var IconData_codePoint = dart.privateName(icon_data, "IconData.codePoint");
+  var Icon_icon = dart.privateName(icon, "Icon.icon");
+  country_code_picker.CountryCodePicker = class CountryCodePicker extends framework.StatefulWidget {
+    get onChanged() {
+      return this[onChanged$];
+    }
+    set onChanged(value) {
+      super.onChanged = value;
+    }
+    get onInit() {
+      return this[onInit$];
+    }
+    set onInit(value) {
+      super.onInit = value;
+    }
+    get initialSelection() {
+      return this[initialSelection$];
+    }
+    set initialSelection(value) {
+      super.initialSelection = value;
+    }
+    get favorite() {
+      return this[favorite$];
+    }
+    set favorite(value) {
+      super.favorite = value;
+    }
+    get textStyle() {
+      return this[textStyle$];
+    }
+    set textStyle(value) {
+      super.textStyle = value;
+    }
+    get padding() {
+      return this[padding$];
+    }
+    set padding(value) {
+      super.padding = value;
+    }
+    get showCountryOnly() {
+      return this[showCountryOnly$];
+    }
+    set showCountryOnly(value) {
+      super.showCountryOnly = value;
+    }
+    get searchDecoration() {
+      return this[searchDecoration$];
+    }
+    set searchDecoration(value) {
+      super.searchDecoration = value;
+    }
+    get searchStyle() {
+      return this[searchStyle$];
+    }
+    set searchStyle(value) {
+      super.searchStyle = value;
+    }
+    get dialogTextStyle() {
+      return this[dialogTextStyle$];
+    }
+    set dialogTextStyle(value) {
+      super.dialogTextStyle = value;
+    }
+    get emptySearchBuilder() {
+      return this[emptySearchBuilder$];
+    }
+    set emptySearchBuilder(value) {
+      super.emptySearchBuilder = value;
+    }
+    get builder() {
+      return this[builder$];
+    }
+    set builder(value) {
+      super.builder = value;
+    }
+    get enabled() {
+      return this[enabled$];
+    }
+    set enabled(value) {
+      super.enabled = value;
+    }
+    get textOverflow() {
+      return this[textOverflow$];
+    }
+    set textOverflow(value) {
+      super.textOverflow = value;
+    }
+    get closeIcon() {
+      return this[closeIcon$];
+    }
+    set closeIcon(value) {
+      super.closeIcon = value;
+    }
+    get barrierColor() {
+      return this[barrierColor$];
+    }
+    set barrierColor(value) {
+      super.barrierColor = value;
+    }
+    get backgroundColor() {
+      return this[backgroundColor$];
+    }
+    set backgroundColor(value) {
+      super.backgroundColor = value;
+    }
+    get boxDecoration() {
+      return this[boxDecoration$];
+    }
+    set boxDecoration(value) {
+      super.boxDecoration = value;
+    }
+    get dialogSize() {
+      return this[dialogSize$];
+    }
+    set dialogSize(value) {
+      super.dialogSize = value;
+    }
+    get dialogBackgroundColor() {
+      return this[dialogBackgroundColor$];
+    }
+    set dialogBackgroundColor(value) {
+      super.dialogBackgroundColor = value;
+    }
+    get countryFilter() {
+      return this[countryFilter$];
+    }
+    set countryFilter(value) {
+      super.countryFilter = value;
+    }
+    get showOnlyCountryWhenClosed() {
+      return this[showOnlyCountryWhenClosed$];
+    }
+    set showOnlyCountryWhenClosed(value) {
+      super.showOnlyCountryWhenClosed = value;
+    }
+    get alignLeft() {
+      return this[alignLeft$];
+    }
+    set alignLeft(value) {
+      super.alignLeft = value;
+    }
+    get showFlag() {
+      return this[showFlag$];
+    }
+    set showFlag(value) {
+      super.showFlag = value;
+    }
+    get hideMainText() {
+      return this[hideMainText$];
+    }
+    set hideMainText(value) {
+      super.hideMainText = value;
+    }
+    get showFlagMain() {
+      return this[showFlagMain$];
+    }
+    set showFlagMain(value) {
+      super.showFlagMain = value;
+    }
+    get showFlagDialog() {
+      return this[showFlagDialog$];
+    }
+    set showFlagDialog(value) {
+      super.showFlagDialog = value;
+    }
+    get flagWidth() {
+      return this[flagWidth$];
+    }
+    set flagWidth(value) {
+      super.flagWidth = value;
+    }
+    get comparator() {
+      return this[comparator$];
+    }
+    set comparator(value) {
+      super.comparator = value;
+    }
+    get hideSearch() {
+      return this[hideSearch$];
+    }
+    set hideSearch(value) {
+      super.hideSearch = value;
+    }
+    get showDropDownButton() {
+      return this[showDropDownButton$];
+    }
+    set showDropDownButton(value) {
+      super.showDropDownButton = value;
+    }
+    createState() {
+      let jsonList = country_codes.codes;
+      let elements = jsonList[$map](T.CountryCodeL(), dart.fn(json => country_code.CountryCode.fromJson(T.MapLOfStringL$dynamic().as(json)), T.MapLToCountryCodeL()))[$toList]();
+      if (this.comparator != null) {
+        elements[$sort](this.comparator);
+      }
+      if (this.countryFilter != null && dart.test(this.countryFilter[$isNotEmpty])) {
+        let uppercaseCustomList = this.countryFilter[$map](T.StringL(), dart.fn(c => c[$toUpperCase](), T.StringLToStringL()))[$toList]();
+        elements = elements[$where](dart.fn(c => dart.test(uppercaseCustomList[$contains](c.code)) || dart.test(uppercaseCustomList[$contains](c.name)) || dart.test(uppercaseCustomList[$contains](c.dialCode)), T.CountryCodeLToboolL()))[$toList]();
+      }
+      return new country_code_picker.CountryCodePickerState.new(elements);
+    }
+  };
+  (country_code_picker.CountryCodePicker.new = function(opts) {
+    let onChanged = opts && 'onChanged' in opts ? opts.onChanged : null;
+    let onInit = opts && 'onInit' in opts ? opts.onInit : null;
+    let initialSelection = opts && 'initialSelection' in opts ? opts.initialSelection : null;
+    let favorite = opts && 'favorite' in opts ? opts.favorite : C[0] || CT.C0;
+    let textStyle = opts && 'textStyle' in opts ? opts.textStyle : null;
+    let padding = opts && 'padding' in opts ? opts.padding : C[1] || CT.C1;
+    let showCountryOnly = opts && 'showCountryOnly' in opts ? opts.showCountryOnly : false;
+    let searchDecoration = opts && 'searchDecoration' in opts ? opts.searchDecoration : C[2] || CT.C2;
+    let searchStyle = opts && 'searchStyle' in opts ? opts.searchStyle : null;
+    let dialogTextStyle = opts && 'dialogTextStyle' in opts ? opts.dialogTextStyle : null;
+    let emptySearchBuilder = opts && 'emptySearchBuilder' in opts ? opts.emptySearchBuilder : null;
+    let showOnlyCountryWhenClosed = opts && 'showOnlyCountryWhenClosed' in opts ? opts.showOnlyCountryWhenClosed : false;
+    let alignLeft = opts && 'alignLeft' in opts ? opts.alignLeft : false;
+    let showFlag = opts && 'showFlag' in opts ? opts.showFlag : true;
+    let showFlagDialog = opts && 'showFlagDialog' in opts ? opts.showFlagDialog : null;
+    let hideMainText = opts && 'hideMainText' in opts ? opts.hideMainText : false;
+    let showFlagMain = opts && 'showFlagMain' in opts ? opts.showFlagMain : null;
+    let builder = opts && 'builder' in opts ? opts.builder : null;
+    let flagWidth = opts && 'flagWidth' in opts ? opts.flagWidth : 32;
+    let enabled = opts && 'enabled' in opts ? opts.enabled : true;
+    let textOverflow = opts && 'textOverflow' in opts ? opts.textOverflow : C[3] || CT.C3;
+    let barrierColor = opts && 'barrierColor' in opts ? opts.barrierColor : null;
+    let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : null;
+    let boxDecoration = opts && 'boxDecoration' in opts ? opts.boxDecoration : null;
+    let comparator = opts && 'comparator' in opts ? opts.comparator : null;
+    let countryFilter = opts && 'countryFilter' in opts ? opts.countryFilter : null;
+    let hideSearch = opts && 'hideSearch' in opts ? opts.hideSearch : false;
+    let showDropDownButton = opts && 'showDropDownButton' in opts ? opts.showDropDownButton : false;
+    let dialogSize = opts && 'dialogSize' in opts ? opts.dialogSize : null;
+    let dialogBackgroundColor = opts && 'dialogBackgroundColor' in opts ? opts.dialogBackgroundColor : null;
+    let closeIcon = opts && 'closeIcon' in opts ? opts.closeIcon : C[4] || CT.C4;
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[onChanged$] = onChanged;
+    this[onInit$] = onInit;
+    this[initialSelection$] = initialSelection;
+    this[favorite$] = favorite;
+    this[textStyle$] = textStyle;
+    this[padding$] = padding;
+    this[showCountryOnly$] = showCountryOnly;
+    this[searchDecoration$] = searchDecoration;
+    this[searchStyle$] = searchStyle;
+    this[dialogTextStyle$] = dialogTextStyle;
+    this[emptySearchBuilder$] = emptySearchBuilder;
+    this[showOnlyCountryWhenClosed$] = showOnlyCountryWhenClosed;
+    this[alignLeft$] = alignLeft;
+    this[showFlag$] = showFlag;
+    this[showFlagDialog$] = showFlagDialog;
+    this[hideMainText$] = hideMainText;
+    this[showFlagMain$] = showFlagMain;
+    this[builder$] = builder;
+    this[flagWidth$] = flagWidth;
+    this[enabled$] = enabled;
+    this[textOverflow$] = textOverflow;
+    this[barrierColor$] = barrierColor;
+    this[backgroundColor$] = backgroundColor;
+    this[boxDecoration$] = boxDecoration;
+    this[comparator$] = comparator;
+    this[countryFilter$] = countryFilter;
+    this[hideSearch$] = hideSearch;
+    this[showDropDownButton$] = showDropDownButton;
+    this[dialogSize$] = dialogSize;
+    this[dialogBackgroundColor$] = dialogBackgroundColor;
+    this[closeIcon$] = closeIcon;
+    country_code_picker.CountryCodePicker.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = country_code_picker.CountryCodePicker.prototype;
+  dart.addTypeTests(country_code_picker.CountryCodePicker);
+  dart.addTypeCaches(country_code_picker.CountryCodePicker);
+  dart.setMethodSignature(country_code_picker.CountryCodePicker, () => ({
+    __proto__: dart.getMethods(country_code_picker.CountryCodePicker.__proto__),
+    createState: dart.fnType(dart.legacy(framework.State$(dart.legacy(framework.StatefulWidget))), [])
+  }));
+  dart.setLibraryUri(country_code_picker.CountryCodePicker, I[0]);
+  dart.setFieldSignature(country_code_picker.CountryCodePicker, () => ({
+    __proto__: dart.getFields(country_code_picker.CountryCodePicker.__proto__),
+    onChanged: dart.finalFieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(country_code.CountryCode)]))),
+    onInit: dart.finalFieldType(dart.legacy(dart.fnType(dart.void, [dart.legacy(country_code.CountryCode)]))),
+    initialSelection: dart.finalFieldType(dart.legacy(core.String)),
+    favorite: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    textStyle: dart.finalFieldType(dart.legacy(text_style.TextStyle)),
+    padding: dart.finalFieldType(dart.legacy(edge_insets.EdgeInsetsGeometry)),
+    showCountryOnly: dart.finalFieldType(dart.legacy(core.bool)),
+    searchDecoration: dart.finalFieldType(dart.legacy(input_decorator.InputDecoration)),
+    searchStyle: dart.finalFieldType(dart.legacy(text_style.TextStyle)),
+    dialogTextStyle: dart.finalFieldType(dart.legacy(text_style.TextStyle)),
+    emptySearchBuilder: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]))),
+    builder: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(country_code.CountryCode)]))),
+    enabled: dart.finalFieldType(dart.legacy(core.bool)),
+    textOverflow: dart.finalFieldType(dart.legacy(paragraph.TextOverflow)),
+    closeIcon: dart.finalFieldType(dart.legacy(icon.Icon)),
+    barrierColor: dart.finalFieldType(dart.legacy(ui.Color)),
+    backgroundColor: dart.finalFieldType(dart.legacy(ui.Color)),
+    boxDecoration: dart.finalFieldType(dart.legacy(box_decoration.BoxDecoration)),
+    dialogSize: dart.finalFieldType(dart.legacy(ui.Size)),
+    dialogBackgroundColor: dart.finalFieldType(dart.legacy(ui.Color)),
+    countryFilter: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    showOnlyCountryWhenClosed: dart.finalFieldType(dart.legacy(core.bool)),
+    alignLeft: dart.finalFieldType(dart.legacy(core.bool)),
+    showFlag: dart.finalFieldType(dart.legacy(core.bool)),
+    hideMainText: dart.finalFieldType(dart.legacy(core.bool)),
+    showFlagMain: dart.finalFieldType(dart.legacy(core.bool)),
+    showFlagDialog: dart.finalFieldType(dart.legacy(core.bool)),
+    flagWidth: dart.finalFieldType(dart.legacy(core.double)),
+    comparator: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(core.int), [dart.legacy(country_code.CountryCode), dart.legacy(country_code.CountryCode)]))),
+    hideSearch: dart.finalFieldType(dart.legacy(core.bool)),
+    showDropDownButton: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  var selectedItem = dart.privateName(country_code_picker, "CountryCodePickerState.selectedItem");
+  var elements$ = dart.privateName(country_code_picker, "CountryCodePickerState.elements");
+  var favoriteElements = dart.privateName(country_code_picker, "CountryCodePickerState.favoriteElements");
+  var _onInit = dart.privateName(country_code_picker, "_onInit");
+  var _publishSelection = dart.privateName(country_code_picker, "_publishSelection");
+  country_code_picker.CountryCodePickerState = class CountryCodePickerState extends framework.State$(dart.legacy(country_code_picker.CountryCodePicker)) {
+    get selectedItem() {
+      return this[selectedItem];
+    }
+    set selectedItem(value) {
+      this[selectedItem] = value;
+    }
+    get elements() {
+      return this[elements$];
+    }
+    set elements(value) {
+      this[elements$] = value;
+    }
+    get favoriteElements() {
+      return this[favoriteElements];
+    }
+    set favoriteElements(value) {
+      this[favoriteElements] = value;
+    }
+    build(context) {
+      let t1, t0, t1$;
+      let _widget = null;
+      if (this.widget.builder != null)
+        _widget = new ink_well.InkWell.new({onTap: dart.bind(this, 'showCountryCodePickerDialog'), child: T.WidgetN().as((t0 = this.widget, t1 = this.selectedItem, t0.builder(t1))), $creationLocationd_0dea112b090073317d4: C[9] || CT.C9});
+      else {
+        _widget = new flat_button.FlatButton.new({padding: this.widget.padding, onPressed: dart.test(this.widget.enabled) ? dart.bind(this, 'showCountryCodePickerDialog') : null, child: new basic.Flex.new({direction: basic_types.Axis.horizontal, mainAxisSize: flex.MainAxisSize.min, children: (() => {
+              let t0 = T.JSArrayOfWidgetL().of([]);
+              if (dart.test(this.widget.showFlagMain != null ? this.widget.showFlagMain : this.widget.showFlag)) t0[$add](new basic.Flexible.new({flex: dart.test(this.widget.alignLeft) ? 0 : 1, fit: dart.test(this.widget.alignLeft) ? flex.FlexFit.tight : flex.FlexFit.loose, child: new basic.Padding.new({padding: dart.test(this.widget.alignLeft) ? C[13] || CT.C13 : C[14] || CT.C14, child: new image.Image.asset(this.selectedItem.flagUri, {package: "country_code_picker", width: this.widget.flagWidth, $creationLocationd_0dea112b090073317d4: C[15] || CT.C15}), $creationLocationd_0dea112b090073317d4: C[20] || CT.C20}), $creationLocationd_0dea112b090073317d4: C[24] || CT.C24}));
+              if (!dart.test(this.widget.hideMainText)) t0[$add](new basic.Flexible.new({fit: dart.test(this.widget.alignLeft) ? flex.FlexFit.tight : flex.FlexFit.loose, child: new text.Text.new(dart.test(this.widget.showOnlyCountryWhenClosed) ? this.selectedItem.toCountryStringOnly() : dart.toString(this.selectedItem), {style: (t1$ = this.widget.textStyle, t1$ == null ? theme.Theme.of(context).textTheme.button : t1$), overflow: this.widget.textOverflow, $creationLocationd_0dea112b090073317d4: C[29] || CT.C29}), $creationLocationd_0dea112b090073317d4: C[34] || CT.C34}));
+              if (dart.test(this.widget.showDropDownButton)) t0[$add](new basic.Flexible.new({flex: dart.test(this.widget.alignLeft) ? 0 : 1, fit: dart.test(this.widget.alignLeft) ? flex.FlexFit.tight : flex.FlexFit.loose, child: new basic.Padding.new({padding: dart.test(this.widget.alignLeft) ? C[13] || CT.C13 : C[14] || CT.C14, child: new icon.Icon.new(icons.Icons.arrow_drop_down_rounded, {color: new ui.Color.new(4282622183), size: this.widget.flagWidth, $creationLocationd_0dea112b090073317d4: C[38] || CT.C38}), $creationLocationd_0dea112b090073317d4: C[43] || CT.C43}), $creationLocationd_0dea112b090073317d4: C[47] || CT.C47}));
+              return t0;
+            })(), $creationLocationd_0dea112b090073317d4: C[52] || CT.C52}), $creationLocationd_0dea112b090073317d4: C[57] || CT.C57});
+      }
+      return _widget;
+    }
+    didChangeDependencies() {
+      super.didChangeDependencies();
+      this.elements = this.elements[$map](T.CountryCodeL(), dart.fn(e => e.localize(this.context), T.CountryCodeLToCountryCodeL()))[$toList]();
+      this[_onInit](this.selectedItem);
+    }
+    didUpdateWidget(oldWidget) {
+      T.CountryCodePickerL().as(oldWidget);
+      super.didUpdateWidget(oldWidget);
+      if (oldWidget.initialSelection != this.widget.initialSelection) {
+        if (this.widget.initialSelection != null) {
+          this.selectedItem = this.elements[$firstWhere](dart.fn(e => e.code[$toUpperCase]() === this.widget.initialSelection[$toUpperCase]() || e.dialCode == this.widget.initialSelection || e.name[$toUpperCase]() === this.widget.initialSelection[$toUpperCase](), T.CountryCodeLToboolL()), {orElse: dart.fn(() => this.elements[$_get](0), T.VoidToCountryCodeL())});
+        } else {
+          this.selectedItem = this.elements[$_get](0);
+        }
+        this[_onInit](this.selectedItem);
+      }
+    }
+    initState() {
+      super.initState();
+      if (this.widget.initialSelection != null) {
+        this.selectedItem = this.elements[$firstWhere](dart.fn(e => e.code[$toUpperCase]() === this.widget.initialSelection[$toUpperCase]() || e.dialCode == this.widget.initialSelection || e.name[$toUpperCase]() === this.widget.initialSelection[$toUpperCase](), T.CountryCodeLToboolL()), {orElse: dart.fn(() => this.elements[$_get](0), T.VoidToCountryCodeL())});
+      } else {
+        this.selectedItem = this.elements[$_get](0);
+      }
+      this.favoriteElements = this.elements[$where](dart.fn(e => this.widget.favorite[$firstWhere](dart.fn(f => e.code[$toUpperCase]() === f[$toUpperCase]() || e.dialCode == f || e.name[$toUpperCase]() === f[$toUpperCase](), T.StringLToboolL()), {orElse: dart.fn(() => null, T.VoidToNull())}) != null, T.CountryCodeLToboolL()))[$toList]();
+    }
+    showCountryCodePickerDialog() {
+      let t1, t1$;
+      material_bottom_sheet.showMaterialModalBottomSheet(dart.dynamic, {barrierColor: (t1 = this.widget.barrierColor, t1 == null ? colors.Colors.grey.withOpacity(0.5) : t1), backgroundColor: (t1$ = this.widget.backgroundColor, t1$ == null ? colors.Colors.transparent : t1$), context: this.context, builder: dart.fn(context => new basic.Center.new({child: new selection_dialog.SelectionDialog.new(this.elements, this.favoriteElements, {showCountryOnly: this.widget.showCountryOnly, emptySearchBuilder: this.widget.emptySearchBuilder, searchDecoration: this.widget.searchDecoration, searchStyle: this.widget.searchStyle, textStyle: this.widget.dialogTextStyle, boxDecoration: this.widget.boxDecoration, showFlag: this.widget.showFlagDialog != null ? this.widget.showFlagDialog : this.widget.showFlag, flagWidth: this.widget.flagWidth, size: this.widget.dialogSize, backgroundColor: this.widget.dialogBackgroundColor, barrierColor: this.widget.barrierColor, hideSearch: this.widget.hideSearch, closeIcon: this.widget.closeIcon, $creationLocationd_0dea112b090073317d4: C[62] || CT.C62}), $creationLocationd_0dea112b090073317d4: C[79] || CT.C79}), T.BuildContextLToCenterL())}).then(core.Null, dart.fn(e => {
+        if (e != null) {
+          this.setState(dart.fn(() => {
+            this.selectedItem = T.CountryCodeL().as(e);
+          }, T.VoidToNull()));
+          this[_publishSelection](T.CountryCodeL().as(e));
+        }
+      }, T.dynamicToNull()));
+    }
+    [_publishSelection](e) {
+      let t2, t1;
+      if (this.widget.onChanged != null) {
+        t1 = this.widget;
+        t2 = e;
+        t1.onChanged(t2);
+      }
+    }
+    [_onInit](e) {
+      let t2, t1;
+      if (this.widget.onInit != null) {
+        t1 = this.widget;
+        t2 = e;
+        t1.onInit(t2);
+      }
+    }
+  };
+  (country_code_picker.CountryCodePickerState.new = function(elements) {
+    this[selectedItem] = null;
+    this[elements$] = T.JSArrayOfCountryCodeL().of([]);
+    this[favoriteElements] = T.JSArrayOfCountryCodeL().of([]);
+    this[elements$] = elements;
+    country_code_picker.CountryCodePickerState.__proto__.new.call(this);
+    ;
+  }).prototype = country_code_picker.CountryCodePickerState.prototype;
+  dart.addTypeTests(country_code_picker.CountryCodePickerState);
+  dart.addTypeCaches(country_code_picker.CountryCodePickerState);
+  dart.setMethodSignature(country_code_picker.CountryCodePickerState, () => ({
+    __proto__: dart.getMethods(country_code_picker.CountryCodePickerState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+    didUpdateWidget: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+    showCountryCodePickerDialog: dart.fnType(dart.void, []),
+    [_publishSelection]: dart.fnType(dart.void, [dart.legacy(country_code.CountryCode)]),
+    [_onInit]: dart.fnType(dart.void, [dart.legacy(country_code.CountryCode)])
+  }));
+  dart.setLibraryUri(country_code_picker.CountryCodePickerState, I[0]);
+  dart.setFieldSignature(country_code_picker.CountryCodePickerState, () => ({
+    __proto__: dart.getFields(country_code_picker.CountryCodePickerState.__proto__),
+    selectedItem: dart.fieldType(dart.legacy(country_code.CountryCode)),
+    elements: dart.fieldType(dart.legacy(core.List$(dart.legacy(country_code.CountryCode)))),
+    favoriteElements: dart.fieldType(dart.legacy(core.List$(dart.legacy(country_code.CountryCode))))
+  }));
+  dart.trackLibraries("packages/country_code_picker/country_code_picker.dart", {
+    "package:country_code_picker/country_code_picker.dart": country_code_picker
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["country_code_picker.dart"],"names":[],"mappings":"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","file":"../../../../../../../E:/packages/country_code_picker/country_code_picker.dart.lib.js"}');
+  // Exports:
+  return {
+    country_code_picker: country_code_picker
+  };
+}));
+
+//# sourceMappingURL=country_code_picker.dart.lib.js.map

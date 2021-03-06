@@ -6,6 +6,7 @@ import 'package:stainless_v2/app/models/material_model.dart';
 import 'package:stainless_v2/app/modules/_shared/app_bar.dart';
 import 'package:stainless_v2/app/modules/_shared/material_card.dart';
 import 'package:stainless_v2/app/modules/_shared/painted_view.dart';
+import 'package:stainless_v2/app/routes/app_pages.dart';
 import 'package:stainless_v2/generated/l10n.dart';
 import 'package:stainless_v2/utils/_export.dart';
 
@@ -61,7 +62,7 @@ class ClientDetialsView extends GetView<ClientDetialsController> {
     Get.put(ClientDetialsController());
     return DefaultTabController(
       initialIndex: 0,
-      length: 3,
+      length: 2,
       child: Scaffold(
           appBar: StainlessAppBar(
             context: context,
@@ -81,10 +82,7 @@ class ClientDetialsView extends GetView<ClientDetialsController> {
               indicatorColor: AppUi.colors.clientPink,
               labelColor: Colors.black,
               tabs: [
-                Text(
-                  S.current.sheets,
-                ),
-                Text(S.current.ouds),
+                Text(S.current.orders),
                 Text(
                   S.current.paymentHistory,
                   softWrap: false,
@@ -93,34 +91,37 @@ class ClientDetialsView extends GetView<ClientDetialsController> {
             ),
           ),
           body: TabBarView(children: [
-            PaintedView(
-              upPainting: false,
-              child: ListView.builder(
-                itemCount: model.length,
-                itemBuilder: (_, i) => InkWell(
-                  onTap: () {
-                    controller.multiSelectController.isSelecting = true;
-                  },
-                  child: MultiSelectItem(
-                    isSelecting: controller.multiSelectController.isSelecting,
-                    onSelected: () {
-                      controller.multiSelectController.toggle(i);
+            Scaffold(
+              body: PaintedView(
+                upPainting: false,
+                child: ListView.builder(
+                  itemCount: model.length,
+                  itemBuilder: (_, i) => InkWell(
+                    onTap: () {
+                      // controller.multiSelectController.isSelecting = true;
                     },
-                    child: Container(
-                      decoration: controller.multiSelectController.isSelected(i)
-                          ? BoxDecoration(color: Colors.grey[300])
-                          : BoxDecoration(),
-                      child: MaterialCard(
-                        model: model[i],
+                    child: MultiSelectItem(
+                      isSelecting: controller.multiSelectController.isSelecting,
+                      onSelected: () {
+                        controller.multiSelectController.toggle(i);
+                      },
+                      child: Container(
+                        decoration:
+                            controller.multiSelectController.isSelected(i)
+                                ? BoxDecoration(color: Colors.grey[300])
+                                : BoxDecoration(),
+                        child: MaterialCard(
+                          model: model[i],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            PaintedView(
-              upPainting: false,
-              child: Container(),
+              floatingActionButton: FloatingActionButton(
+                onPressed: () => Get.toNamed(Routes.ADD_ORDER),
+                child: Icon(Icons.add_rounded),
+              ),
             ),
             PaintedView(
               upPainting: false,

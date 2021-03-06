@@ -1,0 +1,973 @@
+define(['dart_sdk', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/modal_bottom_sheet/src/utils/bottom_sheet_suspended_curve.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/gestures/velocity_tracker.dart', 'packages/flutter/src/gestures/drag_details.dart', 'packages/modal_bottom_sheet/src/utils/scroll_to_top_status_bar.dart', 'packages/flutter/src/rendering/shifted_box.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/foundation/_platform_web.dart'], (function load__packages__modal_bottom_sheet__src__bottom_sheet_dart(dart_sdk, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__rendering__layer$46dart, packages__modal_bottom_sheet__src__utils__bottom_sheet_suspended_curve$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__gestures__velocity_tracker$46dart, packages__flutter__src__gestures__drag_details$46dart, packages__modal_bottom_sheet__src__utils__scroll_to_top_status_bar$46dart, packages__flutter__src__rendering__shifted_box$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__foundation___platform_web$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const scroll_controller = packages__flutter__src__widgets__widget_span$46dart.src__widgets__scroll_controller;
+  const scrollable = packages__flutter__src__widgets__widget_span$46dart.src__widgets__scrollable;
+  const scroll_notification = packages__flutter__src__widgets__widget_span$46dart.src__widgets__scroll_notification;
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const transitions = packages__flutter__src__widgets__widget_span$46dart.src__widgets__transitions;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const gesture_detector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__gesture_detector;
+  const notification_listener = packages__flutter__src__widgets__widget_span$46dart.src__widgets__notification_listener;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const animations = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animations;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const bottom_sheet_suspended_curve = packages__modal_bottom_sheet__src__utils__bottom_sheet_suspended_curve$46dart.src__utils__bottom_sheet_suspended_curve;
+  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
+  const velocity_tracker = packages__flutter__src__gestures__velocity_tracker$46dart.src__gestures__velocity_tracker;
+  const drag_details = packages__flutter__src__gestures__drag_details$46dart.src__gestures__drag_details;
+  const scroll_to_top_status_bar = packages__modal_bottom_sheet__src__utils__scroll_to_top_status_bar$46dart.src__utils__scroll_to_top_status_bar;
+  const shifted_box = packages__flutter__src__rendering__shifted_box$46dart.src__rendering__shifted_box;
+  const theme = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const platform$ = packages__flutter__src__foundation___platform_web$46dart.src__foundation__platform;
+  var bottom_sheet = Object.create(dart.library);
+  var $length = dartx.length;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    StatefulWidgetL: () => (T.StatefulWidgetL = dart.constFn(dart.legacy(framework.StatefulWidget)))(),
+    StateOfStatefulWidgetL: () => (T.StateOfStatefulWidgetL = dart.constFn(framework.State$(T.StatefulWidgetL())))(),
+    StateLOfStatefulWidgetL: () => (T.StateLOfStatefulWidgetL = dart.constFn(dart.legacy(T.StateOfStatefulWidgetL())))(),
+    GlobalKeyOfStateLOfStatefulWidgetL: () => (T.GlobalKeyOfStateLOfStatefulWidgetL = dart.constFn(framework.GlobalKey$(T.StateLOfStatefulWidgetL())))(),
+    RenderBoxL: () => (T.RenderBoxL = dart.constFn(dart.legacy(box.RenderBox)))(),
+    voidToNull: () => (T.voidToNull = dart.constFn(dart.fnType(core.Null, [dart.void])))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    CurveL: () => (T.CurveL = dart.constFn(dart.legacy(curves.Curve)))(),
+    ScrollEndNotificationL: () => (T.ScrollEndNotificationL = dart.constFn(dart.legacy(scroll_notification.ScrollEndNotification)))(),
+    ScrollUpdateNotificationL: () => (T.ScrollUpdateNotificationL = dart.constFn(dart.legacy(scroll_notification.ScrollUpdateNotification)))(),
+    OverscrollNotificationL: () => (T.OverscrollNotificationL = dart.constFn(dart.legacy(scroll_notification.OverscrollNotification)))(),
+    DragUpdateDetailsL: () => (T.DragUpdateDetailsL = dart.constFn(dart.legacy(drag_details.DragUpdateDetails)))(),
+    DragUpdateDetailsLToNull: () => (T.DragUpdateDetailsLToNull = dart.constFn(dart.fnType(core.Null, [T.DragUpdateDetailsL()])))(),
+    DragEndDetailsL: () => (T.DragEndDetailsL = dart.constFn(dart.legacy(drag_details.DragEndDetails)))(),
+    DragEndDetailsLToNull: () => (T.DragEndDetailsLToNull = dart.constFn(dart.fnType(core.Null, [T.DragEndDetailsL()])))(),
+    ScrollNotificationL: () => (T.ScrollNotificationL = dart.constFn(dart.legacy(scroll_notification.ScrollNotification)))(),
+    NotificationListenerOfScrollNotificationL: () => (T.NotificationListenerOfScrollNotificationL = dart.constFn(notification_listener.NotificationListener$(T.ScrollNotificationL())))(),
+    ScrollNotificationLToboolL: () => (T.ScrollNotificationLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.ScrollNotificationL()])))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    CustomSingleChildLayoutL: () => (T.CustomSingleChildLayoutL = dart.constFn(dart.legacy(basic.CustomSingleChildLayout)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    BuildContextLAndWidgetLToCustomSingleChildLayoutL: () => (T.BuildContextLAndWidgetLToCustomSingleChildLayoutL = dart.constFn(dart.fnType(T.CustomSingleChildLayoutL(), [T.BuildContextL(), T.WidgetL()])))(),
+    ClipRectL: () => (T.ClipRectL = dart.constFn(dart.legacy(basic.ClipRect)))(),
+    BuildContextLAndWidgetLToClipRectL: () => (T.BuildContextLAndWidgetLToClipRectL = dart.constFn(dart.fnType(T.ClipRectL(), [T.BuildContextL(), T.WidgetL()])))(),
+    _ModalBottomSheetLayoutL: () => (T._ModalBottomSheetLayoutL = dart.constFn(dart.legacy(bottom_sheet._ModalBottomSheetLayout)))(),
+    _CustomBottomSheetLayoutL: () => (T._CustomBottomSheetLayoutL = dart.constFn(dart.legacy(bottom_sheet._CustomBottomSheetLayout)))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onNotification",
+        [_Location_column]: 25,
+        [_Location_line]: 377,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 25,
+        [_Location_line]: 381,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 376,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/modal_bottom_sheet-1.0.0+1/lib/src/bottom_sheet.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onVerticalDragUpdate",
+        [_Location_column]: 23,
+        [_Location_line]: 370,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onVerticalDragEnd",
+        [_Location_column]: 23,
+        [_Location_line]: 373,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 376,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8], T._LocationL());
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 369,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/modal_bottom_sheet-1.0.0+1/lib/src/bottom_sheet.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "delegate",
+        [_Location_column]: 21,
+        [_Location_line]: 368,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 369,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11, C[12] || CT.C12], T._LocationL());
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 367,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/modal_bottom_sheet-1.0.0+1/lib/src/bottom_sheet.dart"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "animation",
+        [_Location_column]: 19,
+        [_Location_line]: 366,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 19,
+        [_Location_line]: 367,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16], T._LocationL());
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 365,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/modal_bottom_sheet-1.0.0+1/lib/src/bottom_sheet.dart"
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "key",
+        [_Location_column]: 17,
+        [_Location_line]: 364,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 365,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.constList([C[19] || CT.C19, C[20] || CT.C20], T._LocationL());
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[18] || CT.C18,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 363,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/modal_bottom_sheet-1.0.0+1/lib/src/bottom_sheet.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "delegate",
+        [_Location_column]: 13,
+        [_Location_line]: 389,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 393,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24], T._LocationL());
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 388,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/modal_bottom_sheet-1.0.0+1/lib/src/bottom_sheet.dart"
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 388,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.constList([C[27] || CT.C27], T._LocationL());
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[26] || CT.C26,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 387,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/modal_bottom_sheet-1.0.0+1/lib/src/bottom_sheet.dart"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 30,
+        [_Location_line]: 397,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[30] || CT.C30], T._LocationL());
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[29] || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 397,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/modal_bottom_sheet-1.0.0+1/lib/src/bottom_sheet.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "animation",
+        [_Location_column]: 7,
+        [_Location_line]: 354,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 7,
+        [_Location_line]: 355,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 397,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33, C[34] || CT.C34, C[35] || CT.C35], T._LocationL());
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 353,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/modal_bottom_sheet-1.0.0+1/lib/src/bottom_sheet.dart"
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 401,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "scrollController",
+        [_Location_column]: 7,
+        [_Location_line]: 402,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.constList([C[38] || CT.C38, C[39] || CT.C39], T._LocationL());
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[37] || CT.C37,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 400,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/modal_bottom_sheet-1.0.0+1/lib/src/bottom_sheet.dart"
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: platform$.TargetPlatform.prototype,
+        [_name]: "TargetPlatform.iOS",
+        index: 2
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: platform$.TargetPlatform.prototype,
+        [_name]: "TargetPlatform.android",
+        index: 0
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: platform$.TargetPlatform.prototype,
+        [_name]: "TargetPlatform.linux",
+        index: 3
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: platform$.TargetPlatform.prototype,
+        [_name]: "TargetPlatform.macOS",
+        index: 4
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: platform$.TargetPlatform.prototype,
+        [_name]: "TargetPlatform.windows",
+        index: 5
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: platform$.TargetPlatform.prototype,
+        [_name]: "TargetPlatform.fuchsia",
+        index: 1
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: curves.Cubic.prototype,
+        [Cubic_d]: 1,
+        [Cubic_c]: 0.2,
+        [Cubic_b]: 0,
+        [Cubic_a]: 0
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 400000
+      });
+    }
+  }, false);
+  var C = Array(48).fill(void 0);
+  var I = [
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/modal_bottom_sheet-1.0.0+1/lib/src/bottom_sheet.dart",
+    "package:modal_bottom_sheet/src/bottom_sheet.dart"
+  ];
+  var closeProgressThreshold$ = dart.privateName(bottom_sheet, "ModalBottomSheet.closeProgressThreshold");
+  var animationController$ = dart.privateName(bottom_sheet, "ModalBottomSheet.animationController");
+  var animationCurve$ = dart.privateName(bottom_sheet, "ModalBottomSheet.animationCurve");
+  var bounce$ = dart.privateName(bottom_sheet, "ModalBottomSheet.bounce");
+  var expanded$ = dart.privateName(bottom_sheet, "ModalBottomSheet.expanded");
+  var containerBuilder$ = dart.privateName(bottom_sheet, "ModalBottomSheet.containerBuilder");
+  var onClosing$ = dart.privateName(bottom_sheet, "ModalBottomSheet.onClosing");
+  var shouldClose$ = dart.privateName(bottom_sheet, "ModalBottomSheet.shouldClose");
+  var child$ = dart.privateName(bottom_sheet, "ModalBottomSheet.child");
+  var enableDrag$ = dart.privateName(bottom_sheet, "ModalBottomSheet.enableDrag");
+  var scrollController$ = dart.privateName(bottom_sheet, "ModalBottomSheet.scrollController");
+  bottom_sheet.ModalBottomSheet = class ModalBottomSheet extends framework.StatefulWidget {
+    get closeProgressThreshold() {
+      return this[closeProgressThreshold$];
+    }
+    set closeProgressThreshold(value) {
+      super.closeProgressThreshold = value;
+    }
+    get animationController() {
+      return this[animationController$];
+    }
+    set animationController(value) {
+      super.animationController = value;
+    }
+    get animationCurve() {
+      return this[animationCurve$];
+    }
+    set animationCurve(value) {
+      super.animationCurve = value;
+    }
+    get bounce() {
+      return this[bounce$];
+    }
+    set bounce(value) {
+      super.bounce = value;
+    }
+    get expanded() {
+      return this[expanded$];
+    }
+    set expanded(value) {
+      super.expanded = value;
+    }
+    get containerBuilder() {
+      return this[containerBuilder$];
+    }
+    set containerBuilder(value) {
+      super.containerBuilder = value;
+    }
+    get onClosing() {
+      return this[onClosing$];
+    }
+    set onClosing(value) {
+      super.onClosing = value;
+    }
+    get shouldClose() {
+      return this[shouldClose$];
+    }
+    set shouldClose(value) {
+      super.shouldClose = value;
+    }
+    get child() {
+      return this[child$];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    get enableDrag() {
+      return this[enableDrag$];
+    }
+    set enableDrag(value) {
+      super.enableDrag = value;
+    }
+    get scrollController() {
+      return this[scrollController$];
+    }
+    set scrollController(value) {
+      super.scrollController = value;
+    }
+    createState() {
+      return new bottom_sheet._ModalBottomSheetState.new();
+    }
+    static createAnimationController(vsync, opts) {
+      let t0;
+      let duration = opts && 'duration' in opts ? opts.duration : null;
+      return new animation_controller.AnimationController.new({duration: (t0 = duration, t0 == null ? bottom_sheet._bottomSheetDuration : t0), debugLabel: "BottomSheet", vsync: vsync});
+    }
+  };
+  (bottom_sheet.ModalBottomSheet.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let closeProgressThreshold = opts && 'closeProgressThreshold' in opts ? opts.closeProgressThreshold : null;
+    let animationController = opts && 'animationController' in opts ? opts.animationController : null;
+    let animationCurve = opts && 'animationCurve' in opts ? opts.animationCurve : null;
+    let enableDrag = opts && 'enableDrag' in opts ? opts.enableDrag : true;
+    let containerBuilder = opts && 'containerBuilder' in opts ? opts.containerBuilder : null;
+    let bounce = opts && 'bounce' in opts ? opts.bounce : true;
+    let shouldClose = opts && 'shouldClose' in opts ? opts.shouldClose : null;
+    let scrollController = opts && 'scrollController' in opts ? opts.scrollController : null;
+    let expanded = opts && 'expanded' in opts ? opts.expanded : null;
+    let onClosing = opts && 'onClosing' in opts ? opts.onClosing : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[closeProgressThreshold$] = closeProgressThreshold;
+    this[animationController$] = animationController;
+    this[animationCurve$] = animationCurve;
+    this[enableDrag$] = enableDrag;
+    this[containerBuilder$] = containerBuilder;
+    this[bounce$] = bounce;
+    this[shouldClose$] = shouldClose;
+    this[scrollController$] = scrollController;
+    this[expanded$] = expanded;
+    this[onClosing$] = onClosing;
+    this[child$] = child;
+    if (!(enableDrag != null)) dart.assertFailed(null, I[0], 52, 16, "enableDrag != null");
+    if (!(onClosing != null)) dart.assertFailed(null, I[0], 53, 16, "onClosing != null");
+    if (!(child != null)) dart.assertFailed(null, I[0], 54, 16, "child != null");
+    bottom_sheet.ModalBottomSheet.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = bottom_sheet.ModalBottomSheet.prototype;
+  dart.addTypeTests(bottom_sheet.ModalBottomSheet);
+  dart.addTypeCaches(bottom_sheet.ModalBottomSheet);
+  dart.setMethodSignature(bottom_sheet.ModalBottomSheet, () => ({
+    __proto__: dart.getMethods(bottom_sheet.ModalBottomSheet.__proto__),
+    createState: dart.fnType(dart.legacy(bottom_sheet._ModalBottomSheetState), [])
+  }));
+  dart.setLibraryUri(bottom_sheet.ModalBottomSheet, I[1]);
+  dart.setFieldSignature(bottom_sheet.ModalBottomSheet, () => ({
+    __proto__: dart.getFields(bottom_sheet.ModalBottomSheet.__proto__),
+    closeProgressThreshold: dart.finalFieldType(dart.legacy(core.double)),
+    animationController: dart.finalFieldType(dart.legacy(animation_controller.AnimationController)),
+    animationCurve: dart.finalFieldType(dart.legacy(curves.Curve)),
+    bounce: dart.finalFieldType(dart.legacy(core.bool)),
+    expanded: dart.finalFieldType(dart.legacy(core.bool)),
+    containerBuilder: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext), dart.legacy(animation.Animation$(dart.legacy(core.double))), dart.legacy(framework.Widget)]))),
+    onClosing: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, []))),
+    shouldClose: dart.finalFieldType(dart.legacy(dart.fnType(dart.legacy(async.Future$(dart.legacy(core.bool))), []))),
+    child: dart.finalFieldType(dart.legacy(framework.Widget)),
+    enableDrag: dart.finalFieldType(dart.legacy(core.bool)),
+    scrollController: dart.finalFieldType(dart.legacy(scroll_controller.ScrollController))
+  }));
+  var _childKey = dart.privateName(bottom_sheet, "_childKey");
+  var _bounceDragController = dart.privateName(bottom_sheet, "_bounceDragController");
+  var _isCheckingShouldClose = dart.privateName(bottom_sheet, "_isCheckingShouldClose");
+  var _velocityTracker = dart.privateName(bottom_sheet, "_velocityTracker");
+  var _startTime = dart.privateName(bottom_sheet, "_startTime");
+  var _scrollController = dart.privateName(bottom_sheet, "_scrollController");
+  var _childHeight = dart.privateName(bottom_sheet, "_childHeight");
+  var _dismissUnderway = dart.privateName(bottom_sheet, "_dismissUnderway");
+  var _close = dart.privateName(bottom_sheet, "_close");
+  var _cancelClose = dart.privateName(bottom_sheet, "_cancelClose");
+  var _handleDragUpdate = dart.privateName(bottom_sheet, "_handleDragUpdate");
+  var _defaultCurve = dart.privateName(bottom_sheet, "_defaultCurve");
+  var _handleDragEnd = dart.privateName(bottom_sheet, "_handleDragEnd");
+  var _handleScrollUpdate = dart.privateName(bottom_sheet, "_handleScrollUpdate");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  const State_TickerProviderStateMixin$36 = class State_TickerProviderStateMixin extends framework.State$(dart.legacy(bottom_sheet.ModalBottomSheet)) {};
+  (State_TickerProviderStateMixin$36.new = function() {
+    ticker_provider.TickerProviderStateMixin$(dart.legacy(bottom_sheet.ModalBottomSheet))[dart.mixinNew].call(this);
+    State_TickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_TickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_TickerProviderStateMixin$36, ticker_provider.TickerProviderStateMixin$(dart.legacy(bottom_sheet.ModalBottomSheet)));
+  bottom_sheet._ModalBottomSheetState = class _ModalBottomSheetState extends State_TickerProviderStateMixin$36 {
+    get [_scrollController]() {
+      return this.widget.scrollController;
+    }
+    get [_childHeight]() {
+      let renderBox = T.RenderBoxL().as(this[_childKey].currentContext.findRenderObject());
+      return renderBox.size.height;
+    }
+    get [_dismissUnderway]() {
+      return this.widget.animationController.status == animation.AnimationStatus.reverse;
+    }
+    get hasReachedWillPopThreshold() {
+      return dart.notNull(this.widget.animationController.value) < 0.8;
+    }
+    get hasReachedCloseThreshold() {
+      let t0;
+      return dart.notNull(this.widget.animationController.value) < dart.notNull((t0 = this.widget.closeProgressThreshold, t0 == null ? 0.6 : t0));
+    }
+    [_close]() {
+      this.isDragging = false;
+      this.widget.onClosing();
+    }
+    [_cancelClose]() {
+      this.widget.animationController.forward().then(core.Null, dart.fn(value => {
+        if (!dart.test(this.widget.animationController.isCompleted)) {
+          this.widget.animationController.value = 1.0;
+        }
+      }, T.voidToNull()));
+      this[_bounceDragController].reverse();
+    }
+    shouldClose() {
+      return async.async(T.boolL(), (function* shouldClose() {
+        if (dart.test(this[_isCheckingShouldClose])) return false;
+        if (this.widget.shouldClose == null) return null;
+        this[_isCheckingShouldClose] = true;
+        let result = (yield this.widget.shouldClose());
+        this[_isCheckingShouldClose] = false;
+        return result;
+      }).bind(this));
+    }
+    [_handleDragUpdate](primaryDelta) {
+      return async.async(dart.void, (function* _handleDragUpdate() {
+        let t0, t0$, t0$0;
+        this.animationCurve = curves.Curves.linear;
+        if (!dart.test(this.widget.enableDrag)) dart.assertFailed("Dragging is disabled", I[0], 190, 12, "widget.enableDrag");
+        if (dart.test(this[_dismissUnderway])) return;
+        this.isDragging = true;
+        let progress = dart.notNull(primaryDelta) / dart.notNull((t0 = this[_childHeight], t0 == null ? primaryDelta : t0));
+        if (this.widget.shouldClose != null && dart.test(this.hasReachedWillPopThreshold)) {
+          this[_cancelClose]();
+          let canClose = (yield this.shouldClose());
+          if (dart.test(canClose)) {
+            this[_close]();
+            return;
+          } else {
+            this[_cancelClose]();
+          }
+        }
+        let bounce = this.widget.bounce === true;
+        let shouldBounce = dart.notNull(this[_bounceDragController].value) > 0;
+        let isBouncing = dart.notNull(this.widget.animationController.value) - progress > 1;
+        if (bounce && (shouldBounce || isBouncing)) {
+          t0$ = this[_bounceDragController];
+          t0$.value = dart.notNull(t0$.value) - progress * 10;
+          return;
+        }
+        t0$0 = this.widget.animationController;
+        t0$0.value = dart.notNull(t0$0.value) - progress;
+      }).bind(this));
+    }
+    [_handleDragEnd](velocity) {
+      return async.async(dart.void, (function* _handleDragEnd() {
+        if (!dart.test(this.widget.enableDrag)) dart.assertFailed("Dragging is disabled", I[0], 221, 12, "widget.enableDrag");
+        this.animationCurve = new bottom_sheet_suspended_curve.BottomSheetSuspendedCurve.new(this.widget.animationController.value, {curve: T.CurveL().as(this[_defaultCurve])});
+        if (dart.test(this[_dismissUnderway]) || !dart.test(this.isDragging)) return;
+        this.isDragging = false;
+        this[_bounceDragController].reverse();
+        let canClose = true;
+        if (this.widget.shouldClose != null && dart.test(this.hasReachedWillPopThreshold)) {
+          this[_cancelClose]();
+          canClose = (yield this.shouldClose());
+        }
+        if (dart.test(canClose)) {
+          if (dart.notNull(velocity) > 500) {
+            this[_close]();
+          } else if (dart.test(this.hasReachedCloseThreshold)) {
+            if (dart.notNull(this.widget.animationController.value) > 0.0) {
+              this.widget.animationController.fling({velocity: -1.0});
+            }
+            this[_close]();
+          } else {
+            this[_cancelClose]();
+          }
+        } else {
+          this[_cancelClose]();
+        }
+      }).bind(this));
+    }
+    [_handleScrollUpdate](notification) {
+      if (!dart.test(this[_scrollController].hasClients)) return;
+      if (dart.notNull(this[_scrollController].positions[$length]) > 1) return;
+      if (!dart.equals(this[_scrollController], scrollable.Scrollable.of(notification.context).widget.controller)) return;
+      let scrollPosition = this[_scrollController].position;
+      if (scrollPosition.axis == basic_types.Axis.horizontal) return;
+      let isScrollReversed = scrollPosition.axisDirection == basic_types.AxisDirection.down;
+      let offset = isScrollReversed ? scrollPosition.pixels : dart.notNull(scrollPosition.maxScrollExtent) - dart.notNull(scrollPosition.pixels);
+      if (dart.notNull(offset) <= 0) {
+        if (T.ScrollEndNotificationL().is(notification) && notification.dragDetails != null) {
+          this[_handleDragEnd](notification.dragDetails.primaryVelocity);
+          this[_velocityTracker] = null;
+          this[_startTime] = null;
+          return;
+        }
+        if (this[_velocityTracker] == null) {
+          this[_velocityTracker] = new velocity_tracker.VelocityTracker.new();
+          this[_startTime] = new core.DateTime.now();
+        }
+        let dragDetails = null;
+        if (T.ScrollUpdateNotificationL().is(notification)) {
+          dragDetails = notification.dragDetails;
+        }
+        if (T.OverscrollNotificationL().is(notification)) {
+          dragDetails = notification.dragDetails;
+        }
+        if (dragDetails != null) {
+          let duration = this[_startTime].difference(new core.DateTime.now());
+          this[_velocityTracker].addPosition(duration, new ui.Offset.new(0.0, offset));
+          this[_handleDragUpdate](dragDetails.delta.dy);
+        } else if (dart.test(this.isDragging)) {
+          let velocity = this[_velocityTracker].getVelocity().pixelsPerSecond.dy;
+          this[_velocityTracker] = null;
+          this[_startTime] = null;
+          this[_handleDragEnd](velocity);
+        }
+      }
+    }
+    get [_defaultCurve]() {
+      let t0;
+      t0 = this.widget.animationCurve;
+      return t0 == null ? bottom_sheet._modalBottomSheetCurve : t0;
+    }
+    initState() {
+      this.animationCurve = this[_defaultCurve];
+      this[_bounceDragController] = new animation_controller.AnimationController.new({vsync: this, duration: new core.Duration.new({milliseconds: 300})});
+      super.initState();
+    }
+    build(context) {
+      let t3, t2, t1, t0;
+      let bounceAnimation = new animations.CurvedAnimation.new({parent: this[_bounceDragController], curve: curves.Curves.easeOutSine});
+      let child = this.widget.child;
+      if (this.widget.containerBuilder != null) {
+        child = (t0 = this.widget, t1 = context, t2 = this.widget.animationController, t3 = child, t0.containerBuilder(t1, t2, t3));
+      }
+      let mediaQuery = media_query.MediaQuery.of(context);
+      child = new transitions.AnimatedBuilder.new({animation: this.widget.animationController, builder: dart.fn((context, child) => {
+          let animationValue = this.animationCurve.transform(dart.test(mediaQuery.accessibleNavigation) ? 1.0 : this.widget.animationController.value);
+          let draggableChild = !dart.test(this.widget.enableDrag) ? child : new basic.KeyedSubtree.new({key: this[_childKey], child: new transitions.AnimatedBuilder.new({animation: bounceAnimation, builder: dart.fn((context, _) => new basic.CustomSingleChildLayout.new({delegate: new bottom_sheet._CustomBottomSheetLayout.new(bounceAnimation.value), child: new gesture_detector.GestureDetector.new({onVerticalDragUpdate: dart.fn(details => {
+                    this[_handleDragUpdate](details.delta.dy);
+                  }, T.DragUpdateDetailsLToNull()), onVerticalDragEnd: dart.fn(details => {
+                    this[_handleDragEnd](details.primaryVelocity);
+                  }, T.DragEndDetailsLToNull()), child: new (T.NotificationListenerOfScrollNotificationL()).new({onNotification: dart.fn(notification => {
+                      this[_handleScrollUpdate](notification);
+                      return false;
+                    }, T.ScrollNotificationLToboolL()), child: child, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[4] || CT.C4}), $creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), T.BuildContextLAndWidgetLToCustomSingleChildLayoutL()), $creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), $creationLocationd_0dea112b090073317d4: C[17] || CT.C17});
+          return new basic.ClipRect.new({child: new basic.CustomSingleChildLayout.new({delegate: new bottom_sheet._ModalBottomSheetLayout.new(animationValue, this.widget.expanded), child: draggableChild, $creationLocationd_0dea112b090073317d4: C[21] || CT.C21}), $creationLocationd_0dea112b090073317d4: C[25] || CT.C25});
+        }, T.BuildContextLAndWidgetLToClipRectL()), child: new basic.RepaintBoundary.new({child: child, $creationLocationd_0dea112b090073317d4: C[28] || CT.C28}), $creationLocationd_0dea112b090073317d4: C[31] || CT.C31});
+      return new scroll_to_top_status_bar.ScrollToTopStatusBarHandler.new({child: child, scrollController: this[_scrollController], $creationLocationd_0dea112b090073317d4: C[36] || CT.C36});
+    }
+  };
+  (bottom_sheet._ModalBottomSheetState.new = function() {
+    this[_childKey] = T.GlobalKeyOfStateLOfStatefulWidgetL().new({debugLabel: "BottomSheet child"});
+    this[_bounceDragController] = null;
+    this.isDragging = false;
+    this[_isCheckingShouldClose] = false;
+    this.animationCurve = null;
+    this[_velocityTracker] = null;
+    this[_startTime] = null;
+    bottom_sheet._ModalBottomSheetState.__proto__.new.call(this);
+    ;
+  }).prototype = bottom_sheet._ModalBottomSheetState.prototype;
+  dart.addTypeTests(bottom_sheet._ModalBottomSheetState);
+  dart.addTypeCaches(bottom_sheet._ModalBottomSheetState);
+  dart.setMethodSignature(bottom_sheet._ModalBottomSheetState, () => ({
+    __proto__: dart.getMethods(bottom_sheet._ModalBottomSheetState.__proto__),
+    [_close]: dart.fnType(dart.void, []),
+    [_cancelClose]: dart.fnType(dart.void, []),
+    shouldClose: dart.fnType(dart.legacy(async.FutureOr$(dart.legacy(core.bool))), []),
+    [_handleDragUpdate]: dart.fnType(dart.void, [dart.legacy(core.double)]),
+    [_handleDragEnd]: dart.fnType(dart.void, [dart.legacy(core.double)]),
+    [_handleScrollUpdate]: dart.fnType(dart.void, [dart.legacy(scroll_notification.ScrollNotification)]),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setGetterSignature(bottom_sheet._ModalBottomSheetState, () => ({
+    __proto__: dart.getGetters(bottom_sheet._ModalBottomSheetState.__proto__),
+    [_scrollController]: dart.legacy(scroll_controller.ScrollController),
+    [_childHeight]: dart.legacy(core.double),
+    [_dismissUnderway]: dart.legacy(core.bool),
+    hasReachedWillPopThreshold: dart.legacy(core.bool),
+    hasReachedCloseThreshold: dart.legacy(core.bool),
+    [_defaultCurve]: dart.legacy(curves.ParametricCurve$(dart.legacy(core.double)))
+  }));
+  dart.setLibraryUri(bottom_sheet._ModalBottomSheetState, I[1]);
+  dart.setFieldSignature(bottom_sheet._ModalBottomSheetState, () => ({
+    __proto__: dart.getFields(bottom_sheet._ModalBottomSheetState.__proto__),
+    [_childKey]: dart.finalFieldType(dart.legacy(framework.GlobalKey$(dart.legacy(framework.State$(dart.legacy(framework.StatefulWidget)))))),
+    [_bounceDragController]: dart.fieldType(dart.legacy(animation_controller.AnimationController)),
+    isDragging: dart.fieldType(dart.legacy(core.bool)),
+    [_isCheckingShouldClose]: dart.fieldType(dart.legacy(core.bool)),
+    animationCurve: dart.fieldType(dart.legacy(curves.ParametricCurve$(dart.legacy(core.double)))),
+    [_velocityTracker]: dart.fieldType(dart.legacy(velocity_tracker.VelocityTracker)),
+    [_startTime]: dart.fieldType(dart.legacy(core.DateTime))
+  }));
+  bottom_sheet._ModalBottomSheetLayout = class _ModalBottomSheetLayout extends shifted_box.SingleChildLayoutDelegate {
+    getConstraintsForChild(constraints) {
+      return new box.BoxConstraints.new({minWidth: constraints.maxWidth, maxWidth: constraints.maxWidth, minHeight: dart.test(this.expand) ? constraints.maxHeight : 0.0, maxHeight: dart.test(this.expand) ? constraints.maxHeight : constraints.minHeight});
+    }
+    getPositionForChild(size, childSize) {
+      return new ui.Offset.new(0.0, dart.notNull(size.height) - dart.notNull(childSize.height) * dart.notNull(this.progress));
+    }
+    shouldRelayout(oldDelegate) {
+      T._ModalBottomSheetLayoutL().as(oldDelegate);
+      return this.progress != oldDelegate.progress;
+    }
+  };
+  (bottom_sheet._ModalBottomSheetLayout.new = function(progress, expand) {
+    this.progress = progress;
+    this.expand = expand;
+    bottom_sheet._ModalBottomSheetLayout.__proto__.new.call(this);
+    ;
+  }).prototype = bottom_sheet._ModalBottomSheetLayout.prototype;
+  dart.addTypeTests(bottom_sheet._ModalBottomSheetLayout);
+  dart.addTypeCaches(bottom_sheet._ModalBottomSheetLayout);
+  dart.setMethodSignature(bottom_sheet._ModalBottomSheetLayout, () => ({
+    __proto__: dart.getMethods(bottom_sheet._ModalBottomSheetLayout.__proto__),
+    getConstraintsForChild: dart.fnType(dart.legacy(box.BoxConstraints), [dart.legacy(box.BoxConstraints)]),
+    getPositionForChild: dart.fnType(dart.legacy(ui.Offset), [dart.legacy(ui.Size), dart.legacy(ui.Size)]),
+    shouldRelayout: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setLibraryUri(bottom_sheet._ModalBottomSheetLayout, I[1]);
+  dart.setFieldSignature(bottom_sheet._ModalBottomSheetLayout, () => ({
+    __proto__: dart.getFields(bottom_sheet._ModalBottomSheetLayout.__proto__),
+    progress: dart.finalFieldType(dart.legacy(core.double)),
+    expand: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  bottom_sheet._CustomBottomSheetLayout = class _CustomBottomSheetLayout extends shifted_box.SingleChildLayoutDelegate {
+    getConstraintsForChild(constraints) {
+      return new box.BoxConstraints.new({minWidth: constraints.maxWidth, maxWidth: constraints.maxWidth, minHeight: constraints.minHeight, maxHeight: dart.notNull(constraints.maxHeight) + dart.notNull(this.progress) * 8});
+    }
+    getPositionForChild(size, childSize) {
+      this.childHeight == null ? this.childHeight = childSize.height : null;
+      return new ui.Offset.new(0.0, dart.notNull(size.height) - dart.notNull(childSize.height));
+    }
+    shouldRelayout(oldDelegate) {
+      T._CustomBottomSheetLayoutL().as(oldDelegate);
+      if (this.progress != oldDelegate.progress) {
+        this.childHeight = oldDelegate.childHeight;
+        return true;
+      }
+      return false;
+    }
+  };
+  (bottom_sheet._CustomBottomSheetLayout.new = function(progress) {
+    this.childHeight = null;
+    this.progress = progress;
+    bottom_sheet._CustomBottomSheetLayout.__proto__.new.call(this);
+    ;
+  }).prototype = bottom_sheet._CustomBottomSheetLayout.prototype;
+  dart.addTypeTests(bottom_sheet._CustomBottomSheetLayout);
+  dart.addTypeCaches(bottom_sheet._CustomBottomSheetLayout);
+  dart.setMethodSignature(bottom_sheet._CustomBottomSheetLayout, () => ({
+    __proto__: dart.getMethods(bottom_sheet._CustomBottomSheetLayout.__proto__),
+    getConstraintsForChild: dart.fnType(dart.legacy(box.BoxConstraints), [dart.legacy(box.BoxConstraints)]),
+    getPositionForChild: dart.fnType(dart.legacy(ui.Offset), [dart.legacy(ui.Size), dart.legacy(ui.Size)]),
+    shouldRelayout: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setLibraryUri(bottom_sheet._CustomBottomSheetLayout, I[1]);
+  dart.setFieldSignature(bottom_sheet._CustomBottomSheetLayout, () => ({
+    __proto__: dart.getFields(bottom_sheet._CustomBottomSheetLayout.__proto__),
+    progress: dart.finalFieldType(dart.legacy(core.double)),
+    childHeight: dart.fieldType(dart.legacy(core.double))
+  }));
+  var _name = dart.privateName(platform$, "_name");
+  bottom_sheet.defaultPointerDeviceKind = function defaultPointerDeviceKind(context) {
+    let t0, t0$;
+    let platform = (t0$ = (t0 = theme.Theme.of(context), t0 == null ? null : t0.platform), t0$ == null ? platform$.defaultTargetPlatform : t0$);
+    switch (platform) {
+      case C[40] || CT.C40:
+      case C[41] || CT.C41:
+      {
+        return ui.PointerDeviceKind.touch;
+      }
+      case C[42] || CT.C42:
+      case C[43] || CT.C43:
+      case C[44] || CT.C44:
+      {
+        return ui.PointerDeviceKind.mouse;
+      }
+      case C[45] || CT.C45:
+      {
+        return ui.PointerDeviceKind.unknown;
+      }
+    }
+    return ui.PointerDeviceKind.unknown;
+  };
+  var Cubic_d = dart.privateName(curves, "Cubic.d");
+  var Cubic_c = dart.privateName(curves, "Cubic.c");
+  var Cubic_b = dart.privateName(curves, "Cubic.b");
+  var Cubic_a = dart.privateName(curves, "Cubic.a");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  dart.defineLazy(bottom_sheet, {
+    /*bottom_sheet._decelerateEasing*/get _decelerateEasing() {
+      return C[46] || CT.C46;
+    },
+    /*bottom_sheet._modalBottomSheetCurve*/get _modalBottomSheetCurve() {
+      return C[46] || CT.C46;
+    },
+    /*bottom_sheet._bottomSheetDuration*/get _bottomSheetDuration() {
+      return C[47] || CT.C47;
+    },
+    /*bottom_sheet._minFlingVelocity*/get _minFlingVelocity() {
+      return 500;
+    },
+    /*bottom_sheet._closeProgressThreshold*/get _closeProgressThreshold() {
+      return 0.6;
+    },
+    /*bottom_sheet._willPopThreshold*/get _willPopThreshold() {
+      return 0.8;
+    }
+  }, true);
+  dart.trackLibraries("packages/modal_bottom_sheet/src/bottom_sheet.dart", {
+    "package:modal_bottom_sheet/src/bottom_sheet.dart": bottom_sheet
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["bottom_sheet.dart"],"names":[],"mappings":"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","file":"../../../../../../../../E:/packages/modal_bottom_sheet/src/bottom_sheet.dart.lib.js"}');
+  // Exports:
+  return {
+    src__bottom_sheet: bottom_sheet
+  };
+}));
+
+//# sourceMappingURL=bottom_sheet.dart.lib.js.map

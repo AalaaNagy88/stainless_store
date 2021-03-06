@@ -30,5 +30,10 @@
     "add_imports":"أضف وارد",
     "change_language":"تغيير اللغة",
     "theme":"سمات",
-    "my_informations":"معلوماتى الشخصيه"
+    "my_informations":"معلوماتى الشخصيه",
+    "orders":"الطلبات",
+    "type":"النوع",
+    "color":"اللون",
+    "add_order":"أضف الطلب"
+    
 }

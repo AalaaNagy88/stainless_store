@@ -72,14 +72,12 @@ class ProfileView extends GetView<ProfileController> {
                   title: Text(S.current.theme),
                   trailing: Obx(
                     () => Switch(
-                      activeColor: Colors.white,
-                      activeThumbImage: AssetImage(AppUi.assets.languageBlue),
-                      inactiveThumbImage: AssetImage(AppUi.assets.languageGrey),
-                      value: controller.currentIsEn.value,
-                      onChanged: (i) {
-                        controller.currentIsEn.value = i;
-                      },
-                    ),
+                        activeColor: Colors.white,
+                        activeThumbImage: AssetImage(AppUi.assets.languageBlue),
+                        inactiveThumbImage:
+                            AssetImage(AppUi.assets.languageGrey),
+                        value: controller.currentIsEn.value,
+                        onChanged: controller.onChange),
                   ),
                 ),
               ),

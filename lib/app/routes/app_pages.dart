@@ -4,10 +4,14 @@ import 'package:stainless_v2/app/modules/AppNavigation/bindings/app_navigation_b
 import 'package:stainless_v2/app/modules/AppNavigation/views/app_navigation_view.dart';
 import 'package:stainless_v2/app/modules/ClientDetials/bindings/client_detials_binding.dart';
 import 'package:stainless_v2/app/modules/ClientDetials/views/client_detials_view.dart';
+import 'package:stainless_v2/app/modules/addOrder/bindings/add_order_binding.dart';
+import 'package:stainless_v2/app/modules/addOrder/views/add_order_view.dart';
 import 'package:stainless_v2/app/modules/clients/bindings/clients_binding.dart';
 import 'package:stainless_v2/app/modules/clients/views/clients_view.dart';
 import 'package:stainless_v2/app/modules/home/bindings/home_binding.dart';
 import 'package:stainless_v2/app/modules/home/views/home_view.dart';
+import 'package:stainless_v2/app/modules/payement/bindings/payement_binding.dart';
+import 'package:stainless_v2/app/modules/payement/views/payement_view.dart';
 import 'package:stainless_v2/app/modules/payments/bindings/payments_binding.dart';
 import 'package:stainless_v2/app/modules/payments/views/payments_view.dart';
 import 'package:stainless_v2/app/modules/profile/bindings/profile_binding.dart';
@@ -69,6 +73,16 @@ class AppPages {
       name: _Paths.CLIENT_DETIALS,
       page: () => ClientDetialsView(),
       binding: ClientDetialsBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_ORDER,
+      page: () => AddOrderView(),
+      binding: AddOrderBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAYEMENT,
+      page: () => PayementView(),
+      binding: PayementBinding(),
     ),
   ];
 }
