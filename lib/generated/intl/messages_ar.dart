@@ -50,11 +50,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "show" : MessageLookupByLibrary.simpleMessage("أظهر"),
     "size" : MessageLookupByLibrary.simpleMessage("المقاس"),
     "sliver" : MessageLookupByLibrary.simpleMessage("الفضى"),
+    "smsMessage" : MessageLookupByLibrary.simpleMessage("الرجاء إدخال الرمز السرى المستلم عبر SMS"),
     "store" : MessageLookupByLibrary.simpleMessage("المخزن"),
     "theme" : MessageLookupByLibrary.simpleMessage("سمات"),
     "totalPrice" : MessageLookupByLibrary.simpleMessage("السعر الكلى"),
     "total_balance" : MessageLookupByLibrary.simpleMessage("إجمالى الرصيد"),
     "type" : MessageLookupByLibrary.simpleMessage("النوع"),
-    "welcomeMessage" : MessageLookupByLibrary.simpleMessage("مرحبا بك فى مخزن الاستانلس")
+    "welcomeMessage" : MessageLookupByLibrary.simpleMessage("مرحبا بك فى ستنستور")
   };
 }

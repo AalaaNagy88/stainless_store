@@ -17,6 +17,7 @@ import 'package:stainless_v2/app/modules/payments/views/payments_view.dart';
 import 'package:stainless_v2/app/modules/profile/bindings/profile_binding.dart';
 import 'package:stainless_v2/app/modules/profile/views/profile_view.dart';
 import 'package:stainless_v2/app/modules/signUp/bindings/sign_up_binding.dart';
+import 'package:stainless_v2/app/modules/signUp/views/pin_code_view.dart';
 import 'package:stainless_v2/app/modules/signUp/views/sign_up_view.dart';
 import 'package:stainless_v2/app/modules/store/bindings/store_binding.dart';
 import 'package:stainless_v2/app/modules/store/views/store_view.dart';
@@ -83,6 +84,11 @@ class AppPages {
       name: _Paths.PAYEMENT,
       page: () => PayementView(),
       binding: PayementBinding(),
+    ),
+    GetPage(
+      name: _Paths.PIN_CODE,
+      page: () => PinCodeView(),
+      binding: SignUpBinding(),
     ),
   ];
 }

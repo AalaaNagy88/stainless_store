@@ -35,11 +35,21 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Welcom to your stainless store`
+  /// `Welcom to your Stainstore`
   String get welcomeMessage {
     return Intl.message(
-      'Welcom to your stainless store',
+      'Welcom to your Stainstore',
       name: 'welcomeMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, Enter recived code by sms`
+  String get smsMessage {
+    return Intl.message(
+      'Please, Enter recived code by sms',
+      name: 'smsMessage',
       desc: '',
       args: [],
     );

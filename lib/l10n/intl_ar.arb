@@ -1,6 +1,7 @@
 
 {
-    "welcomeMessage":"مرحبا بك فى مخزن الاستانلس",
+    "welcomeMessage":"مرحبا بك فى ستنستور",
+    "smsMessage":"الرجاء إدخال الرمز السرى المستلم عبر SMS",
     "log_in":"تسجيل الدخول",
     "phone_number":"رقم الهاتف",
     "continues":"مواصلة",

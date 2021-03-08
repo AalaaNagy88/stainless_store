@@ -1,6 +1,7 @@
 
 {
-    "welcomeMessage":"Welcom to your stainless store",
+    "welcomeMessage":"Welcom to your Stainstore",
+    "smsMessage":"Please, Enter recived code by sms",
     "log_in":"Log in",
     "phone_number":"Phone Number",
     "continues":"Continue",

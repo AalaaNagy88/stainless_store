@@ -51,12 +51,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "show" : MessageLookupByLibrary.simpleMessage("Show"),
     "size" : MessageLookupByLibrary.simpleMessage("Size"),
     "sliver" : MessageLookupByLibrary.simpleMessage("Sliver"),
+    "smsMessage" : MessageLookupByLibrary.simpleMessage("Please, Enter recived code by sms"),
     "store" : MessageLookupByLibrary.simpleMessage("Store"),
     "theme" : MessageLookupByLibrary.simpleMessage("Theme"),
     "total" : MessageLookupByLibrary.simpleMessage("Total"),
     "totalPrice" : MessageLookupByLibrary.simpleMessage("Total Price"),
     "total_balance" : MessageLookupByLibrary.simpleMessage("Total Balance"),
     "type" : MessageLookupByLibrary.simpleMessage("Type"),
-    "welcomeMessage" : MessageLookupByLibrary.simpleMessage("Welcom to your stainless store")
+    "welcomeMessage" : MessageLookupByLibrary.simpleMessage("Welcom to your Stainstore")
   };
 }

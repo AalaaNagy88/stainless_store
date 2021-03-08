@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "142245158046-acjm4m63trnrh2nl1rompjicagvrlbj4.apps.googleusercontent.com",
+          "client_id": "142245158046-rjajpd23bjscvn36ran6s21kr7cs52ki.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.stainless_v2",
-            "certificate_hash": "21d5f8bb4b54ee84810083dad01022f8c0b0526e"
+            "certificate_hash": "be8151f072490e5d897182e1198b8154047aa904"
           }
         },
         {

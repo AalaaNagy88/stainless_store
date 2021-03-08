@@ -16,6 +16,7 @@ class AppUi {
 
 class _AppAssets {
   final String moneyHero = "assets/flare/money_hero.json";
+  final String securityGard = "assets/flare/security_gard.json";
   final String languageGrey = "assets/icons/language_grey.png";
   final String languageBlue = "assets/icons/language_blue.png";
 }

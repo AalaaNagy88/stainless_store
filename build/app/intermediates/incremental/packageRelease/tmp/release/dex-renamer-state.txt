@@ -1,4 +1,4 @@
-#Mon Mar 01 15:07:32 EET 2021
+#Sun Mar 07 16:03:38 EET 2021
 base.0=E\:\\FlutterProjects\\stainless_v2\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

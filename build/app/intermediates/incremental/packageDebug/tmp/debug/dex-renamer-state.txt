@@ -1,4 +1,4 @@
-#Fri Mar 05 23:33:26 EET 2021
+#Mon Mar 08 05:11:00 EET 2021
 base.0=E\:\\FlutterProjects\\stainless_v2\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.1=classes2.dex
 renamed.1=classes2.dex
