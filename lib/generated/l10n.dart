@@ -55,6 +55,46 @@ class S {
     );
   }
 
+  /// `Please,Enter vaild {thing}`
+  String validation_text(Object thing) {
+    return Intl.message(
+      'Please,Enter vaild $thing',
+      name: 'validation_text',
+      desc: '',
+      args: [thing],
+    );
+  }
+
+  /// `The code consist from 6 number sended to`
+  String get sended_code {
+    return Intl.message(
+      'The code consist from 6 number sended to',
+      name: 'sended_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change number?`
+  String get change_phone {
+    return Intl.message(
+      'Change number?',
+      name: 'change_phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The code will be send after`
+  String get timer_mesg {
+    return Intl.message(
+      'The code will be send after',
+      name: 'timer_mesg',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Log in`
   String get log_in {
     return Intl.message(
@@ -410,6 +450,36 @@ class S {
     return Intl.message(
       'Total',
       name: 'total',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Camera`
+  String get camera {
+    return Intl.message(
+      'Camera',
+      name: 'camera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gallery`
+  String get gallery {
+    return Intl.message(
+      'Gallery',
+      name: 'gallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User Name`
+  String get user_name {
+    return Intl.message(
+      'User Name',
+      name: 'user_name',
       desc: '',
       args: [],
     );

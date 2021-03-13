@@ -11,6 +11,7 @@ class AppField extends TextFormField {
       bool showCursor,
       void Function() onTap,
       String hintText,
+      String Function(String) validator,
       bool isSearch = false})
       : super(
           controller: controller,
@@ -18,6 +19,7 @@ class AppField extends TextFormField {
           autofocus: autofocus,
           readOnly: readOnly,
           showCursor: showCursor,
+          validator: validator,
           onTap: onTap,
           decoration: InputDecoration(
             hintText: hintText,
@@ -36,6 +38,14 @@ class AppField extends TextFormField {
                     borderSide: BorderSide(color: AppUi.colors.blue),
                     borderRadius: BorderRadius.circular(20.h),
                   ),
+            errorBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.red[100]),
+              borderRadius: BorderRadius.circular(20.h),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.red[100]),
+              borderRadius: BorderRadius.circular(20.h),
+            ),
             fillColor: AppUi.colors.blueBacground,
           ),
         );

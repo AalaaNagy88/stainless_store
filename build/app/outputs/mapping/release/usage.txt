@@ -8901,12 +8901,12 @@ com.google.android.gms.common.internal.ClientSettings$Builder:
     public final com.google.android.gms.common.internal.ClientSettings$Builder enableSignInClientDisconnectFix()
 androidx.core.provider.FontsContractCompat$FontInfo
 androidx.test.espresso.matcher.ViewMatchers$WithTagValueMatcher
+org.junit.runner.notification.RunNotifier$3
 com.google.android.gms.auth.api.signin.internal.zzg:
     public static android.content.Intent zzd(android.content.Context,com.google.android.gms.auth.api.signin.GoogleSignInOptions)
     public static android.content.Intent zze(android.content.Context,com.google.android.gms.auth.api.signin.GoogleSignInOptions)
     public static com.google.android.gms.common.api.OptionalPendingResult zzc(com.google.android.gms.common.api.GoogleApiClient,android.content.Context,com.google.android.gms.auth.api.signin.GoogleSignInOptions,boolean)
     public static com.google.android.gms.auth.api.signin.GoogleSignInResult getSignInResultFromIntent(android.content.Intent)
-org.junit.runner.notification.RunNotifier$3
 org.junit.Assert
 androidx.test.internal.platform.ServiceLoaderWrapper$Factory
 androidx.annotation.Px

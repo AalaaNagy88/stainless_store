@@ -4,7 +4,6 @@ part of 'app_pages.dart';
 abstract class Routes {
   static const HOME = _Paths.HOME;
   static const SIGN_UP = _Paths.SIGN_UP;
-  static const PIN_CODE = _Paths.PIN_CODE;
   static const APP_NAVIGATION = _Paths.APP_NAVIGATION;
   static const CLIENTS = _Paths.CLIENTS;
   static const STORE = _Paths.STORE;
@@ -13,12 +12,12 @@ abstract class Routes {
   static const CLIENT_DETIALS = _Paths.CLIENT_DETIALS;
   static const ADD_ORDER = _Paths.ADD_ORDER;
   static const PAYEMENT = _Paths.PAYEMENT;
+  static const SPLASH = _Paths.SPLASH;
 }
 
 abstract class _Paths {
   static const HOME = '/home';
   static const SIGN_UP = '/sign-up';
-  static const PIN_CODE = '/pin-code';
   static const APP_NAVIGATION = '/app-navigation';
   static const CLIENTS = '/clients';
   static const STORE = '/store';
@@ -27,4 +26,5 @@ abstract class _Paths {
   static const CLIENT_DETIALS = '/client-detials';
   static const ADD_ORDER = '/add-order';
   static const PAYEMENT = '/payement';
+  static const SPLASH = '/splash';
 }

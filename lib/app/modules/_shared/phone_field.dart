@@ -19,6 +19,15 @@ class PhoneField extends StatelessWidget {
       child: AppField(
         controller: controller,
         keyboardType: TextInputType.phone,
+        // ignore: missing_return
+        validator: (str) {
+          if (str.isEmpty ||
+              str.length < 11 ||
+              str.length > 11 ||
+              str == null) {
+            return S.current.validation_text(S.current.phone_number);
+          }
+        },
         autofocus: false,
         prefixIcon: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),

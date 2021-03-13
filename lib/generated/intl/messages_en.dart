@@ -19,19 +19,24 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static m0(thing) => "Please,Enter vaild ${thing}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "add" : MessageLookupByLibrary.simpleMessage("Add"),
     "addNewClient" : MessageLookupByLibrary.simpleMessage("Add New Client"),
     "add_imports" : MessageLookupByLibrary.simpleMessage("Add Imports"),
     "add_order" : MessageLookupByLibrary.simpleMessage("Add Order"),
+    "camera" : MessageLookupByLibrary.simpleMessage("Camera"),
     "cancel" : MessageLookupByLibrary.simpleMessage("Cancel"),
     "change_language" : MessageLookupByLibrary.simpleMessage("Change Language"),
+    "change_phone" : MessageLookupByLibrary.simpleMessage("Change number?"),
     "clientName" : MessageLookupByLibrary.simpleMessage("Client Name"),
     "clients" : MessageLookupByLibrary.simpleMessage("Clients"),
     "color" : MessageLookupByLibrary.simpleMessage("Color"),
     "continues" : MessageLookupByLibrary.simpleMessage("Continue"),
     "el" : MessageLookupByLibrary.simpleMessage("EL"),
+    "gallery" : MessageLookupByLibrary.simpleMessage("Gallery"),
     "golden" : MessageLookupByLibrary.simpleMessage("Golden"),
     "home" : MessageLookupByLibrary.simpleMessage("Home"),
     "log_in" : MessageLookupByLibrary.simpleMessage("Log in"),
@@ -47,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "profile" : MessageLookupByLibrary.simpleMessage("Profile"),
     "sale" : MessageLookupByLibrary.simpleMessage("Sale"),
     "search" : MessageLookupByLibrary.simpleMessage("Search..."),
+    "sended_code" : MessageLookupByLibrary.simpleMessage("The code consist from 6 number sended to"),
     "sheets" : MessageLookupByLibrary.simpleMessage("Sheets"),
     "show" : MessageLookupByLibrary.simpleMessage("Show"),
     "size" : MessageLookupByLibrary.simpleMessage("Size"),
@@ -54,10 +60,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "smsMessage" : MessageLookupByLibrary.simpleMessage("Please, Enter recived code by sms"),
     "store" : MessageLookupByLibrary.simpleMessage("Store"),
     "theme" : MessageLookupByLibrary.simpleMessage("Theme"),
+    "timer_mesg" : MessageLookupByLibrary.simpleMessage("The code will be send after"),
     "total" : MessageLookupByLibrary.simpleMessage("Total"),
     "totalPrice" : MessageLookupByLibrary.simpleMessage("Total Price"),
     "total_balance" : MessageLookupByLibrary.simpleMessage("Total Balance"),
     "type" : MessageLookupByLibrary.simpleMessage("Type"),
+    "user_name" : MessageLookupByLibrary.simpleMessage("User Name"),
+    "validation_text" : m0,
     "welcomeMessage" : MessageLookupByLibrary.simpleMessage("Welcom to your Stainstore")
   };
 }

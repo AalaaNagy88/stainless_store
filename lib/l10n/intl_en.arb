@@ -2,6 +2,10 @@
 {
     "welcomeMessage":"Welcom to your Stainstore",
     "smsMessage":"Please, Enter recived code by sms",
+    "validation_text":"Please,Enter vaild {thing}",
+    "sended_code":"The code consist from 6 number sended to",
+    "change_phone":"Change number?",
+    "timer_mesg":"The code will be send after",
     "log_in":"Log in",
     "phone_number":"Phone Number",
     "continues":"Continue",
@@ -37,5 +41,8 @@
     "color":"Color",
     "add_order":"Add Order",
     "sale":"Sale",
-    "total":"Total"
+    "total":"Total",
+    "camera":"Camera",
+    "gallery":"Gallery",
+    "user_name":"User Name"
 }
