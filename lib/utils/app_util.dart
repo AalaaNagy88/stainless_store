@@ -43,7 +43,7 @@ extension appShared on Widget {
 }
 
 extension textToNumConversion on String {
-  double convertToDouble({double defautlValue = 1}) {
+  double convertToDouble({double defautlValue = 0}) {
     return double.tryParse(this) ?? defautlValue;
   }
 }

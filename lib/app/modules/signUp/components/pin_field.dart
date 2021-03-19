@@ -16,7 +16,7 @@ class PinField extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       child: PinFieldAutoFill(
-        onCodeSubmitted: controller.verifyCode,
+        controller: controller.codeController,
         decoration: UnderlineDecoration(
           textStyle: TextStyle(fontSize: 25, color: AppUi.colors.clientPink),
           colorBuilder:

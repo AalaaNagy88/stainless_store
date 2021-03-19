@@ -42,5 +42,7 @@
     "add_order":"أضف الطلب",
     "camera":"الكاميرا",
     "gallery":"الجاليرى",
-    "user_name":"اسم المستخدم"
+    "user_name":"اسم المستخدم",
+    "update_material_amount":"تعديل كمية {material}",
+    "save_edits":"حفظ التعديلات"
 }

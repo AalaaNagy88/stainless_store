@@ -44,6 +44,10 @@
         "source": "C:\\Users\\alaa\\.gradle\\caches\\transforms-2\\files-2.1\\f0c9d99ae44373752f48963f9840317f\\core-1.3.2\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
+        "merged": "E:\\FlutterProjects\\stainless_v2\\build\\app\\intermediates\\res\\merged\\release\\xml_flutter_image_picker_file_paths.xml.flat",
+        "source": "E:\\FlutterProjects\\stainless_v2\\build\\image_picker\\intermediates\\packaged_res\\release\\xml\\flutter_image_picker_file_paths.xml"
+    },
+    {
         "merged": "E:\\FlutterProjects\\stainless_v2\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "C:\\Users\\alaa\\.gradle\\caches\\transforms-2\\files-2.1\\f0c9d99ae44373752f48963f9840317f\\core-1.3.2\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
     },

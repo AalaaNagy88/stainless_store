@@ -44,5 +44,7 @@
     "total":"Total",
     "camera":"Camera",
     "gallery":"Gallery",
-    "user_name":"User Name"
+    "user_name":"User Name",
+    "update_material_amount":"Up date {material} Amount",
+    "save_edits":"Save Edits"
 }

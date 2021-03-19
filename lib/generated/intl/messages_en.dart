@@ -19,7 +19,9 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static m0(thing) => "Please,Enter vaild ${thing}";
+  static m0(material) => "Up date ${material} Amount";
+
+  static m1(thing) => "Please,Enter vaild ${thing}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -51,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "price" : MessageLookupByLibrary.simpleMessage("Price"),
     "profile" : MessageLookupByLibrary.simpleMessage("Profile"),
     "sale" : MessageLookupByLibrary.simpleMessage("Sale"),
+    "save_edits" : MessageLookupByLibrary.simpleMessage("Save Edits"),
     "search" : MessageLookupByLibrary.simpleMessage("Search..."),
     "sended_code" : MessageLookupByLibrary.simpleMessage("The code consist from 6 number sended to"),
     "sheets" : MessageLookupByLibrary.simpleMessage("Sheets"),
@@ -65,8 +68,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "totalPrice" : MessageLookupByLibrary.simpleMessage("Total Price"),
     "total_balance" : MessageLookupByLibrary.simpleMessage("Total Balance"),
     "type" : MessageLookupByLibrary.simpleMessage("Type"),
+    "update_material_amount" : m0,
     "user_name" : MessageLookupByLibrary.simpleMessage("User Name"),
-    "validation_text" : m0,
+    "validation_text" : m1,
     "welcomeMessage" : MessageLookupByLibrary.simpleMessage("Welcom to your Stainstore")
   };
 }

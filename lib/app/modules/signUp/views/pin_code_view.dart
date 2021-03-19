@@ -15,35 +15,32 @@ class PinCodeView extends GetView<SignUpController> {
       body: PaintedView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.w),
-          child: Form(
-            key: controller.key,
-            child: ListView(
-              children: [
-                WelcomUI(
-                  imagePath: AppUi.assets.securityGard,
-                  message: S.current.smsMessage,
-                ),
-                SizedBox(
-                  height: 40.h,
-                ),
-                ChangeNumber(
-                  phoneNumber: controller.phoneNumber,
-                ),
-                PinField(controller: controller),
-                TimerBody(
-                  secondDown: controller.secondDown,
-                ),
-                SizedBox(
-                  height: 60.h,
-                ),
-                AppRaisedButton(
-                  onPressed: () {
-                    controller.key.currentState.save();
-                  },
-                  title: S.current.continues,
-                )
-              ],
-            ),
+          child: ListView(
+            children: [
+              WelcomUI(
+                imagePath: AppUi.assets.securityGard,
+                message: S.current.smsMessage,
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              ChangeNumber(
+                phoneNumber: controller.phoneNumber,
+              ),
+              PinField(controller: controller),
+              TimerBody(
+                secondDown: controller.secondDown,
+              ),
+              SizedBox(
+                height: 60.h,
+              ),
+              AppRaisedButton(
+                onPressed: () {
+                   controller.verifyCode();
+                },
+                title: S.current.continues,
+              )
+            ],
           ),
         ),
       ),

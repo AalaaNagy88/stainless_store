@@ -136,6 +136,7 @@
 -keep class com.google.firebase.auth.internal.RecaptchaActivity { <init>(); }
 -keep class com.google.firebase.components.ComponentDiscoveryService { <init>(); }
 -keep class com.google.firebase.provider.FirebaseInitProvider { <init>(); }
+-keep class io.flutter.plugins.imagepicker.ImagePickerFileProvider { <init>(); }
 -keep class androidx.browser.browseractions.BrowserActionsFallbackMenuView { <init>(android.content.Context, android.util.AttributeSet); }
 
 
@@ -165,6 +166,9 @@
 }
 
 # End of content from C:\Users\alaa\.gradle\caches\transforms-2\files-2.1\4c933b82fb6ca37692eafcf5e1e9e376\jetified-firebase-auth-20.0.3\proguard.txt
+# The proguard configuration file for the following section is C:\Users\alaa\.gradle\caches\transforms-2\files-2.1\1dc10c172a8263f915032e727768e611\jetified-firebase-storage-19.2.1\proguard.txt
+
+# End of content from C:\Users\alaa\.gradle\caches\transforms-2\files-2.1\1dc10c172a8263f915032e727768e611\jetified-firebase-storage-19.2.1\proguard.txt
 # The proguard configuration file for the following section is C:\Users\alaa\.gradle\caches\transforms-2\files-2.1\63d7a7a2521f9f6bcc7ab8917213734e\jetified-play-services-measurement-api-18.0.2\proguard.txt
 # Can be removed once we pull in a dependency on firebase-common that includes
 # https://github.com/firebase/firebase-android-sdk/pull/1472/commits/856f1ca1151cdd88679bbc778892f23dfa34fc06#diff-a2ed34b5a38b4c6c686b09e54865eb48

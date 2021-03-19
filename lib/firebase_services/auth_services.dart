@@ -2,15 +2,13 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:sms_autofill/sms_autofill.dart';
 import 'package:stainless_v2/app/modules/signUp/views/user_info_view.dart';
 import 'package:stainless_v2/services/user_services.dart';
 
 class AuthServices {
-  String _verificationId;
+  String _verificationId = "";
 
   void authBody(String phoneNumber, RxInt secondDown) async {
-    _listenToIncomingMesg();
     _startTimer(secondDown);
     try {
       UserServices.to.auth.verifyPhoneNumber(
@@ -42,11 +40,15 @@ class AuthServices {
 
   void verifyCode(String code) async {
     try {
-      AuthCredential credential = PhoneAuthProvider.credential(
-          verificationId: _verificationId, smsCode: code);
+      UserCredential result = await UserServices.to.auth.signInWithCredential(
+          PhoneAuthProvider.credential(
+              verificationId: _verificationId, smsCode: code));
 
-      await UserServices.to.auth.signInWithCredential(credential);
-      Get.to(UserInfoView());
+      User user = result.user;
+
+      if (user != null) {
+        Get.to(UserInfoView());
+      }
     } catch (e) {
       Get.snackbar(e.message, "");
     }
@@ -54,15 +56,11 @@ class AuthServices {
 
   _codeSent(String verificationId, [int forceResendingToken]) {
     verificationId = verificationId;
+    print(verificationId);
   }
 
   _verificationFailed(e) {
     Get.snackbar(e.message, "");
-  }
-
-  _listenToIncomingMesg() async {
-    await SmsAutoFill().listenForCode;
-    await SmsAutoFill().getAppSignature;
   }
 
   _startTimer(RxInt secondDown) {

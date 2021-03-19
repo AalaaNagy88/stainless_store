@@ -484,6 +484,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Up date {material} Amount`
+  String update_material_amount(Object material) {
+    return Intl.message(
+      'Up date $material Amount',
+      name: 'update_material_amount',
+      desc: '',
+      args: [material],
+    );
+  }
+
+  /// `Save Edits`
+  String get save_edits {
+    return Intl.message(
+      'Save Edits',
+      name: 'save_edits',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

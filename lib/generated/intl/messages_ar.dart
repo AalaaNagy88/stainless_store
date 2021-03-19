@@ -19,6 +19,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static m0(material) => "تعديل كمية ${material}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "add" : MessageLookupByLibrary.simpleMessage("أضف"),
@@ -48,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "phone_number" : MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "price" : MessageLookupByLibrary.simpleMessage("السعر"),
     "profile" : MessageLookupByLibrary.simpleMessage("الملف الشخصى"),
+    "save_edits" : MessageLookupByLibrary.simpleMessage("حفظ التعديلات"),
     "search" : MessageLookupByLibrary.simpleMessage("البحث..."),
     "sended_code" : MessageLookupByLibrary.simpleMessage("تم إرسال كود مكون من 6 أرقام ل"),
     "sheets" : MessageLookupByLibrary.simpleMessage("ألواح"),
@@ -61,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "totalPrice" : MessageLookupByLibrary.simpleMessage("السعر الكلى"),
     "total_balance" : MessageLookupByLibrary.simpleMessage("إجمالى الرصيد"),
     "type" : MessageLookupByLibrary.simpleMessage("النوع"),
+    "update_material_amount" : m0,
     "user_name" : MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "welcomeMessage" : MessageLookupByLibrary.simpleMessage("مرحبا بك فى ستنستور")
   };

@@ -5,8 +5,10 @@ import 'package:stainless_v2/app/modules/_shared/app_bar.dart';
 import 'package:stainless_v2/app/modules/_shared/app_raised_button.dart';
 import 'package:stainless_v2/app/modules/_shared/painted_view.dart';
 import 'package:stainless_v2/app/modules/store/components/_export.dart';
+import 'package:stainless_v2/app/modules/store/components/add_new_import_dialog.dart';
+import 'package:stainless_v2/app/modules/store/components/update_amount_manual_dialog.dart';
 import 'package:stainless_v2/generated/l10n.dart';
-import 'package:stainless_v2/utils/app_ui.dart';
+import 'package:stainless_v2/utils/_export.dart';
 import '../controllers/store_controller.dart';
 
 class StoreView extends GetView<StoreController> {
@@ -34,7 +36,9 @@ class StoreView extends GetView<StoreController> {
         ),
       ),
       floatingActionButton: AppRaisedButton(
-        onPressed: () {},
+        onPressed: () {
+          addNewImportDialog(context, controller);
+        },
         title: S.current.add_imports,
       ),
     );

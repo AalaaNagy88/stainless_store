@@ -28,6 +28,7 @@ class UserInfoView extends GetView<SignUpController> {
                 height: 50.h,
               ),
               AppField(
+                autofocus: true,
                 controller: controller.userNameController,
                 hintText: S.current.name_ex,
                 // ignore: missing_return
