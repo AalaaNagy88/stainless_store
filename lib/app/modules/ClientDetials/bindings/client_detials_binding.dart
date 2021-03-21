@@ -6,7 +6,7 @@ class ClientDetialsBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<ClientDetialsController>(
-      () => ClientDetialsController(),
+      () => ClientDetialsController(Get.arguments),
     );
   }
 }

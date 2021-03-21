@@ -13,9 +13,11 @@ Future addNewImportDialog(BuildContext context, StoreController controller) {
         children: [
           AppField(
             controller: controller.sliver,
+            keyboardType: TextInputType.number,
           ).labeledField(context, S.current.sliver),
           AppField(
             controller: controller.gold,
+            keyboardType: TextInputType.number,
           ).labeledField(context, S.current.golden),
         ],
       ),

@@ -6,7 +6,6 @@ import 'package:stainless_v2/app/modules/_shared/painted_view.dart';
 import 'package:stainless_v2/app/modules/home/components/balance_detials.dart';
 import 'package:stainless_v2/app/modules/home/components/chart.dart';
 import 'package:stainless_v2/generated/l10n.dart';
-import 'package:stainless_v2/services/user_services.dart';
 
 import '../controllers/home_controller.dart';
 

@@ -156,6 +156,19 @@ androidx/lifecycle/viewmodel/R.java
  androidx.lifecycle.viewmodel.R
 com/google/android/gms/auth/api/phone/R.java
  com.google.android.gms.auth.api.phone.R
+io/flutter/plugins/share/R.java
+ io.flutter.plugins.share.R
+ io.flutter.plugins.share.R$attr
+ io.flutter.plugins.share.R$color
+ io.flutter.plugins.share.R$dimen
+ io.flutter.plugins.share.R$drawable
+ io.flutter.plugins.share.R$id
+ io.flutter.plugins.share.R$integer
+ io.flutter.plugins.share.R$layout
+ io.flutter.plugins.share.R$string
+ io.flutter.plugins.share.R$style
+ io.flutter.plugins.share.R$styleable
+ io.flutter.plugins.share.R$xml
 com/example/multi_select_item/R.java
  com.example.multi_select_item.R
  com.example.multi_select_item.R$attr

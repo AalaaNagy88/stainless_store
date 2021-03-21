@@ -1,56 +1,54 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:multi_select_item/multi_select_item.dart';
-import 'package:stainless_v2/app/models/material_model.dart';
+import 'package:stainless_v2/app/models/order_model.dart';
+import 'package:stainless_v2/app/modules/ClientDetials/views/client_orders.dart';
 import 'package:stainless_v2/app/modules/_shared/app_bar.dart';
-import 'package:stainless_v2/app/modules/_shared/material_card.dart';
 import 'package:stainless_v2/app/modules/_shared/painted_view.dart';
-import 'package:stainless_v2/app/routes/app_pages.dart';
 import 'package:stainless_v2/generated/l10n.dart';
 import 'package:stainless_v2/utils/_export.dart';
 
 import '../controllers/client_detials_controller.dart';
 
 class ClientDetialsView extends GetView<ClientDetialsController> {
-  final List<MaterialModel> model = [
-    MaterialModel(
-        number: 3,
+  final List<OrderModel> model = [
+    OrderModel(
+        amount: 3,
         createdAt: DateTime.now(),
         size: 3,
         price: 500,
         totalPrice: 500,
         type: "Gold"),
-    MaterialModel(
-        number: 3,
+    OrderModel(
+        amount: 3,
         createdAt: DateTime.now(),
         size: 3,
         price: 500,
         totalPrice: 500,
         type: "Sliver"),
-    MaterialModel(
-        number: 3,
+    OrderModel(
+        amount: 3,
         createdAt: DateTime.now(),
         size: 3,
         price: 500,
         totalPrice: 500,
         type: "Gold"),
-    MaterialModel(
-        number: 3,
+    OrderModel(
+        amount: 3,
         createdAt: DateTime.now(),
         size: 3,
         price: 500,
         totalPrice: 500,
         type: "Sliver"),
-    MaterialModel(
-        number: 3,
+    OrderModel(
+        amount: 3,
         createdAt: DateTime.now(),
         size: 3,
         price: 500,
         totalPrice: 500,
         type: "Gold"),
-    MaterialModel(
-        number: 3,
+    OrderModel(
+        amount: 3,
         createdAt: DateTime.now(),
         size: 3,
         price: 500,
@@ -59,7 +57,7 @@ class ClientDetialsView extends GetView<ClientDetialsController> {
   ];
   @override
   Widget build(BuildContext context) {
-    Get.put(ClientDetialsController());
+    // Get.put(ClientDetialsController());
     return DefaultTabController(
       initialIndex: 0,
       length: 2,
@@ -91,38 +89,7 @@ class ClientDetialsView extends GetView<ClientDetialsController> {
             ),
           ),
           body: TabBarView(children: [
-            Scaffold(
-              body: PaintedView(
-                upPainting: false,
-                child: ListView.builder(
-                  itemCount: model.length,
-                  itemBuilder: (_, i) => InkWell(
-                    onTap: () {
-                      // controller.multiSelectController.isSelecting = true;
-                    },
-                    child: MultiSelectItem(
-                      isSelecting: controller.multiSelectController.isSelecting,
-                      onSelected: () {
-                        controller.multiSelectController.toggle(i);
-                      },
-                      child: Container(
-                        decoration:
-                            controller.multiSelectController.isSelected(i)
-                                ? BoxDecoration(color: Colors.grey[300])
-                                : BoxDecoration(),
-                        child: MaterialCard(
-                          model: model[i],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              floatingActionButton: FloatingActionButton(
-                onPressed: () => Get.toNamed(Routes.ADD_ORDER),
-                child: Icon(Icons.add_rounded),
-              ),
-            ),
+            ClientOrders(),
             PaintedView(
               upPainting: false,
               child: Container(),

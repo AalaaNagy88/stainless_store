@@ -5,9 +5,9 @@ import 'package:stainless_v2/utils/_export.dart';
 mixin OrderControllerMixin on GetxController {
   final price = TextEditingController();
   final size = TextEditingController();
-  final number = TextEditingController();
+  final amount = TextEditingController();
 
-  double get priceText => price.text.convertToDouble();
-  double get sizeText => size.text.convertToDouble();
-  double get numberText => number.text.convertToDouble();
+  double get priceValue => price.text.convertToDouble();
+  double get sizeValue => size.text.convertToDouble();
+  double get amountValue => amount.text.convertToDouble();
 }

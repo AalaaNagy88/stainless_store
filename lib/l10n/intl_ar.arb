@@ -44,5 +44,14 @@
     "gallery":"الجاليرى",
     "user_name":"اسم المستخدم",
     "update_material_amount":"تعديل كمية {material}",
-    "save_edits":"حفظ التعديلات"
+    "save_edits":"حفظ التعديلات",
+    "edit":"تعديل",
+    "edit_name":"تعديل الاسم",
+    "delete":"حذف",
+    "share":"مشاركه",
+    "delete_mesg":"هل انت متأكد من أنك تريد حذف {thing}؟",
+    "remains":"الباقى",
+    "payed":"المدفوع",
+    "amount":"الكمية"
+
 }

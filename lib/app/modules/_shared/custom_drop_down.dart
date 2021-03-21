@@ -4,7 +4,7 @@ import 'package:get/state_manager.dart';
 import 'package:stainless_v2/utils/_export.dart';
 
 class CutomDropMenu extends StatelessWidget {
-  final List list;
+  final List<Map<String, String>> list;
   final RxString isSelected;
 
   const CutomDropMenu({Key key, this.list, this.isSelected}) : super(key: key);
@@ -33,8 +33,8 @@ class CutomDropMenu extends StatelessWidget {
                     .copyWith(color: AppUi.colors.clientPink),
                 items: list
                     .map((e) => DropdownMenuItem(
-                          child: Text(e),
-                          value: e,
+                          child: Text(e.values.first),
+                          value: e.keys.first,
                         ))
                     .toList(),
                 onChanged: (value) {

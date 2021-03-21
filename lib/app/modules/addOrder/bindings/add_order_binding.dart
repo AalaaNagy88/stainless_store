@@ -6,7 +6,7 @@ class AddOrderBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<AddOrderController>(
-      () => AddOrderController(),
+      () => AddOrderController(Get.arguments),
     );
   }
 }

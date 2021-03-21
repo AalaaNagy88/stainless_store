@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stainless_v2/utils/_export.dart';
 
 class RowData extends Row {
-  RowData(context, {String title, double value, bool isSliver = true})
+  RowData(context, {String title, dynamic value, bool isSliver = true})
       : super(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [

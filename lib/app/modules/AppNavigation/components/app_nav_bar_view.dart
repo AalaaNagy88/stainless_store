@@ -16,8 +16,6 @@ class StainlessNavBar extends GetView<AppNavigationController> {
           items: [
             StanilessNavigationItem(
                 label: S.current.profile, icon: Icons.person),
-            StanilessNavigationItem(
-                label: S.current.payments, icon: Icons.credit_card_rounded),
             StanilessNavigationItem(label: S.current.home, icon: Icons.home),
             StanilessNavigationItem(
                 label: S.current.clients, icon: Icons.group),

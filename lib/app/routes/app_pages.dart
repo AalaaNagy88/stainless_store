@@ -10,8 +10,6 @@ import 'package:stainless_v2/app/modules/clients/bindings/clients_binding.dart';
 import 'package:stainless_v2/app/modules/clients/views/clients_view.dart';
 import 'package:stainless_v2/app/modules/home/bindings/home_binding.dart';
 import 'package:stainless_v2/app/modules/home/views/home_view.dart';
-import 'package:stainless_v2/app/modules/payement/bindings/payement_binding.dart';
-import 'package:stainless_v2/app/modules/payement/views/payement_view.dart';
 import 'package:stainless_v2/app/modules/payments/bindings/payments_binding.dart';
 import 'package:stainless_v2/app/modules/payments/views/payments_view.dart';
 import 'package:stainless_v2/app/modules/profile/bindings/profile_binding.dart';
@@ -30,7 +28,6 @@ class AppPages {
 
   static final navigationRoutes = [
     routes[5],
-    routes[6],
     routes[0],
     routes[3],
     routes[4],
@@ -80,11 +77,6 @@ class AppPages {
       name: _Paths.ADD_ORDER,
       page: () => AddOrderView(),
       binding: AddOrderBinding(),
-    ),
-    GetPage(
-      name: _Paths.PAYEMENT,
-      page: () => PayementView(),
-      binding: PayementBinding(),
     ),
     GetPage(
       name: _Paths.SPLASH,

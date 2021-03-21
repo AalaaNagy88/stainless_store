@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:stainless_v2/generated/l10n.dart';
 import 'package:stainless_v2/utils/app_ui.dart';
 
 class CustomCurrentAmountCard extends Card {
@@ -26,7 +25,7 @@ class CustomCurrentAmountCard extends Card {
                   height: 10.h,
                 ),
                 Text(
-                  amount + " " + S.current.el,
+                  amount,
                   style: Theme.of(context)
                       .textTheme
                       .headline6

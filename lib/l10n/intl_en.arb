@@ -46,5 +46,13 @@
     "gallery":"Gallery",
     "user_name":"User Name",
     "update_material_amount":"Up date {material} Amount",
-    "save_edits":"Save Edits"
+    "save_edits":"Save Edits",
+    "edit":"Edit",
+    "edit_name":"Edit Name",
+    "delete":"Delete",
+    "share":"Share",
+    "delete_mesg":"Are you sure you want to delete {thing}?",
+    "remains":"Remains",
+    "payed":"Payed",
+    "amount":"Amount"
 }

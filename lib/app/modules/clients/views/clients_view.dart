@@ -25,8 +25,9 @@ class ClientsView extends GetView<ClientsController> {
               icon: Icon(Icons.person_add_rounded,
                   color: AppUi.colors.blue, size: 40.w),
               onPressed: () => clientDialog(context,
-                  onConfirm: () {},
+                  onConfirm: () => controller.addClient(),
                   textConfirm: S.current.add,
+                  controller: controller.clientName,
                   title: S.current.addNewClient),
             ),
           )

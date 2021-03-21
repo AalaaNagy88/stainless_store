@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:stainless_v2/app/routes/app_pages.dart';
 import 'package:stainless_v2/generated/l10n.dart';
 import 'package:stainless_v2/main_binding.dart';
-import 'package:stainless_v2/services/user_services.dart';
 import 'package:stainless_v2/utils/app_ui.dart';
 import 'package:stainless_v2/utils/app_util.dart';
 

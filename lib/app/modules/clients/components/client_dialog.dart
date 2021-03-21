@@ -14,12 +14,13 @@ Future clientDialog(BuildContext context,
       title: title,
       content: AppField(
         hintText: S.current.name_ex,
+        controller: controller,
         prefixIcon: Icon(Icons.person),
       ).labeledField(context, S.current.clientName),
       onConfirm: onConfirm,
       onCancel: () {},
       confirmTextColor: Colors.white,
-      textConfirm: S.current.add,
+      textConfirm: textConfirm,
       textCancel: S.current.cancel,
       barrierDismissible: false);
 }

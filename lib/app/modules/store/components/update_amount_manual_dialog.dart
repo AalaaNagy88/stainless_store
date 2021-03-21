@@ -11,6 +11,7 @@ Future updateAmountManualDialog(BuildContext context,
       title: S.current.update_material_amount(title),
       content: AppField(
         controller: controller,
+        keyboardType: TextInputType.number,
       ).labeledField(context, title),
       onConfirm: onConfirm,
       onCancel: () {},

@@ -504,6 +504,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message(
+      'Edit',
+      name: 'edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Name`
+  String get edit_name {
+    return Intl.message(
+      'Edit Name',
+      name: 'edit_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Share`
+  String get share {
+    return Intl.message(
+      'Share',
+      name: 'share',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete {thing}?`
+  String delete_mesg(Object thing) {
+    return Intl.message(
+      'Are you sure you want to delete $thing?',
+      name: 'delete_mesg',
+      desc: '',
+      args: [thing],
+    );
+  }
+
+  /// `Remains`
+  String get remains {
+    return Intl.message(
+      'Remains',
+      name: 'remains',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payed`
+  String get payed {
+    return Intl.message(
+      'Payed',
+      name: 'payed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount`
+  String get amount {
+    return Intl.message(
+      'Amount',
+      name: 'amount',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

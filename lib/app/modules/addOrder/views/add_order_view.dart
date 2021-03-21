@@ -27,27 +27,29 @@ class AddOrderView extends GetView<AddOrderController> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.w)),
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 50.h),
+                padding: EdgeInsets.symmetric(vertical: 10.h),
                 child: ListView(
                   children: [
                     CutomDropMenu(
                       isSelected: controller.selectedType,
                       list: [
-                        S.current.sheets,
-                        S.current.ouds,
+                        {"sheets": S.current.sheets},
+                        {"ouds": S.current.ouds},
                       ],
                     ).labeledField(context, S.current.type),
                     CutomDropMenu(
                       isSelected: controller.selectedColor,
                       list: [
-                        S.current.sliver,
-                        S.current.golden,
+                        {
+                          "sliver": S.current.sliver,
+                        },
+                        {"gold": S.current.golden},
                       ],
                     ).labeledField(context, S.current.color),
                     AppField(
-                      controller: controller.number,
+                      controller: controller.amount,
                       keyboardType: TextInputType.number,
-                    ).labeledField(context, S.current.number),
+                    ).labeledField(context, S.current.amount),
                     AppField(
                       keyboardType: TextInputType.number,
                       controller: controller.size,
@@ -60,7 +62,7 @@ class AddOrderView extends GetView<AddOrderController> {
                       padding: EdgeInsets.symmetric(
                           vertical: 20.h, horizontal: 10.w),
                       child: AppRaisedButton(
-                        onPressed: () {},
+                        onPressed: () => controller.addOrder(),
                         title: S.current.add,
                       ),
                     ),

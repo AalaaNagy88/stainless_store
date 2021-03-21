@@ -39,4 +39,22 @@ class StoreServices {
   updateGoldValueManual(double amount) async {
     _mainRef.update({"store.gold": amount});
   }
+
+  Future<void> getCurrent() async {
+    await _mainRef.snapshots().first.then((value) {
+      UserModel user = UserModel.fromJson(value.data());
+      current.value = StoreModel.fromJson(user.store);
+    });
+  }
+
+  updateAfterNewOrder(String color, double amount) async {
+    await getCurrent();
+    if (color == "sliver") {
+      amount = current.value.sliver - amount;
+      updateSliverValueManual(amount);
+    } else {
+      amount = current.value.gold - amount;
+      updateGoldValueManual(amount);
+    }
+  }
 }
