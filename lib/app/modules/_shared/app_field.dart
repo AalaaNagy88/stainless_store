@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:stainless_v2/utils/app_ui.dart';
 
 class AppField extends TextFormField {
@@ -26,16 +27,25 @@ class AppField extends TextFormField {
             filled: true,
             prefixIcon: prefixIcon,
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: AppUi.colors.blueBacground),
+              borderSide: BorderSide(
+                  color: Get.isDarkMode
+                      ? AppUi.colors.blueBacgroundOfDark
+                      : AppUi.colors.blueBacground),
               borderRadius: BorderRadius.circular(20.h),
             ),
             focusedBorder: isSearch
                 ? OutlineInputBorder(
-                    borderSide: BorderSide(color: AppUi.colors.blueBacground),
+                    borderSide: BorderSide(
+                        color: Get.isDarkMode
+                            ? AppUi.colors.blueBacgroundOfDark
+                            : AppUi.colors.blueBacground),
                     borderRadius: BorderRadius.circular(20.h),
                   )
                 : OutlineInputBorder(
-                    borderSide: BorderSide(color: AppUi.colors.blue),
+                    borderSide: BorderSide(
+                        color: Get.isDarkMode
+                            ? AppUi.colors.blueOfDark
+                            : AppUi.colors.blue),
                     borderRadius: BorderRadius.circular(20.h),
                   ),
             errorBorder: OutlineInputBorder(
@@ -46,7 +56,9 @@ class AppField extends TextFormField {
               borderSide: BorderSide(color: Colors.red[100]),
               borderRadius: BorderRadius.circular(20.h),
             ),
-            fillColor: AppUi.colors.blueBacground,
+            fillColor: Get.isDarkMode
+                ? AppUi.colors.blueBacgroundOfDark
+                : AppUi.colors.blueBacground,
           ),
         );
 }

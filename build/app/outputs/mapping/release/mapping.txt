@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 1.5.69
 # min_api: 18
-# pg_map_id: e067588
+# pg_map_id: 1ffd8ae
 androidx.activity.Cancellable -> androidx.activity.a:
 androidx.activity.ComponentActivity -> androidx.activity.ComponentActivity:
     androidx.activity.OnBackPressedDispatcher mOnBackPressedDispatcher -> f
@@ -26081,6 +26081,38 @@ io.flutter.plugins.imagepicker.ImageResizer -> io.flutter.plugins.imagepicker.g:
     boolean isImageQualityValid(java.lang.Integer) -> a
     java.lang.String resizeImageIfNeeded(java.lang.String,java.lang.Double,java.lang.Double,java.lang.Integer) -> a
     java.io.File resizedImage(android.graphics.Bitmap,java.lang.Double,java.lang.Double,java.lang.Integer,java.lang.String) -> a
+io.flutter.plugins.share.MethodCallHandler -> io.flutter.plugins.share.a:
+    io.flutter.plugins.share.Share share -> a
+    void expectMapArguments(io.flutter.plugin.common.MethodCall) -> a
+    void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> a
+io.flutter.plugins.share.Share -> io.flutter.plugins.share.b:
+    android.content.Context context -> a
+    android.app.Activity activity -> b
+    void clearExternalShareFolder() -> a
+    void copy(java.io.File,java.io.File) -> a
+    java.io.File copyToExternalShareFolder(java.io.File) -> a
+    java.lang.String getMimeTypeBase(java.lang.String) -> a
+    java.util.ArrayList getUrisForPaths(java.util.List) -> a
+    void setActivity(android.app.Activity) -> a
+    void share(java.lang.String,java.lang.String) -> a
+    void shareFiles(java.util.List,java.util.List,java.lang.String,java.lang.String) -> a
+    void startActivity(android.content.Intent) -> a
+    boolean fileIsOnExternal(java.io.File) -> b
+    android.content.Context getContext() -> b
+    java.lang.String reduceMimeTypes(java.util.List) -> b
+    java.io.File getExternalShareFolder() -> c
+io.flutter.plugins.share.SharePlugin -> io.flutter.plugins.share.c:
+    io.flutter.plugins.share.MethodCallHandler handler -> a
+    io.flutter.plugins.share.Share share -> b
+    io.flutter.plugin.common.MethodChannel methodChannel -> c
+    void onAttachedToActivity(io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding) -> a
+    void onAttachedToEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> a
+    void onDetachedFromActivity() -> a
+    void setUpChannel(android.content.Context,android.app.Activity,io.flutter.plugin.common.BinaryMessenger) -> a
+    void onDetachedFromActivityForConfigChanges() -> b
+    void onDetachedFromEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> b
+    void onReattachedToActivityForConfigChanges(io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding) -> b
+    void tearDownChannel() -> c
 io.flutter.util.PathUtils -> d.a.d.a:
     java.lang.String getCacheDirectory(android.content.Context) -> a
     java.lang.String getDataDirectory(android.content.Context) -> b

@@ -9,6 +9,7 @@ class CustomCurrentAmountCard extends Card {
       Color amountColor})
       : super(
           margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
+          color: Colors.white,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.w)),
           child: Padding(

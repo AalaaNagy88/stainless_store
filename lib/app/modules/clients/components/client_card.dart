@@ -37,7 +37,7 @@ class ClientCard extends GetView<ClientsController> {
                 controller.clientName.text = client.name;
                 clientDialog(context,
                     onConfirm: () => controller.editClientName(client.id),
-                    title: S.current.edit_name,
+                    title: S.current.edit_string(S.current.name),
                     controller: controller.clientName);
               }),
           IconSlideAction(
@@ -50,14 +50,13 @@ class ClientCard extends GetView<ClientsController> {
         ],
         secondaryActions: <Widget>[
           IconSlideAction(
-            caption: S.current.delete,
-            foregroundColor: Colors.red,
-            color: Colors.transparent,
-            icon: Icons.delete_forever_rounded,
-            onTap: () => deleteDialog(context,
-                onConfirm: () => controller.deleteClient(client.id),
-                title: client.name),
-          ),
+              caption: S.current.delete,
+              foregroundColor: Colors.red,
+              color: Colors.transparent,
+              icon: Icons.delete_forever_rounded,
+              onTap: () => deleteDialog(context,
+                  onConfirm: () => controller.deleteClient(client),
+                  title: client.name)),
         ],
         child: Padding(
           padding: EdgeInsets.all(8.w),

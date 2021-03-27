@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart' as intl;
 import 'package:stainless_v2/utils/app_ui.dart';
 
@@ -19,7 +20,7 @@ extension appShared on Widget {
     );
   }
 
-  labeledField(context, String label) {
+  labeledField(String label) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
       child: Column(
@@ -29,10 +30,8 @@ extension appShared on Widget {
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
             child: Text(
               label,
-              style: Theme.of(context)
-                  .textTheme
-                  .subtitle2
-                  .copyWith(fontWeight: FontWeight.bold),
+              style:
+                  Get.textTheme.subtitle2.copyWith(fontWeight: FontWeight.bold),
             ),
           ),
           this

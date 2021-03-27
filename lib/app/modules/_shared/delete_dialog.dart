@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 import 'package:stainless_v2/generated/l10n.dart';
 import 'package:stainless_v2/utils/_export.dart';
 
-Future deleteDialog(BuildContext context,
-    {TextEditingController controller,
-    String title,
-    @required Function onConfirm,
-    String textConfirm}) {
+Future deleteDialog(
+  BuildContext context, {
+  String title,
+  @required Function onConfirm,
+}) {
   return Get.defaultDialog(
       titleStyle: TextStyle(color: AppUi.colors.blue),
       content: Padding(

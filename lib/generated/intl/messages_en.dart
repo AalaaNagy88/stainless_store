@@ -21,9 +21,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m0(thing) => "Are you sure you want to delete ${thing}?";
 
-  static m1(material) => "Up date ${material} Amount";
+  static m1(string) => "Edit ${string}";
 
-  static m2(thing) => "Please,Enter vaild ${thing}";
+  static m2(material) => "Up date ${material} Amount";
+
+  static m3(thing) => "Please,Enter vaild ${thing}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -43,15 +45,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "delete" : MessageLookupByLibrary.simpleMessage("Delete"),
     "delete_mesg" : m0,
     "edit" : MessageLookupByLibrary.simpleMessage("Edit"),
-    "edit_name" : MessageLookupByLibrary.simpleMessage("Edit Name"),
+    "edit_string" : m1,
     "el" : MessageLookupByLibrary.simpleMessage("EL"),
     "gallery" : MessageLookupByLibrary.simpleMessage("Gallery"),
     "golden" : MessageLookupByLibrary.simpleMessage("Golden"),
     "home" : MessageLookupByLibrary.simpleMessage("Home"),
     "log_in" : MessageLookupByLibrary.simpleMessage("Log in"),
     "my_informations" : MessageLookupByLibrary.simpleMessage("My Informations"),
+    "name" : MessageLookupByLibrary.simpleMessage("Name"),
     "name_ex" : MessageLookupByLibrary.simpleMessage("Ex: Mohamed"),
+    "no" : MessageLookupByLibrary.simpleMessage("No"),
     "number" : MessageLookupByLibrary.simpleMessage("Number"),
+    "order" : MessageLookupByLibrary.simpleMessage("Order"),
     "orders" : MessageLookupByLibrary.simpleMessage("Orders"),
     "ouds" : MessageLookupByLibrary.simpleMessage("Ouds"),
     "payed" : MessageLookupByLibrary.simpleMessage("Payed"),
@@ -61,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "price" : MessageLookupByLibrary.simpleMessage("Price"),
     "profile" : MessageLookupByLibrary.simpleMessage("Profile"),
     "remains" : MessageLookupByLibrary.simpleMessage("Remains"),
+    "return_orders_to_store" : MessageLookupByLibrary.simpleMessage("There orders isn\'t empty,Do you want return its order to store?"),
     "sale" : MessageLookupByLibrary.simpleMessage("Sale"),
     "save_edits" : MessageLookupByLibrary.simpleMessage("Save Edits"),
     "search" : MessageLookupByLibrary.simpleMessage("Search..."),
@@ -78,9 +84,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "totalPrice" : MessageLookupByLibrary.simpleMessage("Total Price"),
     "total_balance" : MessageLookupByLibrary.simpleMessage("Total Balance"),
     "type" : MessageLookupByLibrary.simpleMessage("Type"),
-    "update_material_amount" : m1,
+    "update_material_amount" : m2,
     "user_name" : MessageLookupByLibrary.simpleMessage("User Name"),
-    "validation_text" : m2,
-    "welcomeMessage" : MessageLookupByLibrary.simpleMessage("Welcom to your Stainstore")
+    "validation_text" : m3,
+    "welcomeMessage" : MessageLookupByLibrary.simpleMessage("Welcom to your Stainstore"),
+    "yes" : MessageLookupByLibrary.simpleMessage("Yes")
   };
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
-import 'package:get/state_manager.dart';
+import 'package:get/get.dart';
 import 'package:stainless_v2/utils/_export.dart';
 
 class CutomDropMenu extends StatelessWidget {
@@ -15,7 +15,9 @@ class CutomDropMenu extends StatelessWidget {
       width: ScreenUtil().screenWidth * .8,
       padding: EdgeInsets.symmetric(horizontal: 30.w),
       decoration: BoxDecoration(
-          color: AppUi.colors.blueBacground,
+          color: Get.isDarkMode
+              ? AppUi.colors.blueBacgroundOfDark
+              : AppUi.colors.blueBacground,
           borderRadius: BorderRadius.circular(15.h)),
       child: ObxValue<RxString>(
           (_) => DropdownButton(

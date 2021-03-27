@@ -10,13 +10,12 @@ Future clientDialog(BuildContext context,
     @required Function onConfirm,
     String textConfirm}) {
   return Get.defaultDialog(
-      titleStyle: TextStyle(color: AppUi.colors.blue),
       title: title,
       content: AppField(
         hintText: S.current.name_ex,
         controller: controller,
         prefixIcon: Icon(Icons.person),
-      ).labeledField(context, S.current.clientName),
+      ).labeledField(S.current.clientName),
       onConfirm: onConfirm,
       onCancel: () {},
       confirmTextColor: Colors.white,

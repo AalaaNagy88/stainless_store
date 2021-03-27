@@ -40,6 +40,6 @@ class PhoneField extends StatelessWidget {
           ),
         ),
       ),
-    ).labeledField(context, S.current.phone_number);
+    ).labeledField(S.current.phone_number);
   }
 }

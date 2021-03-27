@@ -21,7 +21,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m0(thing) => "هل انت متأكد من أنك تريد حذف ${thing}؟";
 
-  static m1(material) => "تعديل كمية ${material}";
+  static m1(string) => "تعديل ${string}";
+
+  static m2(material) => "تعديل كمية ${material}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -41,15 +43,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "delete" : MessageLookupByLibrary.simpleMessage("حذف"),
     "delete_mesg" : m0,
     "edit" : MessageLookupByLibrary.simpleMessage("تعديل"),
-    "edit_name" : MessageLookupByLibrary.simpleMessage("تعديل الاسم"),
+    "edit_string" : m1,
     "el" : MessageLookupByLibrary.simpleMessage("ج.م"),
     "gallery" : MessageLookupByLibrary.simpleMessage("الجاليرى"),
     "golden" : MessageLookupByLibrary.simpleMessage("الذهبى"),
     "home" : MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
     "log_in" : MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "my_informations" : MessageLookupByLibrary.simpleMessage("معلوماتى الشخصيه"),
+    "name" : MessageLookupByLibrary.simpleMessage("الاسم"),
     "name_ex" : MessageLookupByLibrary.simpleMessage("م: محمد"),
+    "no" : MessageLookupByLibrary.simpleMessage("لا"),
     "number" : MessageLookupByLibrary.simpleMessage("العدد"),
+    "order" : MessageLookupByLibrary.simpleMessage("الطلب"),
     "orders" : MessageLookupByLibrary.simpleMessage("الطلبات"),
     "ouds" : MessageLookupByLibrary.simpleMessage("أعواد"),
     "payed" : MessageLookupByLibrary.simpleMessage("المدفوع"),
@@ -59,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "price" : MessageLookupByLibrary.simpleMessage("السعر"),
     "profile" : MessageLookupByLibrary.simpleMessage("الملف الشخصى"),
     "remains" : MessageLookupByLibrary.simpleMessage("الباقى"),
+    "return_orders_to_store" : MessageLookupByLibrary.simpleMessage("عفوا هناك طلبات لدى هذا العميل.\nهل تريد إرحاعها إلى المخزن؟"),
     "save_edits" : MessageLookupByLibrary.simpleMessage("حفظ التعديلات"),
     "search" : MessageLookupByLibrary.simpleMessage("البحث..."),
     "sended_code" : MessageLookupByLibrary.simpleMessage("تم إرسال كود مكون من 6 أرقام ل"),
@@ -74,8 +80,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "totalPrice" : MessageLookupByLibrary.simpleMessage("السعر الكلى"),
     "total_balance" : MessageLookupByLibrary.simpleMessage("إجمالى الرصيد"),
     "type" : MessageLookupByLibrary.simpleMessage("النوع"),
-    "update_material_amount" : m1,
+    "update_material_amount" : m2,
     "user_name" : MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
-    "welcomeMessage" : MessageLookupByLibrary.simpleMessage("مرحبا بك فى ستنستور")
+    "welcomeMessage" : MessageLookupByLibrary.simpleMessage("مرحبا بك فى ستنستور"),
+    "yes" : MessageLookupByLibrary.simpleMessage("نعم")
   };
 }

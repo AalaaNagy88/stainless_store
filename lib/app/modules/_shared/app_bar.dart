@@ -16,8 +16,9 @@ class StainlessAppBar extends AppBar {
             elevation: 0,
             leading: showLeading
                 ? IconButton(
-                    icon: Icon(Icons.arrow_back_ios_rounded,
-                        color: AppUi.colors.blue),
+                    icon: Icon(
+                      Icons.arrow_back_ios_rounded,
+                    ),
                     onPressed: () {
                       Get.back();
                     })
@@ -26,6 +27,9 @@ class StainlessAppBar extends AppBar {
             title: Text(
               title,
               style: Theme.of(context).textTheme.headline4.copyWith(
-                  color: AppUi.colors.clientBlue, fontWeight: FontWeight.w900),
+                  color: Get.isDarkMode
+                      ? AppUi.colors.blueOfDark
+                      : AppUi.colors.clientBlue,
+                  fontWeight: FontWeight.w900),
             ));
 }

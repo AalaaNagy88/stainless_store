@@ -14,7 +14,7 @@ class StainlessApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       builder: () => GetMaterialApp(
-        title: "الاستانلس",
+        title: "StainStore",
         localizationsDelegates: [
           S.delegate,
           CountryLocalizations.delegate,
@@ -26,9 +26,10 @@ class StainlessApp extends StatelessWidget {
           textDirection: AppUtil.textDirection,
           child: _,
         ),
-        theme: AppUi.themes.theme,
+        theme: AppUi.themes.lighttheme,
         debugShowCheckedModeBanner: false,
         supportedLocales: S.delegate.supportedLocales,
+        darkTheme: AppUi.themes.darktheme,
         initialRoute: AppPages.INITIAL,
         getPages: AppPages.routes,
         initialBinding: MainBinding(),

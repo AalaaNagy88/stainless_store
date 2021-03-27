@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
+import 'package:stainless_v2/app/models/order_model.dart';
 import 'package:stainless_v2/app/models/store_model.dart';
 import 'package:stainless_v2/app/models/user_model.dart';
 import 'package:stainless_v2/services/user_services.dart';
@@ -32,12 +33,12 @@ class StoreServices {
     });
   }
 
-  updateSliverValueManual(double amount) async {
-    _mainRef.update({"store.sliver": amount});
+  Future<void> updateSliverValueManual(double amount) async {
+    await _mainRef.update({"store.sliver": amount});
   }
 
-  updateGoldValueManual(double amount) async {
-    _mainRef.update({"store.gold": amount});
+  Future<void> updateGoldValueManual(double amount) async {
+    await _mainRef.update({"store.gold": amount});
   }
 
   Future<void> getCurrent() async {
@@ -47,14 +48,38 @@ class StoreServices {
     });
   }
 
-  updateAfterNewOrder(String color, double amount) async {
+  Future<void> updateAfterNewOrder(String color, double amount) async {
     await getCurrent();
     if (color == "sliver") {
       amount = current.value.sliver - amount;
-      updateSliverValueManual(amount);
+      await updateSliverValueManual(amount);
     } else {
       amount = current.value.gold - amount;
-      updateGoldValueManual(amount);
+      await updateGoldValueManual(amount);
+    }
+  }
+
+  Future<void> updateAfterDeleteOrder(String color, double amount) async {
+    await getCurrent();
+    if (color == "sliver") {
+      amount = current.value.sliver + amount;
+      await updateSliverValueManual(amount);
+    } else {
+      amount = current.value.gold + amount;
+      await updateGoldValueManual(amount);
+    }
+  }
+
+  Future<void> returnClientOrdersToStore(List<OrderModel> orders) async {
+    await getCurrent();
+    for (OrderModel order in orders) {
+      if (order.color == "sliver") {
+        order.amount = current.value.sliver + order.amount;
+        await updateSliverValueManual(order.amount);
+      } else {
+        order.amount = current.value.gold + order.amount;
+        await updateGoldValueManual(order.amount);
+      }
     }
   }
 }

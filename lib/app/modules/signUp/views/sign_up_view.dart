@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:stainless_v2/app/modules/_shared/app_raised_button.dart';
-import 'package:stainless_v2/app/modules/_shared/painted_view.dart';
-import 'package:stainless_v2/app/modules/_shared/phone_field.dart';
+import 'package:stainless_v2/app/modules/_shared/_export.dart';
+
 import 'package:stainless_v2/app/modules/signUp/components/welcom_ui.dart';
 import 'package:stainless_v2/app/modules/signUp/views/pin_code_view.dart';
 import 'package:stainless_v2/generated/l10n.dart';

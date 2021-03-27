@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:stainless_v2/app/modules/_shared/app_bar.dart';
-import 'package:stainless_v2/app/modules/_shared/painted_view.dart';
-import 'package:stainless_v2/app/modules/_shared/search_field.dart';
+import 'package:stainless_v2/app/modules/_shared/_export.dart';
 import 'package:stainless_v2/app/modules/clients/components/_export.dart';
 import 'package:stainless_v2/generated/l10n.dart';
 
@@ -22,8 +20,10 @@ class ClientsView extends GetView<ClientsController> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: IconButton(
-              icon: Icon(Icons.person_add_rounded,
-                  color: AppUi.colors.blue, size: 40.w),
+              icon: Icon(
+                Icons.person_add_rounded,
+                size: 40.w,
+              ),
               onPressed: () => clientDialog(context,
                   onConfirm: () => controller.addClient(),
                   textConfirm: S.current.add,

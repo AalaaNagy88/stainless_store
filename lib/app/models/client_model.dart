@@ -49,7 +49,7 @@ class ClientModel {
   double calcuateOrderPrice(List<OrderModel> orders) {
     if (orders != []) {
       return orders.fold(
-          0, (previousValue, element) => previousValue + element.price);
+          0, (previousValue, element) => previousValue + element.totalPrice);
     } else
       return 0;
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:stainless_v2/app/modules/_shared/app_raised_button.dart';
-import 'package:stainless_v2/app/modules/_shared/painted_view.dart';
+import 'package:stainless_v2/app/modules/_shared/_export.dart';
+
 import 'package:stainless_v2/app/modules/signUp/components/_export.dart';
 import 'package:stainless_v2/app/modules/signUp/controllers/sign_up_controller.dart';
 import 'package:stainless_v2/generated/l10n.dart';
@@ -36,7 +36,7 @@ class PinCodeView extends GetView<SignUpController> {
               ),
               AppRaisedButton(
                 onPressed: () {
-                   controller.verifyCode();
+                  controller.verifyCode();
                 },
                 title: S.current.continues,
               )

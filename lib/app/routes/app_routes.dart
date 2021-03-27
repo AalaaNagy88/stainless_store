@@ -13,6 +13,9 @@ abstract class Routes {
   static const ADD_ORDER = _Paths.ADD_ORDER;
   static const PAYEMENT = _Paths.PAYEMENT;
   static const SPLASH = _Paths.SPLASH;
+  static const EDIT_ORDER = _Paths.EDIT_ORDER;
+  static const ADD_PAYMENTS = _Paths.ADD_PAYMENTS;
+  static const EDIT_PAYMENT = _Paths.EDIT_PAYMENT;
 }
 
 abstract class _Paths {
@@ -27,4 +30,7 @@ abstract class _Paths {
   static const ADD_ORDER = '/add-order';
   static const PAYEMENT = '/payement';
   static const SPLASH = '/splash';
+  static const EDIT_ORDER = '/edit-order';
+  static const ADD_PAYMENTS = '/add-payments';
+  static const EDIT_PAYMENT = '/edit-payment';
 }

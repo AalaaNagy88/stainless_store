@@ -75,6 +75,16 @@ class S {
     );
   }
 
+  /// `There orders isn't empty,Do you want return its order to store?`
+  String get return_orders_to_store {
+    return Intl.message(
+      'There orders isn\'t empty,Do you want return its order to store?',
+      name: 'return_orders_to_store',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Change number?`
   String get change_phone {
     return Intl.message(
@@ -515,13 +525,13 @@ class S {
     );
   }
 
-  /// `Edit Name`
-  String get edit_name {
+  /// `Edit {string}`
+  String edit_string(Object string) {
     return Intl.message(
-      'Edit Name',
-      name: 'edit_name',
+      'Edit $string',
+      name: 'edit_string',
       desc: '',
-      args: [],
+      args: [string],
     );
   }
 
@@ -580,6 +590,46 @@ class S {
     return Intl.message(
       'Amount',
       name: 'amount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order`
+  String get order {
+    return Intl.message(
+      'Order',
+      name: 'order',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message(
+      'Yes',
+      name: 'yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No`
+  String get no {
+    return Intl.message(
+      'No',
+      name: 'no',
       desc: '',
       args: [],
     );

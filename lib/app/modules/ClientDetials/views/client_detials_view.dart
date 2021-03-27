@@ -1,60 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:stainless_v2/app/models/order_model.dart';
 import 'package:stainless_v2/app/modules/ClientDetials/views/client_orders.dart';
-import 'package:stainless_v2/app/modules/_shared/app_bar.dart';
-import 'package:stainless_v2/app/modules/_shared/painted_view.dart';
+import 'package:stainless_v2/app/modules/_shared/_export.dart';
 import 'package:stainless_v2/generated/l10n.dart';
 import 'package:stainless_v2/utils/_export.dart';
 
 import '../controllers/client_detials_controller.dart';
+import 'client_payments.dart';
 
 class ClientDetialsView extends GetView<ClientDetialsController> {
-  final List<OrderModel> model = [
-    OrderModel(
-        amount: 3,
-        createdAt: DateTime.now(),
-        size: 3,
-        price: 500,
-        totalPrice: 500,
-        type: "Gold"),
-    OrderModel(
-        amount: 3,
-        createdAt: DateTime.now(),
-        size: 3,
-        price: 500,
-        totalPrice: 500,
-        type: "Sliver"),
-    OrderModel(
-        amount: 3,
-        createdAt: DateTime.now(),
-        size: 3,
-        price: 500,
-        totalPrice: 500,
-        type: "Gold"),
-    OrderModel(
-        amount: 3,
-        createdAt: DateTime.now(),
-        size: 3,
-        price: 500,
-        totalPrice: 500,
-        type: "Sliver"),
-    OrderModel(
-        amount: 3,
-        createdAt: DateTime.now(),
-        size: 3,
-        price: 500,
-        totalPrice: 500,
-        type: "Gold"),
-    OrderModel(
-        amount: 3,
-        createdAt: DateTime.now(),
-        size: 3,
-        price: 500,
-        totalPrice: 500,
-        type: "Sliver"),
-  ];
   @override
   Widget build(BuildContext context) {
     // Get.put(ClientDetialsController());
@@ -78,22 +33,19 @@ class ClientDetialsView extends GetView<ClientDetialsController> {
                 : [],
             bottom: TabBar(
               indicatorColor: AppUi.colors.clientPink,
-              labelColor: Colors.black,
+              labelColor: Get.isDarkMode ? Colors.white : Colors.black,
+              labelStyle: Theme.of(context).textTheme.subtitle1,
               tabs: [
                 Text(S.current.orders),
                 Text(
                   S.current.paymentHistory,
-                  softWrap: false,
                 ),
               ],
             ),
           ),
           body: TabBarView(children: [
             ClientOrders(),
-            PaintedView(
-              upPainting: false,
-              child: Container(),
-            ),
+            ClientPayments(),
           ])),
     );
   }

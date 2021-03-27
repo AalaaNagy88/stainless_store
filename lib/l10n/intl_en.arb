@@ -4,6 +4,7 @@
     "smsMessage":"Please, Enter recived code by sms",
     "validation_text":"Please,Enter vaild {thing}",
     "sended_code":"The code consist from 6 number sended to",
+    "return_orders_to_store":"There orders isn't empty,Do you want return its order to store?",
     "change_phone":"Change number?",
     "timer_mesg":"The code will be send after",
     "log_in":"Log in",
@@ -48,11 +49,15 @@
     "update_material_amount":"Up date {material} Amount",
     "save_edits":"Save Edits",
     "edit":"Edit",
-    "edit_name":"Edit Name",
+    "edit_string":"Edit {string}",
     "delete":"Delete",
     "share":"Share",
     "delete_mesg":"Are you sure you want to delete {thing}?",
     "remains":"Remains",
     "payed":"Payed",
-    "amount":"Amount"
+    "amount":"Amount",
+    "name":"Name",
+    "order":"Order",
+    "yes":"Yes",
+    "no":"No"
 }

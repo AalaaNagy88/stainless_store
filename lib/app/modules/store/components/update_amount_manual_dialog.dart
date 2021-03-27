@@ -12,7 +12,7 @@ Future updateAmountManualDialog(BuildContext context,
       content: AppField(
         controller: controller,
         keyboardType: TextInputType.number,
-      ).labeledField(context, title),
+      ).labeledField(title),
       onConfirm: onConfirm,
       onCancel: () {},
       confirmTextColor: Colors.white,

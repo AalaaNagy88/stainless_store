@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:stainless_v2/app/modules/_shared/app_bar.dart';
-import 'package:stainless_v2/app/modules/_shared/painted_view.dart';
+import 'package:stainless_v2/app/modules/_shared/_export.dart';
 import 'package:stainless_v2/generated/l10n.dart';
 import 'package:stainless_v2/utils/app_ui.dart';
 
@@ -40,46 +39,35 @@ class ProfileView extends GetView<ProfileController> {
               SizedBox(
                 height: 20.h,
               ),
-              ListTileTheme(
-                iconColor: AppUi.colors.blue,
-                child: ListTile(
-                  leading: Icon(Icons.person_rounded),
-                  title: Text(S.current.my_informations),
-                  trailing: Icon(Icons.arrow_forward_ios_rounded),
-                ),
+              ListTile(
+                leading: Icon(Icons.person_rounded),
+                title: Text(S.current.my_informations),
+                trailing: Icon(Icons.arrow_forward_ios_rounded),
               ),
               SizedBox(
                 height: 20.h,
               ),
-              ListTileTheme(
-                iconColor: AppUi.colors.blue,
-                child: ListTile(
-                  leading: Icon(Icons.language_rounded),
-                  title: Text(S.current.change_language),
-                  trailing: Switch(
-                    value: true,
-                    onChanged: (i) {},
-                  ),
-                ),
+              ListTile(
+                leading: Icon(Icons.language_rounded),
+                title: Text(S.current.change_language),
+                onTap: () => controller.changeCurrentLanguage(),
+                trailing: Obx(() => controller.currentIsEn.value
+                    ? Image.asset(AppUi.assets.languageGrey)
+                    : Image.asset(AppUi.assets.languageBlue)),
               ),
               SizedBox(
                 height: 20.h,
               ),
-              ListTileTheme(
-                iconColor: AppUi.colors.blue,
-                child: ListTile(
-                  leading: Icon(Icons.brightness_medium_rounded),
-                  title: Text(S.current.theme),
-                  trailing: Obx(
-                    () => Switch(
-                        activeColor: Colors.white,
-                        activeThumbImage: AssetImage(AppUi.assets.languageBlue),
-                        inactiveThumbImage:
-                            AssetImage(AppUi.assets.languageGrey),
-                        value: controller.currentIsEn.value,
-                        onChanged: controller.onChange),
-                  ),
-                ),
+              ListTile(
+                leading: Icon(Icons.brightness_medium_rounded),
+                title: Text(S.current.theme),
+                onTap: () => controller.changeCurrentTheme(),
+                trailing: Obx(() => controller.currentIsLight.value
+                    ? Icon(
+                        Icons.brightness_low_outlined,
+                        color: Color(0xffFDCB6E),
+                      )
+                    : Icon(Icons.nightlight_round, color: Colors.white)),
               ),
             ],
           ),

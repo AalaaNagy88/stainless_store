@@ -10,6 +10,7 @@ class ClientsController extends GetxController {
   ClientServices _clientServices = ClientServices();
   List<ClientModel> get clients => _clientServices.clients.value;
   Rx<ClientModel> selected = Rx<ClientModel>();
+  bool confirmOrdersDelete = false;
   @override
   void onInit() {
     _clientServices.loadAllClients();
@@ -38,8 +39,8 @@ class ClientsController extends GetxController {
     Get.back();
   }
 
-  deleteClient(String id) {
-    _clientServices.deleteClient(id);
+  deleteClient(ClientModel client) async {
+    await _clientServices.deleteClient(client, confirmOrdersDelete);
     Get.back();
   }
 

@@ -3,6 +3,7 @@
     "welcomeMessage":"مرحبا بك فى ستنستور",
     "smsMessage":"الرجاء إدخال الرمز السرى المستلم عبر SMS",
     "validation_phone":"من فضلك أدخل رقم الهاتف صحيح",
+    "return_orders_to_store":"عفوا هناك طلبات لدى هذا العميل.\nهل تريد إرحاعها إلى المخزن؟",
     "sended_code":"تم إرسال كود مكون من 6 أرقام ل",
     "change_phone":"تغير الرقم؟",
     "timer_mesg":"سيتم إرسال الرمز بعد",
@@ -46,12 +47,15 @@
     "update_material_amount":"تعديل كمية {material}",
     "save_edits":"حفظ التعديلات",
     "edit":"تعديل",
-    "edit_name":"تعديل الاسم",
+    "edit_string":"تعديل {string}",
     "delete":"حذف",
     "share":"مشاركه",
     "delete_mesg":"هل انت متأكد من أنك تريد حذف {thing}؟",
     "remains":"الباقى",
     "payed":"المدفوع",
-    "amount":"الكمية"
-
+    "amount":"الكمية",
+    "name":"الاسم",
+    "order":"الطلب",
+    "yes":"نعم",
+    "no":"لا"
 }

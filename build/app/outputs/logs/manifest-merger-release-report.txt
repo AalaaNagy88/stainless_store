@@ -11,6 +11,7 @@ MERGED from [:sms_autofill] E:\FlutterProjects\stainless_v2\build\sms_autofill\i
 MERGED from [:cloud_firestore] E:\FlutterProjects\stainless_v2\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
 MERGED from [:integration_test] E:\FlutterProjects\stainless_v2\build\integration_test\intermediates\library_manifest\release\AndroidManifest.xml:7:1-12:12
 MERGED from [:multi_select_item] E:\FlutterProjects\stainless_v2\build\multi_select_item\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:share] E:\FlutterProjects\stainless_v2\build\share\intermediates\library_manifest\release\AndroidManifest.xml:2:1-19:12
 MERGED from [:firebase_auth] E:\FlutterProjects\stainless_v2\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] E:\FlutterProjects\stainless_v2\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
 MERGED from [com.google.firebase:firebase-analytics-ktx:18.0.2] C:\Users\alaa\.gradle\caches\transforms-2\files-2.1\5785d290b8b53809ac8c226e18a0085a\firebase-analytics-ktx-18.0.2\AndroidManifest.xml:2:1-17:12
@@ -95,6 +96,8 @@ MERGED from [:image_picker] E:\FlutterProjects\stainless_v2\build\image_picker\i
 MERGED from [:image_picker] E:\FlutterProjects\stainless_v2\build\image_picker\intermediates\library_manifest\release\AndroidManifest.xml:10:5-20:19
 MERGED from [:cloud_firestore] E:\FlutterProjects\stainless_v2\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
 MERGED from [:cloud_firestore] E:\FlutterProjects\stainless_v2\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
+MERGED from [:share] E:\FlutterProjects\stainless_v2\build\share\intermediates\library_manifest\release\AndroidManifest.xml:7:5-17:19
+MERGED from [:share] E:\FlutterProjects\stainless_v2\build\share\intermediates\library_manifest\release\AndroidManifest.xml:7:5-17:19
 MERGED from [:firebase_auth] E:\FlutterProjects\stainless_v2\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_auth] E:\FlutterProjects\stainless_v2\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] E:\FlutterProjects\stainless_v2\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:7:5-13:19
@@ -217,6 +220,8 @@ MERGED from [:integration_test] E:\FlutterProjects\stainless_v2\build\integratio
 MERGED from [:integration_test] E:\FlutterProjects\stainless_v2\build\integration_test\intermediates\library_manifest\release\AndroidManifest.xml:10:5-44
 MERGED from [:multi_select_item] E:\FlutterProjects\stainless_v2\build\multi_select_item\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:multi_select_item] E:\FlutterProjects\stainless_v2\build\multi_select_item\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:share] E:\FlutterProjects\stainless_v2\build\share\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:share] E:\FlutterProjects\stainless_v2\build\share\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_auth] E:\FlutterProjects\stainless_v2\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_auth] E:\FlutterProjects\stainless_v2\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] E:\FlutterProjects\stainless_v2\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
@@ -415,6 +420,16 @@ ADDED from [:cloud_firestore] E:\FlutterProjects\stainless_v2\build\cloud_firest
 		ADDED from [:cloud_firestore] E:\FlutterProjects\stainless_v2\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:cloud_firestore] E:\FlutterProjects\stainless_v2\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:10:17-134
+provider#io.flutter.plugins.share.ShareFileProvider
+ADDED from [:share] E:\FlutterProjects\stainless_v2\build\share\intermediates\library_manifest\release\AndroidManifest.xml:8:9-16:20
+	android:grantUriPermissions
+		ADDED from [:share] E:\FlutterProjects\stainless_v2\build\share\intermediates\library_manifest\release\AndroidManifest.xml:12:13-47
+	android:authorities
+		ADDED from [:share] E:\FlutterProjects\stainless_v2\build\share\intermediates\library_manifest\release\AndroidManifest.xml:10:13-74
+	android:exported
+		ADDED from [:share] E:\FlutterProjects\stainless_v2\build\share\intermediates\library_manifest\release\AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [:share] E:\FlutterProjects\stainless_v2\build\share\intermediates\library_manifest\release\AndroidManifest.xml:9:13-70
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar
 ADDED from [:firebase_auth] E:\FlutterProjects\stainless_v2\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
 	android:value

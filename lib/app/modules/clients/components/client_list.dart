@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:get/state_manager.dart';
+import 'package:get/get.dart';
 import 'package:stainless_v2/app/modules/clients/components/client_card.dart';
 import 'package:stainless_v2/app/modules/clients/controllers/clients_controller.dart';
 import 'package:stainless_v2/utils/_export.dart';
@@ -27,9 +27,12 @@ class ClientList extends GetView<ClientsController> {
                         child: FadeInAnimation(
                             child: i % 2 == 0
                                 ? ClientCard(
-                                    leadingColor:
-                                        AppUi.colors.clientBlueGradient,
-                                    trailingColor: AppUi.colors.clientBlue,
+                                    leadingColor: Get.isDarkMode
+                                        ? AppUi.colors.clientBlueGradientOfDark
+                                        : AppUi.colors.clientBlueGradient,
+                                    trailingColor: Get.isDarkMode
+                                        ? AppUi.colors.blueOfDark
+                                        : AppUi.colors.clientBlue,
                                     client: controller.clients[i],
                                   )
                                 : ClientCard(
