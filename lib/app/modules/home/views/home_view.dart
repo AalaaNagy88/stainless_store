@@ -20,10 +20,21 @@ class HomeView extends GetView<HomeController> {
       ),
       body: PaintedView(
         downPainting: false,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [BalanceDetials(), Chart()],
+        child: Obx(
+          () => controller.clients == null
+              ? Center(
+                  child: CircularProgressIndicator(),
+                )
+              : Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    BalanceDetials(),
+                    Chart(
+                      monthSales: controller.monthSales,
+                    ),
+                  ],
+                ),
         ),
       ),
     );

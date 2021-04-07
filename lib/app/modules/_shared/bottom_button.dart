@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:stainless_v2/app/modules/_shared/app_raised_button.dart';
+import 'package:stainless_v2/app/modules/_shared/delete_dialog.dart';
 import 'package:stainless_v2/generated/l10n.dart';
 import 'package:stainless_v2/utils/_export.dart';
 
 class BottomButtons extends StatelessWidget {
+  final String title;
   final Function onEdit;
   final Function onDelete;
 
-  const BottomButtons({Key key, @required this.onEdit, @required this.onDelete})
+  const BottomButtons(
+      {Key key, @required this.onEdit, @required this.onDelete, this.title})
       : super(key: key);
 
   @override
@@ -21,7 +24,8 @@ class BottomButtons extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.all(8.w),
               child: AppRaisedButton(
-                onPressed: () => onDelete(),
+                onPressed: () => deleteDialog(context,
+                    onConfirm: () => onDelete(), title: title),
                 color: Colors.red[200],
                 title: S.current.delete,
               ),

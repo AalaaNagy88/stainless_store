@@ -5,9 +5,8 @@ import 'package:stainless_v2/app/models/order_model.dart';
 import 'package:stainless_v2/firebase_services/client_orders_services.dart';
 
 class AddOrderController extends GetxController with OrderControllerMixin {
-  final Rx<ClientModel> rxclient;
-  ClientModel get client => rxclient.value;
-  AddOrderController(this.rxclient);
+  final ClientModel client;
+  AddOrderController(this.client);
   @override
   void onInit() {
     selectedColor.value = "sliver";
@@ -16,7 +15,7 @@ class AddOrderController extends GetxController with OrderControllerMixin {
     super.onInit();
   }
 
-  addOrder() {
+  addOrder() async {
     try {
       client.orders.add(OrderModel(
           type: selectedType.value,
@@ -27,6 +26,7 @@ class AddOrderController extends GetxController with OrderControllerMixin {
           totalPrice:
               selectedType.value == "sheets" ? calcSheetPrice() : priceValue,
           createdAt: date.value));
+
       ClientOrdersServices().addOrder(client);
       Get..back()..back();
     } catch (e) {

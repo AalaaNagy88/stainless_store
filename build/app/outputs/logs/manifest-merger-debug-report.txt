@@ -11,7 +11,6 @@ MERGED from [:flutter_plugin_android_lifecycle] E:\FlutterProjects\stainless_v2\
 MERGED from [:sms_autofill] E:\FlutterProjects\stainless_v2\build\sms_autofill\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:cloud_firestore] E:\FlutterProjects\stainless_v2\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:integration_test] E:\FlutterProjects\stainless_v2\build\integration_test\intermediates\library_manifest\debug\AndroidManifest.xml:7:1-12:12
-MERGED from [:multi_select_item] E:\FlutterProjects\stainless_v2\build\multi_select_item\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:share] E:\FlutterProjects\stainless_v2\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-19:12
 MERGED from [:firebase_auth] E:\FlutterProjects\stainless_v2\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] E:\FlutterProjects\stainless_v2\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
@@ -219,8 +218,6 @@ MERGED from [:cloud_firestore] E:\FlutterProjects\stainless_v2\build\cloud_fires
 MERGED from [:cloud_firestore] E:\FlutterProjects\stainless_v2\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:integration_test] E:\FlutterProjects\stainless_v2\build\integration_test\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-44
 MERGED from [:integration_test] E:\FlutterProjects\stainless_v2\build\integration_test\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-44
-MERGED from [:multi_select_item] E:\FlutterProjects\stainless_v2\build\multi_select_item\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:multi_select_item] E:\FlutterProjects\stainless_v2\build\multi_select_item\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:share] E:\FlutterProjects\stainless_v2\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:share] E:\FlutterProjects\stainless_v2\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_auth] E:\FlutterProjects\stainless_v2\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44

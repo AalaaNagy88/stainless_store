@@ -7,8 +7,9 @@ import 'package:stainless_v2/utils/_export.dart';
 
 Future addNewImportDialog(BuildContext context, StoreController controller) {
   return Get.defaultDialog(
-      titleStyle: TextStyle(color: AppUi.colors.blue),
-      title: S.current.add_imports,
+      titleStyle: TextStyle(
+          color: Get.isDarkMode ? AppUi.colors.blueOfDark : AppUi.colors.blue),
+      title: S.current.add_thing(S.current.imports),
       content: Column(
         children: [
           AppField(

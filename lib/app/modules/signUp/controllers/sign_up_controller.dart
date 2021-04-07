@@ -32,12 +32,12 @@ class SignUpController extends GetxController {
     SmsAutoFill().unregisterListener();
   }
 
-  auth() {
-    AuthServices().authBody(phoneNumber, secondDown);
+  auth() async {
+    await AuthServices().authBody(phoneNumber, secondDown);
   }
 
-  verifyCode() {
-    AuthServices().verifyCode(codeController.text.trim());
+  verifyCode() async {
+    await AuthServices().verifyCode(codeController.text.trim());
   }
 
   updateUserInfo() {

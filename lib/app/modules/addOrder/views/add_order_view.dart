@@ -10,7 +10,7 @@ class AddOrderView extends GetView<AddOrderController> {
   @override
   Widget build(BuildContext context) {
     return OrderForm(
-      appBarTitle: S.current.add_order,
+      appBarTitle: S.current.add_thing(S.current.order),
       selectedType: controller.selectedType,
       selectedColor: controller.selectedColor,
       amount: controller.amount,
@@ -18,7 +18,7 @@ class AddOrderView extends GetView<AddOrderController> {
       date: controller.date,
       size: controller.size,
       onButtonPressed: () => controller.addOrder(),
-      buttonTitle: S.current.add,
+      buttonTitle: S.current.add_thing(S.current.order),
     );
   }
 }

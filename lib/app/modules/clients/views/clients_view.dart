@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stainless_v2/app/modules/_shared/_export.dart';
 import 'package:stainless_v2/app/modules/clients/components/_export.dart';
+import 'package:stainless_v2/app/modules/clients/components/search_field.dart';
 import 'package:stainless_v2/generated/l10n.dart';
 
 import '../controllers/clients_controller.dart';
@@ -28,7 +29,7 @@ class ClientsView extends GetView<ClientsController> {
                   onConfirm: () => controller.addClient(),
                   textConfirm: S.current.add,
                   controller: controller.clientName,
-                  title: S.current.addNewClient),
+                  title: S.current.add_thing(S.current.client)),
             ),
           )
         ],
@@ -42,7 +43,7 @@ class ClientsView extends GetView<ClientsController> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
-              child: SearchField(context),
+              child: Obx(() => SearchField(context, controller)),
             ),
             ClientList()
           ],

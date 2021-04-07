@@ -41,7 +41,6 @@ class CutomDropMenu extends StatelessWidget {
                     .toList(),
                 onChanged: (value) {
                   isSelected.value = value;
-                  print(value);
                 },
               ),
           isSelected),

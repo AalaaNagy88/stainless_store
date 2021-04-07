@@ -3,15 +3,12 @@ import 'package:get/get.dart';
 import 'package:path/path.dart' as p;
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:image_picker/image_picker.dart';
+import 'package:stainless_v2/services/user_services.dart';
 
 class PickImageServices {
   File _image;
-  RxString photoUrl = RxString();
-  RxBool loading = RxBool();
-  PickImageServices() {
-    photoUrl.value = "";
-    loading.value = false;
-  }
+  RxString photoUrl = "".obs;
+  RxBool loading = false.obs;
 
   void pickFromCamera() async {
     final pickedPath = await ImagePicker().getImage(source: ImageSource.camera);
@@ -20,6 +17,7 @@ class PickImageServices {
     } else
       _image = null;
     photoUrl.value = await uploadImage();
+    UserServices.to.user.updateProfile(photoURL: photoUrl.value);
   }
 
   void pickFromGallery() async {
@@ -30,6 +28,7 @@ class PickImageServices {
     } else
       _image = null;
     photoUrl.value = await uploadImage();
+    UserServices.to.user.updateProfile(photoURL: photoUrl.value);
   }
 
   Future<String> uploadImage() async {

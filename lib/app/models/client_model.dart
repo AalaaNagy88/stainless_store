@@ -73,4 +73,10 @@ extension copy on ClientModel {
     this.remains = calcuateRemains(this.orders, this.payments);
     return this;
   }
+
+  ClientModel sort() {
+    this.orders.sort((b, a) => a.createdAt.compareTo(b.createdAt));
+    this.payments.sort((b, a) => a.createdAt.compareTo(b.createdAt));
+    return this;
+  }
 }

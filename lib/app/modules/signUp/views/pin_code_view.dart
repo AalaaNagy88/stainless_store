@@ -27,7 +27,7 @@ class PinCodeView extends GetView<SignUpController> {
               ChangeNumber(
                 phoneNumber: controller.phoneNumber,
               ),
-              PinField(controller: controller),
+              PinField(),
               TimerBody(
                 secondDown: controller.secondDown,
               ),
@@ -36,6 +36,7 @@ class PinCodeView extends GetView<SignUpController> {
               ),
               AppRaisedButton(
                 onPressed: () {
+                  // controller.auth();
                   controller.verifyCode();
                 },
                 title: S.current.continues,

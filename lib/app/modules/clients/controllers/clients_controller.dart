@@ -1,11 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:stainless_v2/app/controllers_mixins/search_controller_mixin.dart';
 import 'package:stainless_v2/app/models/client_model.dart';
 import 'package:stainless_v2/firebase_services/client_services.dart';
 import 'package:stainless_v2/generated/l10n.dart';
 import 'package:share/share.dart';
 
-class ClientsController extends GetxController {
+class ClientsController extends GetxController with SearchControllerMixin {
   final clientName = TextEditingController();
   ClientServices _clientServices = ClientServices();
   List<ClientModel> get clients => _clientServices.clients.value;
@@ -13,12 +14,12 @@ class ClientsController extends GetxController {
   bool confirmOrdersDelete = false;
   @override
   void onInit() {
-    _clientServices.loadAllClients();
     super.onInit();
   }
 
   @override
   void onReady() {
+    _clientServices.loadAllClients();
     super.onReady();
   }
 
@@ -28,7 +29,8 @@ class ClientsController extends GetxController {
   }
 
   addClient() {
-    _clientServices.addNewClient(clientName.text);
+    if (clientName.text.isNotEmpty)
+      _clientServices.addNewClient(clientName.text);
     clientName.text = "";
     Get.back();
   }

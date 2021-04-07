@@ -16,7 +16,9 @@ class EditOrderView extends GetView<EditOrderController> {
         context: context,
         title: controller.indexOfselected.client.name,
         actions: [
-          IconButton(icon: Icon(Icons.share_rounded), onPressed: () {})
+          IconButton(
+              icon: Icon(Icons.share_rounded),
+              onPressed: () => controller.shareOrder())
         ],
       ),
       body: PaintedView(
@@ -86,6 +88,7 @@ class EditOrderView extends GetView<EditOrderController> {
             )),
           )),
       bottomNavigationBar: BottomButtons(
+        title: S.current.order,
         onEdit: () => Get.to(EditOrderFormView()),
         onDelete: () => controller.deleteOrder(),
       ),

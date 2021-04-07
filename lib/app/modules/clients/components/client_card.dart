@@ -22,8 +22,8 @@ class ClientCard extends GetView<ClientsController> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.selected.value = client;
-        Get.toNamed(Routes.CLIENT_DETIALS, arguments: controller.selected);
+        controller.endSearch();
+        Get.toNamed(Routes.CLIENT_DETIALS, arguments: client);
       },
       child: Slidable(
         actionPane: SlidableDrawerActionPane(),
@@ -71,12 +71,16 @@ class ClientCard extends GetView<ClientsController> {
                   width: 40.w,
                   height: 40.w,
                   decoration: BoxDecoration(
-                      gradient: leadingColor,
+                      gradient: client.remains == 0
+                          ? AppUi.colors.sliverGradient
+                          : leadingColor,
                       borderRadius: BorderRadius.circular(40.w)),
                   child: Center(
                       child: Text(
-                    client.name.split(" ").fold("",
-                        (previousValue, element) => previousValue + element[0]),
+                    client.name.split(" ").fold(
+                        "",
+                        (previousValue, element) =>
+                            previousValue + element.substring(0, 1)),
                     style: Theme.of(context)
                         .textTheme
                         .headline6
@@ -91,7 +95,10 @@ class ClientCard extends GetView<ClientsController> {
                 trailing: Text(
                   "${client.remains}" + S.current.el,
                   style: Theme.of(context).textTheme.subtitle2.copyWith(
-                      color: trailingColor, fontWeight: FontWeight.w900),
+                      color: client.remains == 0
+                          ? Colors.grey[500]
+                          : trailingColor,
+                      fontWeight: FontWeight.w900),
                 ),
               ),
             ),

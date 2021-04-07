@@ -175,6 +175,16 @@ class S {
     );
   }
 
+  /// `Client`
+  String get client {
+    return Intl.message(
+      'Client',
+      name: 'client',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Store`
   String get store {
     return Intl.message(
@@ -285,16 +295,6 @@ class S {
     );
   }
 
-  /// `Add New Client`
-  String get addNewClient {
-    return Intl.message(
-      'Add New Client',
-      name: 'addNewClient',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Add`
   String get add {
     return Intl.message(
@@ -365,11 +365,11 @@ class S {
     );
   }
 
-  /// `Add Imports`
-  String get add_imports {
+  /// `Imports`
+  String get imports {
     return Intl.message(
-      'Add Imports',
-      name: 'add_imports',
+      'Imports',
+      name: 'imports',
       desc: '',
       args: [],
     );
@@ -435,13 +435,13 @@ class S {
     );
   }
 
-  /// `Add Order`
-  String get add_order {
+  /// `Add {string}`
+  String add_thing(Object string) {
     return Intl.message(
-      'Add Order',
-      name: 'add_order',
+      'Add $string',
+      name: 'add_thing',
       desc: '',
-      args: [],
+      args: [string],
     );
   }
 
@@ -630,6 +630,156 @@ class S {
     return Intl.message(
       'No',
       name: 'no',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There's no {thing} until now`
+  String no_thing(Object thing) {
+    return Intl.message(
+      'There\'s no $thing until now',
+      name: 'no_thing',
+      desc: '',
+      args: [thing],
+    );
+  }
+
+  /// `Jan`
+  String get Jan {
+    return Intl.message(
+      'Jan',
+      name: 'Jan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Feb`
+  String get Feb {
+    return Intl.message(
+      'Feb',
+      name: 'Feb',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mar`
+  String get Mar {
+    return Intl.message(
+      'Mar',
+      name: 'Mar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apr`
+  String get Apr {
+    return Intl.message(
+      'Apr',
+      name: 'Apr',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `May`
+  String get May {
+    return Intl.message(
+      'May',
+      name: 'May',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Jun`
+  String get Jun {
+    return Intl.message(
+      'Jun',
+      name: 'Jun',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Jul`
+  String get Jul {
+    return Intl.message(
+      'Jul',
+      name: 'Jul',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Aug`
+  String get Aug {
+    return Intl.message(
+      'Aug',
+      name: 'Aug',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sep`
+  String get Sep {
+    return Intl.message(
+      'Sep',
+      name: 'Sep',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oct`
+  String get Oct {
+    return Intl.message(
+      'Oct',
+      name: 'Oct',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Nov`
+  String get Nov {
+    return Intl.message(
+      'Nov',
+      name: 'Nov',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dec`
+  String get Dec {
+    return Intl.message(
+      'Dec',
+      name: 'Dec',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `hide`
+  String get hide {
+    return Intl.message(
+      'hide',
+      name: 'hide',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log Out`
+  String get logOut {
+    return Intl.message(
+      'Log Out',
+      name: 'logOut',
       desc: '',
       args: [],
     );

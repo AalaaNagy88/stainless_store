@@ -169,18 +169,6 @@ io/flutter/plugins/share/R.java
  io.flutter.plugins.share.R$style
  io.flutter.plugins.share.R$styleable
  io.flutter.plugins.share.R$xml
-com/example/multi_select_item/R.java
- com.example.multi_select_item.R
- com.example.multi_select_item.R$attr
- com.example.multi_select_item.R$color
- com.example.multi_select_item.R$dimen
- com.example.multi_select_item.R$drawable
- com.example.multi_select_item.R$id
- com.example.multi_select_item.R$integer
- com.example.multi_select_item.R$layout
- com.example.multi_select_item.R$string
- com.example.multi_select_item.R$style
- com.example.multi_select_item.R$styleable
 com/example/stainless_v2/R.java
  com.example.stainless_v2.R
  com.example.stainless_v2.R$attr

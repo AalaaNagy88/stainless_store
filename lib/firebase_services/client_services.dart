@@ -18,9 +18,8 @@ class ClientServices {
         .collection("Clients");
   }
   Future<void> addNewClient(String name) async {
-    await _mainRef
-        .add(ClientModel(name: name).toJson())
-        .then((value) => _mainRef.doc(value.id).update({"id": value.id}));
+    await _mainRef.add(ClientModel(name: name).toJson()).then(
+        (value) async => await _mainRef.doc(value.id).update({"id": value.id}));
   }
 
   Future<void> updateClientName({String name, String id}) async {
@@ -29,8 +28,12 @@ class ClientServices {
 
   loadAllClients() {
     _mainRef.snapshots().listen((event) {
-      clients.value =
-          event.docs.map((e) => ClientModel.fromJson(e.data()).calc()).toList();
+      clients.value = event.docs
+          .map((e) => ClientModel.fromJson(e.data())
+            ..calc()
+            ..sort())
+          .toList();
+      clients.value.sort((a, b) => a.name.compareTo(b.name));
     });
   }
 

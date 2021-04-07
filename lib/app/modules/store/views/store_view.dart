@@ -36,7 +36,7 @@ class StoreView extends GetView<StoreController> {
         onPressed: () {
           addNewImportDialog(context, controller);
         },
-        title: S.current.add_imports,
+        title: S.current.add_thing(S.current.imports),
       ),
     );
   }

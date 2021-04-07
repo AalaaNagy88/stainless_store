@@ -13,52 +13,50 @@ class AppField extends TextFormField {
       void Function() onTap,
       String hintText,
       String Function(String) validator,
-      bool isSearch = false})
+      void Function(String) onChanged,
+      Widget suffixIcon,
+      String initialValue,
+      FocusNode focusNode})
       : super(
-          controller: controller,
-          keyboardType: keyboardType,
-          autofocus: autofocus,
-          readOnly: readOnly,
-          showCursor: showCursor,
-          validator: validator,
-          onTap: onTap,
-          decoration: InputDecoration(
-            hintText: hintText,
-            filled: true,
-            prefixIcon: prefixIcon,
-            enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                  color: Get.isDarkMode
-                      ? AppUi.colors.blueBacgroundOfDark
-                      : AppUi.colors.blueBacground),
-              borderRadius: BorderRadius.circular(20.h),
+            controller: controller,
+            keyboardType: keyboardType,
+            autofocus: autofocus,
+            readOnly: readOnly,
+            showCursor: showCursor,
+            validator: validator,
+            onTap: onTap,
+            initialValue: initialValue,
+            onChanged: onChanged,
+            decoration: InputDecoration(
+              hintText: hintText,
+              filled: true,
+              prefixIcon: prefixIcon,
+              suffixIcon: suffixIcon,
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                    color: Get.isDarkMode
+                        ? AppUi.colors.blueBacgroundOfDark
+                        : AppUi.colors.blueBacground),
+                borderRadius: BorderRadius.circular(20.h),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                    color: Get.isDarkMode
+                        ? AppUi.colors.blueOfDark
+                        : AppUi.colors.blue),
+                borderRadius: BorderRadius.circular(20.h),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.red[100]),
+                borderRadius: BorderRadius.circular(20.h),
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.red[100]),
+                borderRadius: BorderRadius.circular(20.h),
+              ),
+              fillColor: Get.isDarkMode
+                  ? AppUi.colors.blueBacgroundOfDark
+                  : AppUi.colors.blueBacground,
             ),
-            focusedBorder: isSearch
-                ? OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color: Get.isDarkMode
-                            ? AppUi.colors.blueBacgroundOfDark
-                            : AppUi.colors.blueBacground),
-                    borderRadius: BorderRadius.circular(20.h),
-                  )
-                : OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color: Get.isDarkMode
-                            ? AppUi.colors.blueOfDark
-                            : AppUi.colors.blue),
-                    borderRadius: BorderRadius.circular(20.h),
-                  ),
-            errorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.red[100]),
-              borderRadius: BorderRadius.circular(20.h),
-            ),
-            focusedErrorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.red[100]),
-              borderRadius: BorderRadius.circular(20.h),
-            ),
-            fillColor: Get.isDarkMode
-                ? AppUi.colors.blueBacgroundOfDark
-                : AppUi.colors.blueBacground,
-          ),
-        );
+            focusNode: focusNode);
 }

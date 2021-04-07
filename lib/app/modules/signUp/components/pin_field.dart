@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sms_autofill/sms_autofill.dart';
 import 'package:stainless_v2/app/modules/signUp/controllers/sign_up_controller.dart';
 import 'package:stainless_v2/utils/_export.dart';
 
-class PinField extends StatelessWidget {
-  const PinField({
-    Key key,
-    @required this.controller,
-  }) : super(key: key);
-
-  final SignUpController controller;
-
+class PinField extends GetView<SignUpController> {
   @override
   Widget build(BuildContext context) {
     return Padding(

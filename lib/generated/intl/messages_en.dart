@@ -19,42 +19,61 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static m0(thing) => "Are you sure you want to delete ${thing}?";
+  static m0(string) => "Add ${string}";
 
-  static m1(string) => "Edit ${string}";
+  static m1(thing) => "Are you sure you want to delete ${thing}?";
 
-  static m2(material) => "Up date ${material} Amount";
+  static m2(string) => "Edit ${string}";
 
-  static m3(thing) => "Please,Enter vaild ${thing}";
+  static m3(thing) => "There\'s no ${thing} until now";
+
+  static m4(material) => "Up date ${material} Amount";
+
+  static m5(thing) => "Please,Enter vaild ${thing}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "Apr" : MessageLookupByLibrary.simpleMessage("Apr"),
+    "Aug" : MessageLookupByLibrary.simpleMessage("Aug"),
+    "Dec" : MessageLookupByLibrary.simpleMessage("Dec"),
+    "Feb" : MessageLookupByLibrary.simpleMessage("Feb"),
+    "Jan" : MessageLookupByLibrary.simpleMessage("Jan"),
+    "Jul" : MessageLookupByLibrary.simpleMessage("Jul"),
+    "Jun" : MessageLookupByLibrary.simpleMessage("Jun"),
+    "Mar" : MessageLookupByLibrary.simpleMessage("Mar"),
+    "May" : MessageLookupByLibrary.simpleMessage("May"),
+    "Nov" : MessageLookupByLibrary.simpleMessage("Nov"),
+    "Oct" : MessageLookupByLibrary.simpleMessage("Oct"),
+    "Sep" : MessageLookupByLibrary.simpleMessage("Sep"),
     "add" : MessageLookupByLibrary.simpleMessage("Add"),
-    "addNewClient" : MessageLookupByLibrary.simpleMessage("Add New Client"),
-    "add_imports" : MessageLookupByLibrary.simpleMessage("Add Imports"),
-    "add_order" : MessageLookupByLibrary.simpleMessage("Add Order"),
+    "add_thing" : m0,
     "amount" : MessageLookupByLibrary.simpleMessage("Amount"),
     "camera" : MessageLookupByLibrary.simpleMessage("Camera"),
     "cancel" : MessageLookupByLibrary.simpleMessage("Cancel"),
     "change_language" : MessageLookupByLibrary.simpleMessage("Change Language"),
     "change_phone" : MessageLookupByLibrary.simpleMessage("Change number?"),
+    "client" : MessageLookupByLibrary.simpleMessage("Client"),
     "clientName" : MessageLookupByLibrary.simpleMessage("Client Name"),
     "clients" : MessageLookupByLibrary.simpleMessage("Clients"),
     "color" : MessageLookupByLibrary.simpleMessage("Color"),
     "continues" : MessageLookupByLibrary.simpleMessage("Continue"),
     "delete" : MessageLookupByLibrary.simpleMessage("Delete"),
-    "delete_mesg" : m0,
+    "delete_mesg" : m1,
     "edit" : MessageLookupByLibrary.simpleMessage("Edit"),
-    "edit_string" : m1,
+    "edit_string" : m2,
     "el" : MessageLookupByLibrary.simpleMessage("EL"),
     "gallery" : MessageLookupByLibrary.simpleMessage("Gallery"),
     "golden" : MessageLookupByLibrary.simpleMessage("Golden"),
+    "hide" : MessageLookupByLibrary.simpleMessage("hide"),
     "home" : MessageLookupByLibrary.simpleMessage("Home"),
+    "imports" : MessageLookupByLibrary.simpleMessage("Imports"),
+    "logOut" : MessageLookupByLibrary.simpleMessage("Log Out"),
     "log_in" : MessageLookupByLibrary.simpleMessage("Log in"),
     "my_informations" : MessageLookupByLibrary.simpleMessage("My Informations"),
     "name" : MessageLookupByLibrary.simpleMessage("Name"),
     "name_ex" : MessageLookupByLibrary.simpleMessage("Ex: Mohamed"),
     "no" : MessageLookupByLibrary.simpleMessage("No"),
+    "no_thing" : m3,
     "number" : MessageLookupByLibrary.simpleMessage("Number"),
     "order" : MessageLookupByLibrary.simpleMessage("Order"),
     "orders" : MessageLookupByLibrary.simpleMessage("Orders"),
@@ -84,9 +103,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "totalPrice" : MessageLookupByLibrary.simpleMessage("Total Price"),
     "total_balance" : MessageLookupByLibrary.simpleMessage("Total Balance"),
     "type" : MessageLookupByLibrary.simpleMessage("Type"),
-    "update_material_amount" : m2,
+    "update_material_amount" : m4,
     "user_name" : MessageLookupByLibrary.simpleMessage("User Name"),
-    "validation_text" : m3,
+    "validation_text" : m5,
     "welcomeMessage" : MessageLookupByLibrary.simpleMessage("Welcom to your Stainstore"),
     "yes" : MessageLookupByLibrary.simpleMessage("Yes")
   };

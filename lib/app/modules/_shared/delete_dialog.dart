@@ -9,7 +9,8 @@ Future deleteDialog(
   @required Function onConfirm,
 }) {
   return Get.defaultDialog(
-      titleStyle: TextStyle(color: AppUi.colors.blue),
+      titleStyle: TextStyle(
+          color: Get.isDarkMode ? AppUi.colors.blueOfDark : AppUi.colors.blue),
       content: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Text(S.current.delete_mesg(title)),

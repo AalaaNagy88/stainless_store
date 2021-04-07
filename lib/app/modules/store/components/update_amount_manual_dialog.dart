@@ -7,8 +7,8 @@ import 'package:stainless_v2/utils/_export.dart';
 Future updateAmountManualDialog(BuildContext context,
     {String title, Function onConfirm, TextEditingController controller}) {
   return Get.defaultDialog(
-      titleStyle: TextStyle(color: AppUi.colors.blue),
-      title: S.current.update_material_amount(title),
+ titleStyle: TextStyle(
+          color: Get.isDarkMode ? AppUi.colors.blueOfDark : AppUi.colors.blue),      title: S.current.update_material_amount(title),
       content: AppField(
         controller: controller,
         keyboardType: TextInputType.number,

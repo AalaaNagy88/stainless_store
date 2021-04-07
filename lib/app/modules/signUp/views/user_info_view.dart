@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:stainless_v2/app/modules/_shared/_export.dart';
+import 'package:stainless_v2/app/modules/_shared/user_photo.dart';
 
-import 'package:stainless_v2/app/modules/signUp/components/_export.dart';
 import 'package:stainless_v2/app/modules/signUp/controllers/sign_up_controller.dart';
 import 'package:stainless_v2/generated/l10n.dart';
+import 'package:stainless_v2/services/user_services.dart';
 import 'package:stainless_v2/utils/_export.dart';
 
 class UserInfoView extends GetView<SignUpController> {
   @override
   Widget build(BuildContext context) {
+    controller.userNameController.text = UserServices.to.user.displayName;
     return Scaffold(
         body: PaintedView(
       child: Form(
@@ -22,7 +24,9 @@ class UserInfoView extends GetView<SignUpController> {
               SizedBox(
                 height: 100.h,
               ),
-              UserPhoto(),
+              UserPhoto(
+                pickImageServices: controller.pickImageServices,
+              ),
               SizedBox(
                 height: 50.h,
               ),

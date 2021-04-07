@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stainless_v2/app/models/selected_item_current_client.dart';
+import 'package:stainless_v2/app/modules/ClientDetials/components/selectable.dart';
 import 'package:stainless_v2/app/modules/ClientDetials/controllers/client_detials_controller.dart';
 import 'package:stainless_v2/app/modules/_shared/_export.dart';
 import 'package:stainless_v2/app/modules/_shared/payment_card.dart';
@@ -48,15 +49,22 @@ class ClientPayments extends GetView<ClientDetialsController> {
                 ],
               ),
             ),
-            ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: controller.payments.length,
-                itemBuilder: (context, i) => InkWell(
-                    onTap: () => Get.toNamed(Routes.EDIT_PAYMENT,
-                        arguments: SelectedItemOfCurrentClient(
-                            client: controller.client, selectedItemIndex: i)),
-                    child: PaymentCard(payment: controller.payments[i]))),
+            controller.payments.length != 0
+                ? ListView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: controller.payments.length,
+                    itemBuilder: (context, i) => Selectable(
+                          child: PaymentCard(payment: controller.payments[i]),
+                          index: i,
+                          onTap: () => Get.toNamed(Routes.EDIT_PAYMENT,
+                              arguments: SelectedItemOfCurrentClient(
+                                  client: controller.client,
+                                  selectedItemIndex: i)),
+                        ))
+                : EmptyListHint(
+                    thing: S.current.paymentHistory,
+                  ),
           ],
         ),
       ),

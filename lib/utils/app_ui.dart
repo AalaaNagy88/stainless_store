@@ -16,6 +16,8 @@ class AppUi {
 
 class _AppAssets {
   final String moneyHero = "assets/flare/money_hero.json";
+  final String noData = "assets/flare/no_data.json";
+  final String emptyList = "assets/flare/empty_client_list.json";
   final String logo = "assets/flare/logo.json";
   final String securityGard = "assets/flare/security_gard.json";
   final String languageGrey = "assets/icons/language_grey.png";
@@ -71,6 +73,7 @@ class _AppTheme {
           unselectedItemColor: AppUi.colors.blueAccent));
   final darktheme = ThemeData.dark().copyWith(
       primaryColor: AppUi.colors.blueOfDark,
+      accentColor: AppUi.colors.blueOfDark,
       iconTheme: IconThemeData(color: AppUi.colors.blueOfDark, size: 40.w),
       appBarTheme: AppBarTheme(
           actionsIconTheme:

@@ -8,7 +8,7 @@ import 'package:stainless_v2/services/user_services.dart';
 class AuthServices {
   String _verificationId = "";
 
-  void authBody(String phoneNumber, RxInt secondDown) async {
+  Future<void> authBody(String phoneNumber, RxInt secondDown) async {
     _startTimer(secondDown);
     try {
       UserServices.to.auth.verifyPhoneNumber(
@@ -17,46 +17,24 @@ class AuthServices {
           verificationCompleted: _verifcationCompleted,
           verificationFailed: _verificationFailed,
           codeSent: _codeSent,
-          codeAutoRetrievalTimeout: null);
+          codeAutoRetrievalTimeout: _codeAutoRetrievalTimeout);
     } catch (e) {
       Get.snackbar(e.message, "");
     }
   }
 
   void _verifcationCompleted(AuthCredential credential) async {
-    try {
-      UserCredential result =
-          await UserServices.to.auth.signInWithCredential(credential);
-
-      User user = result.user;
-
-      if (user != null) {
-        Get.to(UserInfoView());
-      }
-    } catch (e) {
-      Get.snackbar(e.message, "");
-    }
+    await signIn(credential);
   }
 
-  void verifyCode(String code) async {
-    try {
-      UserCredential result = await UserServices.to.auth.signInWithCredential(
-          PhoneAuthProvider.credential(
-              verificationId: _verificationId, smsCode: code));
-
-      User user = result.user;
-
-      if (user != null) {
-        Get.to(UserInfoView());
-      }
-    } catch (e) {
-      Get.snackbar(e.message, "");
-    }
+  Future<void> verifyCode(String code) async {
+    AuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: _verificationId, smsCode: code);
+    await signIn(credential);
   }
 
   _codeSent(String verificationId, [int forceResendingToken]) {
-    verificationId = verificationId;
-    print(verificationId);
+    _verificationId = verificationId;
   }
 
   _verificationFailed(e) {
@@ -72,5 +50,24 @@ class AuthServices {
         secondDown.value--;
       }
     });
+  }
+
+  _codeAutoRetrievalTimeout(String verificationId) {
+    _verificationId = verificationId;
+  }
+
+  Future<void> signIn(AuthCredential credential) async {
+    try {
+      UserCredential result =
+          await UserServices.to.auth.signInWithCredential(credential);
+
+      User user = result.user;
+
+      if (user != null) {
+        Get.to(UserInfoView());
+      }
+    } catch (e) {
+      Get.snackbar(e.message, "");
+    }
   }
 }

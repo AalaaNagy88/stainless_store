@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
-import 'package:stainless_v2/app/modules/clients/components/client_card.dart';
+import 'package:lottie/lottie.dart';
+import 'package:stainless_v2/app/modules/_shared/_export.dart';
 import 'package:stainless_v2/app/modules/clients/controllers/clients_controller.dart';
+import 'package:stainless_v2/generated/l10n.dart';
 import 'package:stainless_v2/utils/_export.dart';
+
+import 'animated_client_list_body.dart';
 
 class ClientList extends GetView<ClientsController> {
   const ClientList({
@@ -13,35 +17,30 @@ class ClientList extends GetView<ClientsController> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-        child: AnimationLimiter(
-      child: Obx(
-        () => controller.clients == null
-            ? Center(child: CircularProgressIndicator())
-            : ListView.builder(
-                itemCount: controller.clients.length,
-                itemBuilder: (_, i) => AnimationConfiguration.staggeredList(
-                    position: i,
-                    duration: const Duration(milliseconds: 500),
-                    child: SlideAnimation(
-                        horizontalOffset: 100.w,
-                        child: FadeInAnimation(
-                            child: i % 2 == 0
-                                ? ClientCard(
-                                    leadingColor: Get.isDarkMode
-                                        ? AppUi.colors.clientBlueGradientOfDark
-                                        : AppUi.colors.clientBlueGradient,
-                                    trailingColor: Get.isDarkMode
-                                        ? AppUi.colors.blueOfDark
-                                        : AppUi.colors.clientBlue,
-                                    client: controller.clients[i],
-                                  )
-                                : ClientCard(
-                                    leadingColor:
-                                        AppUi.colors.clientPinkGradient,
-                                    trailingColor: AppUi.colors.clientPink,
-                                    client: controller.clients[i],
-                                  ))))),
+      child: AnimationLimiter(
+        child: Obx(
+          () => controller.clients == null
+              ? Center(child: CircularProgressIndicator())
+              : !controller.focus.value
+                  ? controller.clients.length != 0
+                      ? AnimatedClientListBody(
+                          list: controller.clients,
+                        )
+                      : ListView(
+                          children: [
+                            Lottie.asset(AppUi.assets.emptyList),
+                            EmptyListHint(
+                              thing: S.current.clients,
+                            ),
+                          ],
+                        )
+                  : controller.matching.value
+                      ? AnimatedClientListBody(
+                          list: controller.suggestedList,
+                        )
+                      : Center(child: Lottie.asset(AppUi.assets.noData)),
+        ),
       ),
-    ));
+    );
   }
 }
