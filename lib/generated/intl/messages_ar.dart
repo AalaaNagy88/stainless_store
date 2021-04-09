@@ -91,7 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sended_code" : MessageLookupByLibrary.simpleMessage("تم إرسال كود مكون من 6 أرقام ل"),
     "share" : MessageLookupByLibrary.simpleMessage("مشاركه"),
     "sheets" : MessageLookupByLibrary.simpleMessage("ألواح"),
-    "show" : MessageLookupByLibrary.simpleMessage("أظهر"),
+    "show" : MessageLookupByLibrary.simpleMessage("إظهار"),
     "size" : MessageLookupByLibrary.simpleMessage("المقاس"),
     "sliver" : MessageLookupByLibrary.simpleMessage("الفضى"),
     "smsMessage" : MessageLookupByLibrary.simpleMessage("الرجاء إدخال الرمز السرى المستلم عبر SMS"),
