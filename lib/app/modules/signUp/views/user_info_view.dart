@@ -12,7 +12,7 @@ import 'package:stainless_v2/utils/_export.dart';
 class UserInfoView extends GetView<SignUpController> {
   @override
   Widget build(BuildContext context) {
-    controller.userNameController.text = UserServices.to.user.displayName;
+    controller.userNameController.text = UserServices.to.user.displayName==null?"":UserServices.to.user.displayName;
     return Scaffold(
         body: PaintedView(
       child: Form(

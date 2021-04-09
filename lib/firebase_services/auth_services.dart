@@ -16,25 +16,22 @@ class AuthServices {
           timeout: Duration(seconds: 60),
           verificationCompleted: _verifcationCompleted,
           verificationFailed: _verificationFailed,
-          codeSent: _codeSent,
+          codeSent: (String verificationId, [int forceResendingToken]) async {
+            _verificationId = verificationId;
+          },
           codeAutoRetrievalTimeout: _codeAutoRetrievalTimeout);
     } catch (e) {
       Get.snackbar(e.message, "");
     }
   }
 
-  void _verifcationCompleted(AuthCredential credential) async {
-    await signIn(credential);
-  }
+  void _verifcationCompleted(AuthCredential credential) async {}
 
   Future<void> verifyCode(String code) async {
+    print(_verificationId);
     AuthCredential credential = PhoneAuthProvider.credential(
         verificationId: _verificationId, smsCode: code);
     await signIn(credential);
-  }
-
-  _codeSent(String verificationId, [int forceResendingToken]) {
-    _verificationId = verificationId;
   }
 
   _verificationFailed(e) {

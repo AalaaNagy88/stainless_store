@@ -5,6 +5,7 @@ import 'package:stainless_v2/generated/l10n.dart';
 import 'package:stainless_v2/utils/_export.dart';
 import 'dart:math';
 
+// ignore: must_be_immutable
 class Chart extends StatelessWidget {
   final List<double> monthSales;
 

@@ -29,14 +29,11 @@ class UserPhoto extends StatelessWidget {
                   ? Center(
                       child: CircularProgressIndicator(),
                     )
-                  : UserServices.to.user.photoURL != null ||
-                          UserServices.to.user.photoURL.isEmpty
+                  : UserServices.to.user.photoURL != null
                       ? ClipRRect(
                           borderRadius: BorderRadius.circular(250.h),
-                          child: Image.network(
-                            UserServices.to.user.photoURL,
-                            fit: BoxFit.cover,
-                          ))
+                          child: Image.network(UserServices.to.user.photoURL,
+                              fit: BoxFit.cover))
                       : Icon(
                           Icons.person_rounded,
                           size: 100.h,

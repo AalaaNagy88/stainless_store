@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stainless_v2/firebase_services/pick_image_services.dart';
+import 'package:stainless_v2/firebase_services/user_utils_services.dart';
 import 'package:stainless_v2/generated/l10n.dart';
 import 'package:stainless_v2/services/user_services.dart';
 import 'package:stainless_v2/utils/app_builder.dart';
@@ -12,12 +13,15 @@ class ProfileController extends GetxController {
   RxBool currentIsEn = RxBool();
   RxBool currentIsLight = RxBool();
   PickImageServices pickImageServices = PickImageServices();
+  UserUtilsServices _userUtilsServices;
 
   @override
-  void onInit() {
+  void onInit() async {
+    _userUtilsServices = UserUtilsServices();
+    await _userUtilsServices.openUserServices();
     currentIsEn.value =
-        UserServices.to.userLanguage.value == "en" ? true : false;
-    currentIsLight.value = UserServices.to.isDarkMode.value ? false : true;
+        _userUtilsServices.userLanguage.value == "en" ? true : false;
+    currentIsLight.value = _userUtilsServices.isDarkMode.value ? false : true;
     super.onInit();
   }
 
@@ -44,7 +48,7 @@ class ProfileController extends GetxController {
       await S.load(locale);
       Get.updateLocale(locale);
     }
-    await UserServices.to.updateCurrentLanguage(currentLanguage);
+    await _userUtilsServices.updateCurrentLanguage(currentLanguage);
   }
 
   void changeCurrentTheme() async {
@@ -52,7 +56,7 @@ class ProfileController extends GetxController {
     currentIsLight.value
         ? Get.changeTheme(AppUi.themes.lighttheme)
         : Get.changeTheme(AppUi.themes.darktheme);
-    await UserServices.to.updateCurrentTheme(!currentIsLight.value);
+    await _userUtilsServices.updateCurrentTheme(!currentIsLight.value);
   }
 
   chnageUserName() {

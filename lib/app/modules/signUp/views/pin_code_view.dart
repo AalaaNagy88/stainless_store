@@ -14,7 +14,7 @@ class PinCodeView extends GetView<SignUpController> {
     return Scaffold(
       body: PaintedView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.w),
+          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
           child: ListView(
             children: [
               WelcomUI(
@@ -36,7 +36,7 @@ class PinCodeView extends GetView<SignUpController> {
               ),
               AppRaisedButton(
                 onPressed: () {
-                  // controller.auth();
+                  print("pressed");
                   controller.verifyCode();
                 },
                 title: S.current.continues,

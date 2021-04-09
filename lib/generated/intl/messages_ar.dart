@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m4(material) => "تعديل كمية ${material}";
 
+  static m5(thing) => "من فضلك أدخل ${thing}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "Apr" : MessageLookupByLibrary.simpleMessage("إبريل"),
@@ -102,6 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "type" : MessageLookupByLibrary.simpleMessage("النوع"),
     "update_material_amount" : m4,
     "user_name" : MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
+    "validation_text" : m5,
     "welcomeMessage" : MessageLookupByLibrary.simpleMessage("مرحبا بك فى ستنستور"),
     "yes" : MessageLookupByLibrary.simpleMessage("نعم")
   };

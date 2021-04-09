@@ -6,7 +6,6 @@ import 'package:stainless_v2/app/modules/ClientDetials/controllers/client_detial
 import 'package:stainless_v2/app/modules/_shared/_export.dart';
 import 'package:stainless_v2/app/routes/app_pages.dart';
 import 'package:stainless_v2/generated/l10n.dart';
-import 'package:stainless_v2/utils/_export.dart';
 
 class ClientOrders extends GetView<ClientDetialsController> {
   @override

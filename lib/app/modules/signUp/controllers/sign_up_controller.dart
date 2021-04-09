@@ -8,7 +8,7 @@ import 'package:stainless_v2/firebase_services/pick_image_services.dart';
 import 'package:stainless_v2/firebase_services/store_services.dart';
 import 'package:stainless_v2/services/user_services.dart';
 
-class SignUpController extends GetxController {
+class SignUpController extends GetxController with CodeAutoFill {
   final phoneController = TextEditingController();
   final userNameController = TextEditingController();
   final codeController = TextEditingController();
@@ -19,10 +19,12 @@ class SignUpController extends GetxController {
   String get userName => userNameController.text;
   RxInt secondDown = RxInt();
   PickImageServices pickImageServices = PickImageServices();
+  AuthServices _authServices;
   @override
   void onReady() {
     _listenToIncomingMesg();
     userNameController.text = "";
+    _authServices = AuthServices();
     super.onReady();
   }
 
@@ -33,11 +35,11 @@ class SignUpController extends GetxController {
   }
 
   auth() async {
-    await AuthServices().authBody(phoneNumber, secondDown);
+    await _authServices.authBody(phoneNumber, secondDown);
   }
 
   verifyCode() async {
-    await AuthServices().verifyCode(codeController.text.trim());
+    await _authServices.verifyCode(codeController.text);
   }
 
   updateUserInfo() {
@@ -59,5 +61,10 @@ class SignUpController extends GetxController {
     } else {
       userNameController.text = UserServices.to.user.displayName;
     }
+  }
+
+  @override
+  void codeUpdated() {
+    codeController.text = code;
   }
 }
