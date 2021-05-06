@@ -1,7 +1,7 @@
 # StainStore
 
-A  Flutter project for managing stainless sheets store.
-The project offers users managing order and payment history of clients and how orders affect the store, view Monthly profit and total rest of the balance, and share clients' data with them.
+A  Flutter app for managing stainless sheets store.
+The app offers users managing order and payment history of clients and how orders affect the store, view Monthly profit and total rest of the balance, and share clients' data with them.
 - The app supports two languages: English and Arabic
 - And two Themes: Light and dark
 
