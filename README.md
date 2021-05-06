@@ -1,16 +1,16 @@
-# stainless_v2
+# StainStore
 
-A new Flutter project.
+A  Flutter project for managing stainless sheets store.
+The project offers users managing order and payment history of clients and how orders affect the store, view Monthly profit and total rest of the balance, and share clients' data with them.
+- The app supports two languages: English and Arabic
+- And two Themes: Light and dark
 
-## Getting Started
+## Tools and Technology used
+- State Management : getx
+- architecture : MVC
+- Reactive programing to dealing with stream
+## Release and Run
+[![run](https://img.youtube.com/vi/ewopcDqKRyk/0.jpg)](https://www.youtube-nocookie.com/embed/ewopcDqKRyk)
 
-This project is a starting point for a Flutter application.
+- [For Test app: release version click here to download !](https://github.com/AalaaNagy88/stainless_store/blob/master/build/app/outputs/flutter-apk/app.apk)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
